@@ -5,11 +5,11 @@ import ProductCard from "@/components/ProductCard";
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. It's a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
+    description: "Volcano is Electron rebranded. Electron was an executor that was..",
     price: "$6.99 - $26.99",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
-    icon: "🌋",
+    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    icon: "",
     slug: "volcano-executor"
   },
   {

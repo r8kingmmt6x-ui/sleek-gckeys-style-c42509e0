@@ -1,34 +1,39 @@
-import { Home, Package, Star, HelpCircle } from "lucide-react";
+import { Home, Package, Star, HelpCircle, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center font-bold text-xs">
               GC
             </div>
             <span className="text-lg font-bold">GC Keys</span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-            <a href="#home" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+            <Link to="/" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
               <Home className="w-4 h-4" />
               <span>Home</span>
-            </a>
-            <a href="#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Package className="w-4 h-4" />
               <span>Products</span>
-            </a>
-            <a href="#reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/#reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Star className="w-4 h-4" />
               <span>Reviews</span>
-            </a>
-            <a href="#support" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/terms" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <FileText className="w-4 h-4" />
+              <span>ToS</span>
+            </Link>
+            <Link to="/#support" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <HelpCircle className="w-4 h-4" />
               <span>Support</span>
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-6">

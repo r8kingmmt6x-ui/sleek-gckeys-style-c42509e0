@@ -9,7 +9,8 @@ const products = [
     price: "$6.99 - $26.99",
     stock: 0,
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
-    icon: "🌋"
+    icon: "🌋",
+    slug: "volcano-executor"
   },
   {
     title: "Rift NOW",
@@ -17,7 +18,8 @@ const products = [
     price: "$1.99 - $6.99",
     stock: 0,
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
-    icon: "R"
+    icon: "R",
+    slug: "rift-now"
   },
   {
     title: "Exploitingis.FUN",
@@ -25,7 +27,8 @@ const products = [
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-    icon: "○"
+    icon: "○",
+    slug: "exploitingis-fun"
   },
   {
     title: "Seliware",
@@ -33,7 +36,8 @@ const products = [
     price: "$3.95 - $9.95",
     stock: 0,
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
-    icon: "S"
+    icon: "S",
+    slug: "seliware"
   },
   {
     title: "pretty.rich",
@@ -41,7 +45,8 @@ const products = [
     price: "$8.99 - $19.99",
     stock: 8,
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-    icon: "PR"
+    icon: "PR",
+    slug: "pretty-rich"
   },
   {
     title: "SoliX Executor",
@@ -49,7 +54,8 @@ const products = [
     price: "$5.99 - $12.99",
     stock: 12,
     image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
-    icon: "SX"
+    icon: "SX",
+    slug: "solix-executor"
   }
 ];
 
@@ -59,9 +65,9 @@ const Index = () => {
       <Navbar />
       <Hero />
       
-      <section className="pb-20 px-4">
+      <section className="pb-20 px-4" id="products">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}

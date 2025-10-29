@@ -51,51 +51,27 @@ const products = [
     ]
   },
   {
-    title: "Rift NOW",
-    description: "With Rift NOW, you get on-demand access – no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, Ink Game and Forsaken.",
-    price: "$1.99 - $6.99",
+   title: "Volcano Executor",
+    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
+    price: "$6.99 - $26.99",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
-    icon: "R",
-    slug: "rift-now",
+    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    icon: "",
+    slug: "volcano-executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$1.99", inStock: false },
-      { name: "Quarterly", duration: "90-Day Access", price: "$4.99", inStock: false },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$6.99", inStock: false }
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
     features: [
-      "On-Demand Access",
-      "No Key System",
-      "No Banner Ads",
-      "Instant Execution"
+      "Instant Key Delivery",
+      "No Annoying Pop-ups",
+      "No Checkpoints or Ads",
+      "3x HWID Resets Per Day"
     ],
     requirements: [
       "Windows 10/11",
-      "Supported games only"
-    ]
-  },
-  {
-    title: "Exploitingis.FUN",
-    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters",
-    price: "$7.99 - $14.99",
-    stock: 15,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-    icon: "○",
-    slug: "exploitingis-fun",
-    plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: true },
-      { name: "Quarterly", duration: "90-Day Access", price: "$12.99", inStock: true },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$14.99", inStock: true }
-    ],
-    features: [
-      "Multi-Game Support",
-      "Premium Features",
-      "Fast Updates",
-      "Dedicated Support"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Supported games required"
+      "Minimum requirements for Roblox"
     ]
   },
   {

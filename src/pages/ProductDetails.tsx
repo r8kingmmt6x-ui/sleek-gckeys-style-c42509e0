@@ -31,8 +31,8 @@ const products = [
     description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
     price: "$6.99 - $26.99",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
-    icon: "🌋",
+    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    icon: "",
     slug: "volcano-executor",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },

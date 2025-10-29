@@ -1,9 +1,29 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Check } from "lucide-react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+declare global {
+  interface Window {
+    sellAuthEmbed: {
+      checkout: (
+        element: null,
+        options: {
+          cart: Array<{
+            productId: number;
+            variantId: number;
+            quantity: number;
+          }>;
+          shopId: number;
+          modal: boolean;
+        }
+      ) => void;
+    };
+  }
+}
 
 const products = [
   {
@@ -15,9 +35,9 @@ const products = [
     icon: "🌋",
     slug: "volcano-executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false }
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",
@@ -155,6 +175,51 @@ const products = [
 const ProductDetails = () => {
   const { slug } = useParams();
   const product = products.find(p => p.slug === slug);
+  const [selectedPlan, setSelectedPlan] = useState<{
+    productId: number;
+    variantId: number;
+    name: string;
+    price: string;
+  } | null>(null);
+
+  // Load SellAuth script for Volcano Executor
+  useEffect(() => {
+    if (slug === "volcano-executor") {
+      const script = document.createElement("script");
+      script.src = "https://sellauth.com/assets/js/sellauth-embed-2.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [slug]);
+
+  const handlePlanSelect = (plan: any) => {
+    if (slug === "volcano-executor" && plan.productId) {
+      setSelectedPlan({
+        productId: plan.productId,
+        variantId: plan.variantId,
+        name: plan.name,
+        price: plan.price
+      });
+    }
+  };
+
+  const handlePurchase = () => {
+    if (slug === "volcano-executor" && selectedPlan && window.sellAuthEmbed) {
+      window.sellAuthEmbed.checkout(null, {
+        cart: [{
+          productId: selectedPlan.productId,
+          variantId: selectedPlan.variantId,
+          quantity: 1
+        }],
+        shopId: 165518,
+        modal: true
+      });
+    }
+  };
 
   if (!product) {
     return (
@@ -214,7 +279,15 @@ const ProductDetails = () => {
                 
                 <div className="space-y-3 mb-6">
                   {product.plans.map((plan, index) => (
-                    <div key={index} className="bg-secondary/50 border border-border rounded-lg p-4 flex items-center justify-between">
+                    <div 
+                      key={index} 
+                      onClick={() => handlePlanSelect(plan)}
+                      className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
+                        selectedPlan?.variantId === (plan as any).variantId
+                          ? 'border-primary ring-2 ring-primary'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="font-semibold">{plan.name}</span>
@@ -227,8 +300,15 @@ const ProductDetails = () => {
                   ))}
                 </div>
 
-                <Button className="w-full h-12 text-base" size="lg" disabled={product.stock === 0}>
-                  Select a plan
+                <Button 
+                  onClick={handlePurchase}
+                  className="w-full h-12 text-base" 
+                  size="lg" 
+                  disabled={slug === "volcano-executor" ? !selectedPlan : product.stock === 0}
+                >
+                  {slug === "volcano-executor" && selectedPlan
+                    ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
+                    : "Select a plan"}
                 </Button>
               </div>
             </div>

@@ -51,13 +51,13 @@ const products = [
     ]
   },
   {
-   title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
-    price: "$6.99 - $26.99",
+   title: "Rift NOW",
+    description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
+    price: "$2.49 - $5.99",
     stock: 0,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
     icon: "",
-    slug: "volcano-executor",
+    slug: "rift-now",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },

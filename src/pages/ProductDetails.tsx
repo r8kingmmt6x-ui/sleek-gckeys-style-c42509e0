@@ -35,7 +35,7 @@ const products = [
     icon: "",
     slug: "volcano-executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: , variantId:  },
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
       { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
@@ -59,9 +59,9 @@ const products = [
     icon: "",
     slug: "rift-now",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393930, variantId: 562297 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393930, variantId: 639153 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393930, variantId: 639154 }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
     ],
     features: [
       "Instant Key Delivery",

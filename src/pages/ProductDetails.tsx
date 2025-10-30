@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useSellAuthStock } from "@/hooks/useSellAuthStock";
 
 declare global {
   interface Window {
@@ -182,6 +183,9 @@ const ProductDetails = () => {
     price: string;
   } | null>(null);
 
+  // Fetch live stock data from SellAuth
+  const { data: stockData, isLoading: isLoadingStock } = useSellAuthStock(slug || '');
+
   // Load SellAuth script
   useEffect(() => {
     const script = document.createElement("script");
@@ -221,6 +225,18 @@ const ProductDetails = () => {
 
   // Check if product has SellAuth integration
   const hasSellAuthIntegration = product?.plans.some(plan => (plan as any).productId && (plan as any).variantId);
+
+  // Get live stock for a variant
+  const getVariantStock = (variantName: string): number | null => {
+    if (!stockData?.variants) return null;
+    const variant = stockData.variants.find(v => v.name === variantName);
+    return variant ? variant.stock : null;
+  };
+
+  // Calculate total stock from live data
+  const liveStock = stockData?.variants 
+    ? stockData.variants.reduce((sum, v) => sum + v.stock, 0)
+    : null;
 
   if (!product) {
     return (
@@ -269,8 +285,8 @@ const ProductDetails = () => {
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
                   <div className="flex gap-2">
-                    <Badge variant={product.stock > 0 ? "secondary" : "destructive"}>
-                      {product.stock > 0 ? "In Stock" : "Out of Stock"}
+                    <Badge variant={(liveStock ?? product.stock) > 0 ? "secondary" : "destructive"}>
+                      {isLoadingStock ? "Loading..." : (liveStock ?? product.stock) > 0 ? "In Stock" : "Out of Stock"}
                     </Badge>
                     <Badge variant="secondary">Executor</Badge>
                   </div>
@@ -279,26 +295,34 @@ const ProductDetails = () => {
                 <h3 className="text-xl font-bold mb-4">Choose Your Plan</h3>
                 
                 <div className="space-y-3 mb-6">
-                  {product.plans.map((plan, index) => (
-                    <div 
-                      key={index} 
-                      onClick={() => handlePlanSelect(plan)}
-                      className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
-                        selectedPlan?.variantId === (plan as any).variantId
-                          ? 'border-primary ring-2 ring-primary'
-                          : 'border-border hover:border-primary/50'
-                      }`}
-                    >
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-semibold">{plan.name}</span>
-                          {!plan.inStock && <span className="text-xs text-destructive">• Out of stock</span>}
+                  {product.plans.map((plan, index) => {
+                    const liveVariantStock = getVariantStock(plan.name);
+                    const stock = liveVariantStock ?? (plan.inStock ? 1 : 0);
+                    
+                    return (
+                      <div 
+                        key={index} 
+                        onClick={() => handlePlanSelect(plan)}
+                        className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
+                          selectedPlan?.variantId === (plan as any).variantId
+                            ? 'border-primary ring-2 ring-primary'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-semibold">{plan.name}</span>
+                            {stock === 0 && <span className="text-xs text-destructive">• Out of stock</span>}
+                            {liveVariantStock !== null && liveVariantStock > 0 && (
+                              <span className="text-xs text-muted-foreground">• {liveVariantStock} available</span>
+                            )}
+                          </div>
+                          <div className="text-sm text-muted-foreground">{plan.duration}</div>
                         </div>
-                        <div className="text-sm text-muted-foreground">{plan.duration}</div>
+                        <div className="text-xl font-bold text-primary">{plan.price}</div>
                       </div>
-                      <div className="text-xl font-bold text-primary">{plan.price}</div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 <Button 

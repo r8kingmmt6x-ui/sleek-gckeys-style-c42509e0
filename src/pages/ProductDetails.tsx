@@ -158,22 +158,20 @@ const ProductDetails = () => {
     price: string;
   } | null>(null);
 
-  // Load SellAuth script for Volcano Executor
+  // Load SellAuth script
   useEffect(() => {
-    if (slug === "volcano-executor") {
-      const script = document.createElement("script");
-      script.src = "https://sellauth.com/assets/js/sellauth-embed-2.js";
-      script.async = true;
-      document.body.appendChild(script);
+    const script = document.createElement("script");
+    script.src = "https://sellauth.com/assets/js/sellauth-embed-2.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, [slug]);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handlePlanSelect = (plan: any) => {
-    if (slug === "volcano-executor" && plan.productId) {
+    if (plan.productId) {
       setSelectedPlan({
         productId: plan.productId,
         variantId: plan.variantId,
@@ -184,7 +182,7 @@ const ProductDetails = () => {
   };
 
   const handlePurchase = () => {
-    if (slug === "volcano-executor" && selectedPlan && window.sellAuthEmbed) {
+    if (selectedPlan && window.sellAuthEmbed) {
       window.sellAuthEmbed.checkout(null, {
         cart: [{
           productId: selectedPlan.productId,
@@ -280,9 +278,9 @@ const ProductDetails = () => {
                   onClick={handlePurchase}
                   className="w-full h-12 text-base" 
                   size="lg" 
-                  disabled={slug === "volcano-executor" ? !selectedPlan : product.stock === 0}
+                  disabled={!selectedPlan}
                 >
-                  {slug === "volcano-executor" && selectedPlan
+                  {selectedPlan
                     ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
                     : "Select a plan"}
                 </Button>

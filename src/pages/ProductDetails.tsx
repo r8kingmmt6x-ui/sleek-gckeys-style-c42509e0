@@ -35,9 +35,9 @@ const products = [
     icon: "",
     slug: "volcano-executor",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393930, variantId: 562297 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393930, variantId: 639153 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393930, variantId: 639154 }
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",
@@ -55,13 +55,13 @@ const products = [
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
     price: "$2.49 - $5.99",
     stock: 0,
-    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
     icon: "",
     slug: "rift-now",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393930, variantId: 562297 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393930, variantId: 639153 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",

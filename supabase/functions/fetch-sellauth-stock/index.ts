@@ -49,31 +49,44 @@ serve(async (req) => {
 function parseStockFromHTML(html: string): { variants: Array<{ name: string; stock: number; inStock: boolean }> } {
   const variants: Array<{ name: string; stock: number; inStock: boolean }> = [];
   
-  // Match variant buttons with stock information
-  const variantRegex = /<button[^>]*type="button"[^>]*>([\s\S]*?)<\/button>/g;
-  const matches = [...html.matchAll(variantRegex)];
+  // Extract all button sections that contain variant information
+  const buttonSections = html.split(/<button[^>]*type="button"[^>]*>/);
   
-  for (const match of matches) {
-    const buttonHtml = match[1];
+  for (let i = 1; i < buttonSections.length; i++) {
+    const section = buttonSections[i];
     
-    // Extract variant name
-    const nameMatch = buttonHtml.match(/<p class="text-base">([^<]+)<\/p>/);
-    const name = nameMatch ? nameMatch[1].trim() : '';
+    // Stop at the closing button tag
+    const endIndex = section.indexOf('</button>');
+    if (endIndex === -1) continue;
     
-    if (!name) continue;
+    const buttonContent = section.substring(0, endIndex);
     
-    // Extract stock information
-    const stockMatch = buttonHtml.match(/<span>(\d+) In Stock<\/span>|<span>Out of Stock<\/span>/);
+    // Extract variant name - look for the first <p class="text-base">
+    const nameMatch = buttonContent.match(/<p\s+class="text-base">([^<]+)<\/p>/);
+    if (!nameMatch) continue;
     
-    if (stockMatch) {
-      if (stockMatch[0].includes('Out of Stock')) {
-        variants.push({ name, stock: 0, inStock: false });
-      } else if (stockMatch[1]) {
-        const stock = parseInt(stockMatch[1], 10);
-        variants.push({ name, stock, inStock: true });
-      }
+    const name = nameMatch[1].trim();
+    
+    // Extract stock information - look for the stock span within this button
+    let stock = 0;
+    let inStock = false;
+    
+    // Check for "X In Stock" pattern
+    const inStockMatch = buttonContent.match(/<span>(\d+)\s+In\s+Stock<\/span>/i);
+    if (inStockMatch) {
+      stock = parseInt(inStockMatch[1], 10);
+      inStock = true;
+    } else if (buttonContent.includes('Out of Stock')) {
+      stock = 0;
+      inStock = false;
+    } else {
+      // Skip if no stock information found
+      continue;
     }
+    
+    variants.push({ name, stock, inStock });
   }
   
+  console.log(`Parsed ${variants.length} variants:`, JSON.stringify(variants));
   return { variants };
 }

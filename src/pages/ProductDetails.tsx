@@ -51,7 +51,7 @@ const products = [
     ]
   },
   {
-   title: "Rift NOW",
+    title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
     price: "$2.49 - $5.99",
     stock: 0,
@@ -68,6 +68,30 @@ const products = [
       "No Annoying Pop-ups",
       "No Checkpoints or Ads",
       "3x HWID Resets Per Day"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ]
+  },
+  {
+    title: "Exploitingis.FUN",
+    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters.",
+    price: "$7.99 - $14.99",
+    stock: 15,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+    icon: "○",
+    slug: "exploitingis-fun",
+    plans: [
+      { name: "Weekly", duration: "7-Day Access", price: "$7.99", inStock: true },
+      { name: "Monthly", duration: "30-Day Access", price: "$9.99", inStock: true },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$14.99", inStock: true }
+    ],
+    features: [
+      "Multiple Game Support",
+      "Instant Key Delivery",
+      "No Annoying Pop-ups",
+      "Regular Updates"
     ],
     requirements: [
       "Windows 10/11",

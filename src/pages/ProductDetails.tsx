@@ -195,7 +195,7 @@ const ProductDetails = () => {
   }, []);
 
   const handlePlanSelect = (plan: any) => {
-    if (plan.productId) {
+    if (plan.productId && plan.variantId) {
       setSelectedPlan({
         productId: plan.productId,
         variantId: plan.variantId,
@@ -206,7 +206,7 @@ const ProductDetails = () => {
   };
 
   const handlePurchase = () => {
-    if (selectedPlan && window.sellAuthEmbed) {
+    if (selectedPlan && selectedPlan.productId && selectedPlan.variantId && window.sellAuthEmbed) {
       window.sellAuthEmbed.checkout(null, {
         cart: [{
           productId: selectedPlan.productId,
@@ -218,6 +218,9 @@ const ProductDetails = () => {
       });
     }
   };
+
+  // Check if product has SellAuth integration
+  const hasSellAuthIntegration = product?.plans.some(plan => (plan as any).productId && (plan as any).variantId);
 
   if (!product) {
     return (
@@ -302,9 +305,11 @@ const ProductDetails = () => {
                   onClick={handlePurchase}
                   className="w-full h-12 text-base" 
                   size="lg" 
-                  disabled={!selectedPlan}
+                  disabled={!hasSellAuthIntegration || !selectedPlan}
                 >
-                  {selectedPlan
+                  {!hasSellAuthIntegration
+                    ? "Coming Soon"
+                    : selectedPlan
                     ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
                     : "Select a plan"}
                 </Button>

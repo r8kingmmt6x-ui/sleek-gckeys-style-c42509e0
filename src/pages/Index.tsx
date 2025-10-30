@@ -15,10 +15,10 @@ const products = [
   {
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access – no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed.",
-    price: "$1.99 - $6.99",
+    price: "$2.49 - $5.99",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
-    icon: "R",
+    image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
+    icon: "",
     slug: "rift-now"
   },
   {

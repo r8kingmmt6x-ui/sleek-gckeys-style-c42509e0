@@ -34,16 +34,14 @@ serve(async (req) => {
 
     console.log(`Fetching stock for product: ${productSlug}`);
     
-    // Fetch products from SellAuth API
-    const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/products`, {
-      method: 'POST',
+    // Fetch products from SellAuth API with path filter
+    const url = new URL(`https://api.sellauth.com/v1/shops/${shopId}/products`);
+    const response = await fetch(url.toString(), {
+      method: 'GET',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        paths: [productSlug]
-      })
+      }
     });
 
     if (!response.ok) {

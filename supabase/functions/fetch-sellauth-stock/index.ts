@@ -21,14 +21,45 @@ serve(async (req) => {
       );
     }
 
+    const apiKey = Deno.env.get('SELLAUTH_API_KEY');
+    const shopId = Deno.env.get('SELLAUTH_SHOP_ID');
+
+    if (!apiKey || !shopId) {
+      console.error('SellAuth credentials not configured');
+      return new Response(
+        JSON.stringify({ error: 'SellAuth API credentials not configured' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     console.log(`Fetching stock for product: ${productSlug}`);
     
-    // Fetch the SellAuth product page
-    const response = await fetch(`https://gckeys.mysellauth.com/product/${productSlug}`);
-    const html = await response.text();
+    // Fetch products from SellAuth API
+    const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/products`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        paths: [productSlug]
+      })
+    });
 
-    // Parse stock counts from HTML
-    const stockData = parseStockFromHTML(html);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('SellAuth API error:', response.status, errorText);
+      return new Response(
+        JSON.stringify({ error: 'Failed to fetch from SellAuth API' }),
+        { status: response.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const data = await response.json();
+    console.log('SellAuth API response:', JSON.stringify(data));
+
+    // Parse stock from API response
+    const stockData = parseStockFromAPI(data, productSlug);
 
     console.log(`Stock data parsed:`, stockData);
 
@@ -46,41 +77,41 @@ serve(async (req) => {
   }
 });
 
-function parseStockFromHTML(html: string): { variants: Array<{ name: string; stock: number; inStock: boolean }> } {
+function parseStockFromAPI(data: any, productSlug: string): { variants: Array<{ name: string; stock: number; inStock: boolean }> } {
   const variants: Array<{ name: string; stock: number; inStock: boolean }> = [];
   
-  console.log('Starting HTML parsing...');
-  console.log('HTML length:', html.length);
-  
-  // Look for variant buttons with a more flexible approach
-  // Split by text-base paragraphs which contain variant names
-  const sections = html.split(/<p[^>]*class="text-base"[^>]*>/);
-  console.log(`Found ${sections.length - 1} potential variant sections`);
-  
-  for (let i = 1; i < sections.length; i++) {
-    const section = sections[i];
+  try {
+    // The API response should have a data array with products
+    const products = data.data || [];
+    console.log(`Found ${products.length} products in API response`);
     
-    // Extract name (up to the closing </p>)
-    const nameEndIndex = section.indexOf('</p>');
-    if (nameEndIndex === -1) continue;
+    // Find the product matching the slug
+    const product = products.find((p: any) => p.path === productSlug);
     
-    const name = section.substring(0, nameEndIndex).trim();
-    console.log(`\nFound variant: ${name}`);
-    
-    // Look ahead in this section for stock info
-    const stockInMatch = section.match(/(\d+)\s+In\s+Stock/i);
-    const outOfStockMatch = section.match(/Out\s+of\s+Stock/i);
-    
-    if (stockInMatch) {
-      const stock = parseInt(stockInMatch[1], 10);
-      console.log(`Stock: ${stock}`);
-      variants.push({ name, stock, inStock: true });
-    } else if (outOfStockMatch) {
-      console.log('Out of stock');
-      variants.push({ name, stock: 0, inStock: false });
+    if (!product) {
+      console.log(`Product with slug "${productSlug}" not found`);
+      return { variants };
     }
+    
+    console.log(`Found product: ${product.name}`);
+    
+    // Get variants from the product
+    const productVariants = product.variants || [];
+    console.log(`Product has ${productVariants.length} variants`);
+    
+    for (const variant of productVariants) {
+      const name = variant.name || '';
+      const stock = variant.stock ?? 0;
+      const inStock = stock > 0 || stock === -1; // -1 often means unlimited stock
+      
+      console.log(`Variant: ${name}, Stock: ${stock}, In Stock: ${inStock}`);
+      variants.push({ name, stock: stock === -1 ? 999 : stock, inStock });
+    }
+    
+  } catch (error) {
+    console.error('Error parsing API response:', error);
   }
   
-  console.log(`\nParsed ${variants.length} variants:`, JSON.stringify(variants));
+  console.log(`Parsed ${variants.length} variants:`, JSON.stringify(variants));
   return { variants };
 }

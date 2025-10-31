@@ -52,51 +52,35 @@ function parseStockFromHTML(html: string): { variants: Array<{ name: string; sto
   console.log('Starting HTML parsing...');
   console.log('HTML length:', html.length);
   
-  // Match each button element containing variant info
-  const buttonRegex = /<button[^>]*type="button"[^>]*>([\s\S]*?)<\/button>/g;
-  let match;
-  let buttonCount = 0;
+  // Look for variant buttons with a more flexible approach
+  // Split by text-base paragraphs which contain variant names
+  const sections = html.split(/<p[^>]*class="text-base"[^>]*>/);
+  console.log(`Found ${sections.length - 1} potential variant sections`);
   
-  while ((match = buttonRegex.exec(html)) !== null) {
-    buttonCount++;
-    const buttonContent = match[1];
-    console.log(`\nProcessing button #${buttonCount}`);
-    console.log('Button content preview:', buttonContent.substring(0, 200));
+  for (let i = 1; i < sections.length; i++) {
+    const section = sections[i];
     
-    // Extract variant name from <p class="text-base">
-    const nameMatch = buttonContent.match(/<p[^>]*class="text-base"[^>]*>([^<]+)<\/p>/);
-    if (!nameMatch) {
-      console.log('No name match found');
-      continue;
-    }
+    // Extract name (up to the closing </p>)
+    const nameEndIndex = section.indexOf('</p>');
+    if (nameEndIndex === -1) continue;
     
-    const name = nameMatch[1].trim();
-    console.log('Found variant name:', name);
+    const name = section.substring(0, nameEndIndex).trim();
+    console.log(`\nFound variant: ${name}`);
     
-    // Look for stock info in nested span within text-xs paragraph
-    let stock = 0;
-    let inStock = false;
+    // Look ahead in this section for stock info
+    const stockInMatch = section.match(/(\d+)\s+In\s+Stock/i);
+    const outOfStockMatch = section.match(/Out\s+of\s+Stock/i);
     
-    // Match the stock span content
-    const stockSpanMatch = buttonContent.match(/<span>(\d+)\s+In\s+Stock<\/span>/i);
-    const outOfStockMatch = buttonContent.match(/<span>Out\s+of\s+Stock<\/span>/i);
-    
-    if (stockSpanMatch) {
-      stock = parseInt(stockSpanMatch[1], 10);
-      inStock = true;
-      console.log('Found in stock:', stock);
-      variants.push({ name, stock, inStock });
+    if (stockInMatch) {
+      const stock = parseInt(stockInMatch[1], 10);
+      console.log(`Stock: ${stock}`);
+      variants.push({ name, stock, inStock: true });
     } else if (outOfStockMatch) {
-      stock = 0;
-      inStock = false;
-      console.log('Found out of stock');
-      variants.push({ name, stock, inStock });
-    } else {
-      console.log('No stock match found in button');
+      console.log('Out of stock');
+      variants.push({ name, stock: 0, inStock: false });
     }
   }
   
-  console.log(`\nTotal buttons processed: ${buttonCount}`);
-  console.log(`Parsed ${variants.length} variants:`, JSON.stringify(variants));
+  console.log(`\nParsed ${variants.length} variants:`, JSON.stringify(variants));
   return { variants };
 }

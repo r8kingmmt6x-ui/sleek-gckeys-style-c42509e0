@@ -147,7 +147,7 @@ const Terms = () => {
                   support channels. We aim to respond to all inquiries within 24 hours.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Last updated: January 2025
+                  Last updated: October 29, 2025
                 </p>
               </CardContent>
             </Card>

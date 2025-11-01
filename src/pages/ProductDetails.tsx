@@ -36,9 +36,9 @@ const products = [
     slug: "volcano-executor",
     category: "Executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: true, productId: 393930, variantId: 562297 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: true, productId: 393930, variantId: 639153 },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: true, productId: 393930, variantId: 639154 }
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",
@@ -115,7 +115,7 @@ const products = [
       ],
     requirements: [
       "Windows 10/11",
-      "Compatible with Roblox"
+      "Minimum requirements for Roblox"
     ]
   },
   {
@@ -127,20 +127,18 @@ const products = [
     slug: "pretty-rich",
     category: "Bio-link",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
-    ],
+      { name: "pretty.rich invite", duration: "", price: "1.99", inStock: false, productId: 393924, variantId: 564505 },
+      ],
     features: [
-      "Premium Features",
-      "Unmatched Stability",
-      "Advanced Technology",
-      "Priority Support"
+      "Music Integration",
+      "Discord Integration",
+      "Customize to your liking",
+      "Analytics & Insights",
+      "Access to 30+ domains"
     ],
     requirements: [
       "Windows 10/11",
-      "Modern system required"
-    ]
+      ]
   },
   {
     title: "Solix Hub",
@@ -151,19 +149,17 @@ const products = [
     slug: "solix-hub",
     category: "Script Hub",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
-    ],
+      { name: "Weekly", duration: "7-Day Access", price: "$1.99", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "2 Months", duration: "60-Day Access", price: "$4.99", inStock: false, productId: 393924, variantId: 564504 },
+      ],
     features: [
-      "Lightning-Fast Processing",
-      "Enhanced Security",
-      "Professional Grade",
-      "Seamless Integration"
-    ],
+      "Instant Key Delivery",
+      "No more frequent reactivations",
+      "No Checkpoints or Ads",
+      ],
     requirements: [
       "Windows 10/11",
-      "Professional use recommended"
+      "Minimum requirements for Roblox"
     ]
   }
 ];

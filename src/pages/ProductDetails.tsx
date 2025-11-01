@@ -29,7 +29,7 @@ declare global {
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.   2",
+    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market. (volcano.wtf/discord.html)(volcano.wtf)",
     price: "$6.99 - $26.99",
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
@@ -75,7 +75,7 @@ const products = [
   },
   {
     title: "Exploitingis.FUN",
-    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters.",
+    description: "Exploitingis.FUN exclusively Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
@@ -98,7 +98,7 @@ const products = [
   },
   {
     title: "Seliware",
-    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
+    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time. (seliware.com/discord)",
     price: "$3.95 - $9.95",
     stock: 0,
     image: "https://cdn.imgchest.com/files/41845bf96598.webp",
@@ -121,8 +121,8 @@ const products = [
   },
   {
     title: "pretty.rich",
-    description: "Premium execution service with advanced features and unmatched stability. Experience the ultimate in performance and reliability with our cutting-edge technology.",
-    price: "$8.99 - $19.99",
+    description: "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
+    price: "$1.99",
     stock: 8,
     image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
@@ -144,8 +144,8 @@ const products = [
   },
   {
     title: "Solix Hub",
-    description: "Advanced execution platform designed for professionals. Features include lightning-fast processing, enhanced security, and seamless integration across all platforms.",
-    price: "$5.99 - $12.99",
+    description: "Skip the hassle of reactivating every 12 hours. We’re now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
+    price: "$4.99 - $14.99",
     stock: 12,
     image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
     slug: "solix-hub",

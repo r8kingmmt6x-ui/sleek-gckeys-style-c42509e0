@@ -38,19 +38,19 @@ const products = [
   },
   {
     title: "pretty.rich",
-    description: "Premium execution service with advanced features and unmatched stability. Experience the ultimate in performance and reliability with our cutting-edge technology.",
-    price: "$8.99 - $19.99",
+    description: "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
+    price: "$1.99",
     stock: 8,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+    image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich"
   },
   {
-    title: "SoliX Executor",
-    description: "Advanced execution platform designed for professionals. Features include lightning-fast processing, enhanced security, and seamless integration across all platforms.",
-    price: "$5.99 - $12.99",
+    title: "Solix Hub",
+    description: "Skip the hassle of reactivating every 12 hours. We’re now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
+    price: "$4.99 - $14.99",
     stock: 12,
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
-    slug: "solix-executor"
+    image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
+    slug: "solix-hub"
   }
 ];
 

@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
+    description: "Volcano is Electron rebranded. It's a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
     price: "$6.99 - $26.99",
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",

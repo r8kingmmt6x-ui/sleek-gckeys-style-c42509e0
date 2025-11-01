@@ -29,16 +29,16 @@ declare global {
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market. (volcano.wtf/discord.html)(volcano.wtf)",
+    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market. (volcano.wtf)(volcano.wtf/discord.html)",
     price: "$6.99 - $26.99",
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
     slug: "volcano-executor",
     category: "Executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
+      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: true, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: true, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: true, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",
@@ -98,23 +98,21 @@ const products = [
   },
   {
     title: "Seliware",
-    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time. (seliware.com/discord)",
+    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time. (seliware.com)(seliware.com/discord)",
     price: "$3.95 - $9.95",
     stock: 0,
     image: "https://cdn.imgchest.com/files/41845bf96598.webp",
     slug: "seliware",
     category: "Executor",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
-    ],
+      { name: "Weekly", duration: "7-Day Access", price: "$3.95", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "Monthly", duration: "30-Day Access", price: "$9.95", inStock: false, productId: 393924, variantId: 564504 },
+      ],
     features: [
+      "Ultra-Fast Execution",
       "Rock-Solid Stability",
-      "Advanced Features",
-      "Regular Updates",
-      "Premium Support"
-    ],
+      "100% sUNC",
+      ],
     requirements: [
       "Windows 10/11",
       "Compatible with Roblox"

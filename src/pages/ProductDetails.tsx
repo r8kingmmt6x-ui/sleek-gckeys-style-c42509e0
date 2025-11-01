@@ -81,9 +81,9 @@ const products = [
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
     slug: "exploitingis-fun",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$7.99", inStock: true },
-      { name: "Monthly", duration: "30-Day Access", price: "$9.99", inStock: true },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$14.99", inStock: true }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
     ],
     features: [
       "Multiple Game Support",
@@ -104,9 +104,9 @@ const products = [
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
     slug: "seliware",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$3.95", inStock: false },
-      { name: "Quarterly", duration: "90-Day Access", price: "$7.95", inStock: false },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$9.95", inStock: false }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
     ],
     features: [
       "Rock-Solid Stability",
@@ -127,9 +127,9 @@ const products = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
     slug: "pretty-rich",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$8.99", inStock: true },
-      { name: "Quarterly", duration: "90-Day Access", price: "$15.99", inStock: true },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$19.99", inStock: true }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
     ],
     features: [
       "Premium Features",
@@ -143,16 +143,16 @@ const products = [
     ]
   },
   {
-    title: "SoliX Executor",
+    title: "Solix Hub",
     description: "Advanced execution platform designed for professionals. Features include lightning-fast processing, enhanced security, and seamless integration across all platforms.",
     price: "$5.99 - $12.99",
     stock: 12,
     image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
-    slug: "solix-executor",
+    slug: "solix-hub",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$5.99", inStock: true },
-      { name: "Quarterly", duration: "90-Day Access", price: "$10.99", inStock: true },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$12.99", inStock: true }
+      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
     ],
     features: [
       "Lightning-Fast Processing",

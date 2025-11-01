@@ -1,7 +1,12 @@
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-const Hero = () => {
+interface HeroProps {
+  searchTerm: string;
+  onSearchChange: (value: string) => void;
+}
+
+const Hero = ({ searchTerm, onSearchChange }: HeroProps) => {
   return (
     <section className="pt-28 pb-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
@@ -15,6 +20,8 @@ const Hero = () => {
           <Input
             type="text"
             placeholder="Search for products..."
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
             className="pl-11 h-12 bg-input border-border text-sm rounded-lg"
           />
         </div>

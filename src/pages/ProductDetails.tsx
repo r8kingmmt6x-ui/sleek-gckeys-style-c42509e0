@@ -81,10 +81,9 @@ const products = [
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
     slug: "exploiting-is-fun",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
-    ],
+      { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393924, variantId: 564504 },
+      ],
     features: [
       "Multiple Game Support",
       "Instant Key Delivery",

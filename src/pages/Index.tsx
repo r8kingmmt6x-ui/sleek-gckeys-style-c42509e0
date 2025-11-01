@@ -9,7 +9,7 @@ const products = [
     description: "Volcano is Electron rebranded. It's a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
     price: "$6.99 - $26.99",
     stock: 67,
-    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    image: "https://framerusercontent.com/images/LLUBpyxKIbAMfaqUtZ28kmrBaE.png?width=1800&height=1200",
     slug: "volcano-executor"
   },
   {

@@ -10,7 +10,6 @@ const products = [
     price: "$6.99 - $26.99",
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
-    icon: "",
     slug: "volcano-executor"
   },
   {
@@ -19,7 +18,6 @@ const products = [
     price: "$2.49 - $5.99",
     stock: 0,
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
-    icon: "",
     slug: "rift-now"
   },
   {
@@ -28,7 +26,6 @@ const products = [
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
-    icon: "",
     slug: "exploiting-is-fun"
   },
   {
@@ -37,7 +34,6 @@ const products = [
     price: "$3.95 - $9.95",
     stock: 0,
     image: "https://cdn.imgchest.com/files/41845bf96598.webp",
-    icon: "",
     slug: "seliware"
   },
   {

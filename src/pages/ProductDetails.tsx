@@ -58,7 +58,7 @@ const products = [
     stock: 0,
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
     slug: "rift-now",
-    category: "Executor",
+    category: "Script Hub",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -82,7 +82,7 @@ const products = [
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
     slug: "exploiting-is-fun",
-    category: "Executor",
+    category: "Script Hub",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 393924, variantId: 564505 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -129,7 +129,7 @@ const products = [
     stock: 8,
     image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
-    category: "Service",
+    category: "Bio-link",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -153,6 +153,7 @@ const products = [
     stock: 12,
     image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
     slug: "solix-hub",
+    category: "Script Hub",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },

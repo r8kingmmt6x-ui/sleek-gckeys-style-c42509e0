@@ -42,7 +42,6 @@ const products = [
     price: "$8.99 - $19.99",
     stock: 8,
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-    icon: "PR",
     slug: "pretty-rich"
   },
   {
@@ -51,7 +50,6 @@ const products = [
     price: "$5.99 - $12.99",
     stock: 12,
     image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
-    icon: "SX",
     slug: "solix-executor"
   }
 ];

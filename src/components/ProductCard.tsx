@@ -9,11 +9,10 @@ interface ProductCardProps {
   price: string;
   stock: number;
   image: string;
-  icon: string;
   slug: string;
 }
 
-const ProductCard = ({ title, description, price, stock, image, icon, slug }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, stock, image, slug }: ProductCardProps) => {
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
       <Link to={`/products/${slug}`}>
@@ -23,9 +22,6 @@ const ProductCard = ({ title, description, price, stock, image, icon, slug }: Pr
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute top-4 left-4 w-10 h-10 rounded-lg bg-background/90 backdrop-blur-sm flex items-center justify-center text-xl font-bold">
-            {icon}
-          </div>
         </div>
         
         <CardHeader>

@@ -33,7 +33,6 @@ const products = [
     price: "$6.99 - $26.99",
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
-    icon: "",
     slug: "volcano-executor",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
@@ -57,7 +56,6 @@ const products = [
     price: "$2.49 - $5.99",
     stock: 0,
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
-    icon: "",
     slug: "rift-now",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
@@ -81,7 +79,6 @@ const products = [
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-    icon: "○",
     slug: "exploitingis-fun",
     plans: [
       { name: "Weekly", duration: "7-Day Access", price: "$7.99", inStock: true },
@@ -105,7 +102,6 @@ const products = [
     price: "$3.95 - $9.95",
     stock: 0,
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
-    icon: "S",
     slug: "seliware",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$3.95", inStock: false },
@@ -129,7 +125,6 @@ const products = [
     price: "$8.99 - $19.99",
     stock: 8,
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-    icon: "PR",
     slug: "pretty-rich",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$8.99", inStock: true },
@@ -153,7 +148,6 @@ const products = [
     price: "$5.99 - $12.99",
     stock: 12,
     image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
-    icon: "SX",
     slug: "solix-executor",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$5.99", inStock: true },
@@ -271,9 +265,6 @@ const ProductDetails = () => {
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-lg bg-background/90 backdrop-blur-sm flex items-center justify-center text-2xl font-bold">
-                  {product.icon}
-                </div>
               </div>
 
               <h1 className="text-4xl font-bold mb-4">{product.title}</h1>

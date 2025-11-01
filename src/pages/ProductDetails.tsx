@@ -78,8 +78,8 @@ const products = [
     description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters.",
     price: "$7.99 - $14.99",
     stock: 15,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-    slug: "exploitingis-fun",
+    image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
+    slug: "exploiting-is-fun",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -101,7 +101,7 @@ const products = [
     description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
     price: "$3.95 - $9.95",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
+    image: "https://cdn.imgchest.com/files/41845bf96598.webp",
     slug: "seliware",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
@@ -124,7 +124,7 @@ const products = [
     description: "Premium execution service with advanced features and unmatched stability. Experience the ultimate in performance and reliability with our cutting-edge technology.",
     price: "$8.99 - $19.99",
     stock: 8,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+    image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
@@ -147,7 +147,7 @@ const products = [
     description: "Advanced execution platform designed for professionals. Features include lightning-fast processing, enhanced security, and seamless integration across all platforms.",
     price: "$5.99 - $12.99",
     stock: 12,
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+    image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
     slug: "solix-hub",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },

@@ -34,6 +34,7 @@ const products = [
     stock: 67,
     image: "https://cdn.imgchest.com/files/edf608619724.webp",
     slug: "volcano-executor",
+    category: "Executor",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
@@ -57,6 +58,7 @@ const products = [
     stock: 0,
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
     slug: "rift-now",
+    category: "Executor",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -80,6 +82,7 @@ const products = [
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
     slug: "exploiting-is-fun",
+    category: "Executor",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 393924, variantId: 564505 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -102,6 +105,7 @@ const products = [
     stock: 0,
     image: "https://cdn.imgchest.com/files/41845bf96598.webp",
     slug: "seliware",
+    category: "Executor",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -125,6 +129,7 @@ const products = [
     stock: 8,
     image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
+    category: "Service",
     plans: [
       { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
       { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
@@ -278,7 +283,7 @@ const ProductDetails = () => {
                     <Badge variant={(liveStock ?? product.stock) > 0 ? "secondary" : "destructive"}>
                       {isLoadingStock ? "Loading..." : (liveStock ?? product.stock) > 0 ? "In Stock" : "Out of Stock"}
                     </Badge>
-                    <Badge variant="secondary">Executor</Badge>
+                    <Badge variant="secondary">{product.category}</Badge>
                   </div>
                 </div>
 

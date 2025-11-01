@@ -66,10 +66,9 @@ const products = [
     ],
     features: [
       "Instant Key Delivery",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads",
-      "3x HWID Resets Per Day"
-    ],
+      "Premium Support",
+      "No Ads",
+      ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"

@@ -27,17 +27,17 @@ const products = [
     description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters.",
     price: "$7.99 - $14.99",
     stock: 15,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-    icon: "○",
-    slug: "exploitingis-fun"
+    image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
+    icon: "",
+    slug: "exploiting-is-fun"
   },
   {
     title: "Seliware",
     description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
     price: "$3.95 - $9.95",
     stock: 0,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
-    icon: "S",
+    image: "https://cdn.imgchest.com/files/41845bf96598.webp",
+    icon: "",
     slug: "seliware"
   },
   {

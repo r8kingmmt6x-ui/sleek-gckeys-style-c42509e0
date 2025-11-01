@@ -26,7 +26,7 @@ const products = [
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
-    slug: "exploitingis-fun"
+    slug: "exploiting-is-fun"
   },
   {
     title: "Seliware",

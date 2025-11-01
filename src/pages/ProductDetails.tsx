@@ -67,7 +67,7 @@ const products = [
     features: [
       "Instant Key Delivery",
       "Premium Support",
-      "No Ads",
+      "No Checkpoints or Ads",
       ],
     requirements: [
       "Windows 10/11",
@@ -76,7 +76,7 @@ const products = [
   },
   {
     title: "Exploitingis.FUN",
-    description: "Exploitingis.FUN exclusively Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
+    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
     price: "$7.99 - $14.99",
     stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
@@ -87,11 +87,10 @@ const products = [
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393924, variantId: 564504 },
       ],
     features: [
-      "Multiple Game Support",
       "Instant Key Delivery",
-      "No Annoying Pop-ups",
-      "Regular Updates"
-    ],
+      "Premium Support",
+      "No Checkpoints or Ads",
+      ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"

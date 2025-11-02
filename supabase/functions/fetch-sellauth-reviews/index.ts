@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.38/deno-dom-wasm.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -20,71 +19,62 @@ serve(async (req) => {
   }
 
   try {
-    console.log('Fetching reviews from SellAuth');
+    const apiKey = Deno.env.get('SELLAUTH_API_KEY');
+    const shopId = Deno.env.get('SELLAUTH_SHOP_ID');
+
+    if (!apiKey || !shopId) {
+      throw new Error('SELLAUTH_API_KEY or SELLAUTH_SHOP_ID not configured');
+    }
+
+    console.log(`Fetching reviews from SellAuth API for shop ${shopId}`);
     
-    const response = await fetch('https://gckeys.mysellauth.com/feedback', {
+    const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/feedbacks`, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json',
       }
     });
 
     if (!response.ok) {
-      console.error(`SellAuth API error: ${response.status}`);
+      console.error(`SellAuth API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`Error response: ${errorText}`);
       throw new Error(`Failed to fetch reviews: ${response.status}`);
     }
 
-    const html = await response.text();
-    console.log('Successfully fetched HTML, parsing reviews...');
+    const data = await response.json();
+    console.log(`Successfully fetched data from SellAuth API`);
     
-    // Parse HTML using DOMParser
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    if (!doc) {
-      throw new Error('Failed to parse HTML');
-    }
-
     const reviews: Review[] = [];
     
-    // Try multiple selectors to find review elements
-    const possibleSelectors = [
-      '.feedback-item',
-      '[data-feedback]',
-      '.review-item',
-      '.review',
-      '[class*="feedback"]',
-      '[class*="review"]'
-    ];
-
-    let reviewElements = null;
-    for (const selector of possibleSelectors) {
-      const elements = doc.querySelectorAll(selector);
-      if (elements && elements.length > 0) {
-        reviewElements = elements;
-        console.log(`Found ${elements.length} reviews using selector: ${selector}`);
-        break;
-      }
-    }
-
-    if (reviewElements && reviewElements.length > 0) {
-      reviewElements.forEach((el: any) => {
+    // Parse the SellAuth API response
+    if (data && Array.isArray(data)) {
+      data.forEach((feedback: any) => {
         try {
-          const author = el.querySelector('.feedback-author, .review-author, [class*="author"]')?.textContent?.trim() || 'Anonymous';
-          const ratingEl = el.querySelector('.feedback-rating, .review-rating, [class*="rating"]');
-          const rating = ratingEl ? parseInt(ratingEl.getAttribute('data-rating') || '5') : 5;
-          const comment = el.querySelector('.feedback-comment, .review-comment, .comment, [class*="comment"]')?.textContent?.trim() || '';
-          const date = el.querySelector('.feedback-date, .review-date, .date, [class*="date"]')?.textContent?.trim() || '';
-          const product = el.querySelector('.feedback-product, .review-product, .product, [class*="product"]')?.textContent?.trim() || '';
-          
-          if (comment) {
-            reviews.push({ author, rating, comment, date, product });
+          // Skip automatic feedbacks
+          if (feedback.is_automatic === 1 || feedback.message === 'Automatic feedback after 7 days.') {
+            return;
+          }
+
+          const review: Review = {
+            author: 'Customer',
+            rating: feedback.rating || 5,
+            comment: feedback.message || '',
+            date: feedback.created_at ? new Date(feedback.created_at).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: '2-digit' 
+            }) : '',
+            product: feedback.listing?.title || feedback.listing?.name || '',
+          };
+
+          if (review.comment) {
+            reviews.push(review);
           }
         } catch (err) {
-          console.error('Error parsing review element:', err);
+          console.error('Error parsing review:', err);
         }
       });
-    } else {
-      console.log('No review elements found with any selector, returning empty array');
     }
 
     console.log(`Successfully parsed ${reviews.length} reviews`);

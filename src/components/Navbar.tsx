@@ -22,7 +22,7 @@ const Navbar = () => {
               <Package className="w-4 h-4" />
               <span>Products</span>
             </Link>
-            <Link to="/#reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Star className="w-4 h-4" />
               <span>Reviews</span>
             </Link>

@@ -1,66 +1,12 @@
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
-import { useEffect, useState } from "react";
 import { Star, Loader2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
-
-interface Review {
-  author: string;
-  rating: number;
-  comment: string;
-  date: string;
-  product: string;
-}
+import { useSellAuthReviews } from "@/hooks/useSellAuthReviews";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const fetchReviews = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      
-      const response = await fetch('https://gckeys.mysellauth.com/feedback');
-      const html = await response.text();
-      
-      // Parse the HTML to extract reviews
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const reviewElements = doc.querySelectorAll('.feedback-item');
-      
-      const parsedReviews: Review[] = [];
-      reviewElements.forEach((el) => {
-        const author = el.querySelector('.feedback-author')?.textContent?.trim() || 'Anonymous';
-        const ratingEl = el.querySelector('.feedback-rating');
-        const rating = ratingEl ? parseInt(ratingEl.getAttribute('data-rating') || '5') : 5;
-        const comment = el.querySelector('.feedback-comment')?.textContent?.trim() || '';
-        const date = el.querySelector('.feedback-date')?.textContent?.trim() || '';
-        const product = el.querySelector('.feedback-product')?.textContent?.trim() || '';
-        
-        if (comment) {
-          parsedReviews.push({ author, rating, comment, date, product });
-        }
-      });
-      
-      setReviews(parsedReviews);
-    } catch (err) {
-      console.error('Error fetching reviews:', err);
-      setError('Failed to load reviews. Please try again later.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchReviews();
-    
-    // Auto-refresh every 2 minutes
-    const interval = setInterval(fetchReviews, 2 * 60 * 1000);
-    
-    return () => clearInterval(interval);
-  }, []);
+  const { data, isLoading, error } = useSellAuthReviews();
+  const reviews = data?.reviews || [];
 
   const renderStars = (rating: number) => {
     return (
@@ -102,7 +48,7 @@ const Reviews = () => {
 
             {error && (
               <div className="text-center py-20">
-                <p className="text-destructive">{error}</p>
+                <p className="text-destructive">Failed to load reviews. Please try again later.</p>
               </div>
             )}
 

@@ -26,75 +26,65 @@ serve(async (req) => {
       throw new Error('SELLAUTH_API_KEY or SELLAUTH_SHOP_ID not configured');
     }
 
-    console.log(`Fetching reviews from SellAuth API for shop ${shopId}`);
+    // Get page number from request body, default to 1
+    const body = await req.json().catch(() => ({}));
+    const page = parseInt(body.page || '1');
+    
+    console.log(`Fetching reviews from SellAuth API for shop ${shopId}, page ${page}`);
+    
+    const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/feedbacks?page=${page}`, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json',
+      }
+    });
+
+    if (!response.ok) {
+      console.error(`SellAuth API error: ${response.status} ${response.statusText}`);
+      throw new Error(`Failed to fetch reviews: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(`Successfully fetched data from SellAuth API for page ${page}`);
     
     const reviews: Review[] = [];
     
-    // Fetch all pages (1-21)
-    for (let page = 1; page <= 21; page++) {
-      try {
-        console.log(`Fetching page ${page}...`);
-        
-        const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/feedbacks?page=${page}`, {
-          headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Accept': 'application/json',
+    // Parse the SellAuth API response - handle both array and paginated response
+    const feedbacks = Array.isArray(data) ? data : (data.data || []);
+    console.log(`Found ${feedbacks.length} feedbacks on page ${page}`);
+    
+    if (feedbacks && Array.isArray(feedbacks)) {
+      feedbacks.forEach((feedback: any) => {
+        try {
+          // Skip automatic feedbacks
+          if (feedback.is_automatic === 1 || feedback.message === 'Automatic feedback after 7 days.') {
+            return;
           }
-        });
+          
+          const review: Review = {
+            author: feedback.author || feedback.customer?.name || 'Customer',
+            rating: feedback.rating || feedback.stars || 5,
+            comment: feedback.message || feedback.comment || feedback.review || '',
+            date: feedback.created_at ? new Date(feedback.created_at).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: '2-digit' 
+            }) : new Date().toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: '2-digit' 
+            }),
+            product: feedback.listing?.title || feedback.listing?.name || feedback.product?.name || 'Product',
+          };
 
-        if (!response.ok) {
-          console.error(`SellAuth API error on page ${page}: ${response.status} ${response.statusText}`);
-          continue; // Skip this page and continue with next
-        }
-
-        const data = await response.json();
-        
-        // Parse the SellAuth API response - handle both array and paginated response
-        const feedbacks = Array.isArray(data) ? data : (data.data || []);
-        
-        if (!feedbacks || feedbacks.length === 0) {
-          console.log(`No more reviews found at page ${page}, stopping`);
-          break; // No more reviews, stop fetching
-        }
-        
-        console.log(`Found ${feedbacks.length} feedbacks on page ${page}`);
-        
-        feedbacks.forEach((feedback: any) => {
-          try {
-            // Skip automatic feedbacks
-            if (feedback.is_automatic === 1 || feedback.message === 'Automatic feedback after 7 days.') {
-              return;
-            }
-            
-            const review: Review = {
-              author: feedback.author || feedback.customer?.name || 'Customer',
-              rating: feedback.rating || feedback.stars || 5,
-              comment: feedback.message || feedback.comment || feedback.review || '',
-              date: feedback.created_at ? new Date(feedback.created_at).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: '2-digit' 
-              }) : new Date().toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: '2-digit' 
-              }),
-              product: feedback.listing?.title || feedback.listing?.name || feedback.product?.name || 'Product',
-            };
-
-            // Add review if it has a comment
-            if (review.comment && review.comment.trim()) {
-              reviews.push(review);
-            }
-          } catch (err) {
-            console.error('Error parsing review:', err);
+          // Add review if it has a comment
+          if (review.comment && review.comment.trim()) {
+            reviews.push(review);
           }
-        });
-        
-      } catch (pageError) {
-        console.error(`Error fetching page ${page}:`, pageError);
-        continue; // Continue with next page
-      }
+        } catch (err) {
+          console.error('Error parsing review:', err);
+        }
+      });
     }
 
     console.log(`Successfully parsed ${reviews.length} reviews`);

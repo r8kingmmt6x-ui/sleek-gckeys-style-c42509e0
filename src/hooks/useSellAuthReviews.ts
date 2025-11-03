@@ -14,16 +14,17 @@ interface ReviewsResponse {
   error?: string;
 }
 
-export const useSellAuthReviews = () => {
+export const useSellAuthReviews = (page: number = 1) => {
   return useQuery({
-    queryKey: ['sellauth-reviews'],
+    queryKey: ['sellauth-reviews', page],
     queryFn: async () => {
-      const { data, error } = await supabase.functions.invoke<ReviewsResponse>('fetch-sellauth-reviews');
+      const { data, error } = await supabase.functions.invoke<ReviewsResponse>('fetch-sellauth-reviews', {
+        body: { page }
+      });
 
       if (error) throw error;
       return data;
     },
     staleTime: 2 * 60 * 1000, // Cache for 2 minutes
-    refetchInterval: 2 * 60 * 1000, // Auto-refresh every 2 minutes
   });
 };

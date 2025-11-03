@@ -44,33 +44,38 @@ serve(async (req) => {
 
     const data = await response.json();
     console.log(`Successfully fetched data from SellAuth API`);
+    console.log(`Raw API response:`, JSON.stringify(data).substring(0, 500)); // Log first 500 chars
     
     const reviews: Review[] = [];
     
-    // Parse the SellAuth API response
-    if (data && Array.isArray(data)) {
-      data.forEach((feedback: any) => {
+    // Parse the SellAuth API response - handle both array and paginated response
+    const feedbacks = Array.isArray(data) ? data : (data.data || []);
+    console.log(`Found ${feedbacks.length} feedbacks in response`);
+    
+    if (feedbacks && Array.isArray(feedbacks)) {
+      feedbacks.forEach((feedback: any) => {
         try {
-          // Skip automatic feedbacks
-          if (feedback.is_automatic === 1 || feedback.message === 'Automatic feedback after 7 days.') {
-            return;
-          }
-
+          console.log(`Processing feedback:`, JSON.stringify(feedback).substring(0, 200));
+          
+          // Accept all reviews, not just non-automatic ones
           const review: Review = {
-            author: 'Customer',
-            rating: feedback.rating || 5,
-            comment: feedback.message || '',
+            author: feedback.author || feedback.customer?.name || 'Customer',
+            rating: feedback.rating || feedback.stars || 5,
+            comment: feedback.message || feedback.comment || feedback.review || '',
             date: feedback.created_at ? new Date(feedback.created_at).toLocaleDateString('en-US', { 
               year: 'numeric', 
               month: 'short', 
               day: '2-digit' 
-            }) : '',
-            product: feedback.listing?.title || feedback.listing?.name || '',
+            }) : new Date().toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: '2-digit' 
+            }),
+            product: feedback.listing?.title || feedback.listing?.name || feedback.product?.name || 'Product',
           };
 
-          if (review.comment) {
-            reviews.push(review);
-          }
+          // Add review even if comment is empty, we'll show the rating
+          reviews.push(review);
         } catch (err) {
           console.error('Error parsing review:', err);
         }

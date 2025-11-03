@@ -59,7 +59,7 @@ serve(async (req) => {
           const review: Review = {
             author: feedback.author || feedback.customer?.name || 'Customer',
             rating: feedback.rating || feedback.stars || 5,
-            comment: feedback.message || feedback.comment || feedback.review || '',
+            comment: feedback.message || feedback.comment || feedback.review || 'Automatic feedback after 7 days.',
             date: feedback.created_at ? new Date(feedback.created_at).toLocaleDateString('en-US', { 
               year: 'numeric', 
               month: 'short', 
@@ -72,10 +72,7 @@ serve(async (req) => {
             product: feedback.listing?.title || feedback.listing?.name || feedback.product?.name || 'Product',
           };
 
-          // Add review if it has a comment
-          if (review.comment && review.comment.trim()) {
-            reviews.push(review);
-          }
+          reviews.push(review);
         } catch (err) {
           console.error('Error parsing review:', err);
         }

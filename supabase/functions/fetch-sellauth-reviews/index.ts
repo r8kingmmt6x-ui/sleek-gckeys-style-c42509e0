@@ -56,11 +56,6 @@ serve(async (req) => {
     if (feedbacks && Array.isArray(feedbacks)) {
       feedbacks.forEach((feedback: any) => {
         try {
-          // Skip automatic feedbacks
-          if (feedback.is_automatic === 1 || feedback.message === 'Automatic feedback after 7 days.') {
-            return;
-          }
-          
           const review: Review = {
             author: feedback.author || feedback.customer?.name || 'Customer',
             rating: feedback.rating || feedback.stars || 5,

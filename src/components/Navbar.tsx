@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-14">
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="YOUR_IMAGE_URL_HERE" 
+              src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
               alt="GC Keys Logo" 
               className="w-7 h-7 rounded-md object-cover"
             />

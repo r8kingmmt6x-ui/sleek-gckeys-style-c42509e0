@@ -14,10 +14,10 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-            <Link to="/" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+            <a href="/" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
               <Home className="w-4 h-4" />
               <span>Home</span>
-            </Link>
+            </a>
             <Link to="/#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Package className="w-4 h-4" />
               <span>Products</span>

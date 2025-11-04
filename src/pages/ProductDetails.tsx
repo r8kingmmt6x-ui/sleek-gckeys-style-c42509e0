@@ -273,8 +273,8 @@ const ProductDetails = () => {
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
                   <div className="flex gap-2">
-                    <Badge variant={(liveStock ?? product.stock) > 0 ? "secondary" : "destructive"}>
-                      {isLoadingStock ? "Loading..." : (liveStock ?? product.stock) > 0 ? "In Stock" : "Out of Stock"}
+                    <Badge variant={(liveStock ?? product.stock) > 0 ? "success" : "destructive"}>
+                      {isLoadingStock ? "In Stock" : `${liveStock ?? product.stock} In Stock`}
                     </Badge>
                     <Badge variant="secondary">{product.category}</Badge>
                   </div>
@@ -300,10 +300,13 @@ const ProductDetails = () => {
                         <div>
                           <div className="flex items-center gap-2 mb-1">
                             <span className="font-semibold">{plan.name}</span>
-                            {stock === 0 && <span className="text-xs text-destructive">• Out of stock</span>}
-                            {liveVariantStock !== null && liveVariantStock > 0 && (
+                            {isLoadingStock ? (
+                              <span className="text-xs text-muted-foreground">• In Stock</span>
+                            ) : stock === 0 ? (
+                              <span className="text-xs text-destructive">• Out of stock</span>
+                            ) : liveVariantStock !== null && liveVariantStock > 0 ? (
                               <span className="text-xs text-muted-foreground">• {liveVariantStock} available</span>
-                            )}
+                            ) : null}
                           </div>
                           <div className="text-sm text-muted-foreground">{plan.duration}</div>
                         </div>

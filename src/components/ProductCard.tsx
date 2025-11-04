@@ -27,7 +27,7 @@ const ProductCard = ({ title, description, price, stock, image, slug }: ProductC
         <CardHeader>
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="text-xl">{title}</CardTitle>
-            <Badge variant={stock > 0 ? "secondary" : "destructive"} className="text-xs">
+            <Badge variant={stock > 0 ? "success" : "destructive"} className="text-xs">
               {stock} In Stock
             </Badge>
           </div>

@@ -10,9 +10,10 @@ interface ProductCardProps {
   stock: number;
   image: string;
   slug: string;
+  isLoadingStock?: boolean;
 }
 
-const ProductCard = ({ title, description, price, stock, image, slug }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false }: ProductCardProps) => {
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
       <Link to={`/products/${slug}`}>
@@ -28,7 +29,7 @@ const ProductCard = ({ title, description, price, stock, image, slug }: ProductC
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="text-xl">{title}</CardTitle>
             <Badge variant={stock > 0 ? "success" : "destructive"} className="text-xs">
-              {stock} In Stock
+              {isLoadingStock ? "In Stock" : `${stock} In Stock`}
             </Badge>
           </div>
           <div className="text-xl font-bold text-primary">{price}</div>

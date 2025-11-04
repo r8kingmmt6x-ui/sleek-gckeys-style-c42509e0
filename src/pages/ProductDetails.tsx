@@ -301,11 +301,11 @@ const ProductDetails = () => {
                           <div className="flex items-center gap-2 mb-1">
                             <span className="font-semibold">{plan.name}</span>
                             {isLoadingStock ? (
-                              <span className="text-xs text-muted-foreground">• In Stock</span>
+                              <span className="text-xs text-success">• In Stock</span>
                             ) : stock === 0 ? (
                               <span className="text-xs text-destructive">• Out of stock</span>
                             ) : liveVariantStock !== null && liveVariantStock > 0 ? (
-                              <span className="text-xs text-muted-foreground">• {liveVariantStock} available</span>
+                              <span className="text-xs text-success">• {liveVariantStock} available</span>
                             ) : null}
                           </div>
                           <div className="text-sm text-muted-foreground">{plan.duration}</div>

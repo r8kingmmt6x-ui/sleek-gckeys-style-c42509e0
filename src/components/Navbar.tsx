@@ -44,13 +44,13 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <div className="text-right">
               <div className="text-lg font-bold">
-                {isLoading ? "..." : `${shopStats?.sales || 0}+`}
+                {isLoading ? "..." : shopStats?.sales || 0}
               </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
             </div>
             <div className="text-right">
               <div className="text-lg font-bold">
-                {isLoading ? "..." : `${shopStats?.buyers || 0}+`}
+                {isLoading ? "..." : shopStats?.buyers || 0}
               </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">BUYERS</div>
             </div>

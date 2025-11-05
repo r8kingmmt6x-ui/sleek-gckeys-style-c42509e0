@@ -60,8 +60,8 @@ serve(async (req) => {
       rating = parseFloat(shopData.average_rating || shopData.rating || 0);
     }
     
-    // Fetch customers count
-    const customersResponse = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/customers`, {
+    // Fetch customers count - get first page to check total
+    const customersResponse = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/customers?perPage=1`, {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Accept': 'application/json',
@@ -71,8 +71,9 @@ serve(async (req) => {
     let buyersCount = 0;
     if (customersResponse.ok) {
       const customersData = await customersResponse.json();
-      // Get total from pagination data or count the data array
-      buyersCount = customersData.total || customersData.data?.length || 0;
+      console.log('Customers response:', JSON.stringify(customersData));
+      // SellAuth uses pagination with total, last_page, per_page
+      buyersCount = customersData.total || 0;
     }
 
     const stats: ShopStats = {

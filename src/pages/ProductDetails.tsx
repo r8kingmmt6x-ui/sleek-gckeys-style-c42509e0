@@ -83,8 +83,8 @@ const products = [
     slug: "exploiting-is-fun",
     category: "Script Hub",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 456407, variantId: 668978 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 456407, variantId: 737141 },
       ],
     features: [
       "Instant Key Delivery",
@@ -105,8 +105,8 @@ const products = [
     slug: "seliware",
     category: "Executor",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$3.95", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "Monthly", duration: "30-Day Access", price: "$9.95", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "Weekly", duration: "7-Day Access", price: "$3.95", inStock: false, productId: 395148, variantId: 565174 },
+      { name: "Monthly", duration: "30-Day Access", price: "$9.95", inStock: false, productId: 395148, variantId: 565175 },
       ],
     features: [
       "Ultra-Fast Execution",
@@ -127,7 +127,7 @@ const products = [
     slug: "pretty-rich",
     category: "Bio-link",
     plans: [
-      { name: "pretty.rich invite", duration: "", price: "1.99", inStock: false, productId: 393924, variantId: 564505 },
+      { name: "pretty.rich invite", duration: "", price: "1.99", inStock: false, productId: 418813, variantId: 604896 },
       ],
     features: [
       "Music Integration",
@@ -149,8 +149,8 @@ const products = [
     slug: "solix-hub",
     category: "Script Hub",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$1.99", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "2 Months", duration: "60-Day Access", price: "$4.99", inStock: false, productId: 393924, variantId: 564504 },
+      { name: "Weekly", duration: "7-Day Access", price: "$1.99", inStock: false, productId: 487342, variantId: 719645 },
+      { name: "2 Months", duration: "60-Day Access", price: "$4.99", inStock: false, productId: 487342, variantId: 719644 },
       ],
     features: [
       "Instant Key Delivery",

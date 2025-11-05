@@ -26,25 +26,59 @@ serve(async (req) => {
 
     console.log(`Fetching shop stats from SellAuth API for shop ${shopId}`);
     
-    const response = await fetch(`https://api.sellauth.com/v1/shops/${shopId}`, {
+    // Fetch products to calculate total sales
+    const productsResponse = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/products`, {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Accept': 'application/json',
       }
     });
 
-    if (!response.ok) {
-      console.error(`SellAuth API error: ${response.status} ${response.statusText}`);
-      throw new Error(`Failed to fetch shop stats: ${response.status}`);
+    if (!productsResponse.ok) {
+      console.error(`SellAuth API error: ${productsResponse.status} ${productsResponse.statusText}`);
+      throw new Error(`Failed to fetch products: ${productsResponse.status}`);
     }
 
-    const data = await response.json();
-    console.log('Successfully fetched shop stats from SellAuth API');
+    const productsData = await productsResponse.json();
+    console.log('Successfully fetched products from SellAuth API');
     
+    // Calculate total sales from all products
+    const products = productsData.data || [];
+    const totalSales = products.reduce((sum: number, product: any) => sum + (product.products_sold || 0), 0);
+    
+    // Fetch shop info for rating
+    const shopResponse = await fetch(`https://api.sellauth.com/v1/shops/${shopId}`, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json',
+      }
+    });
+
+    let rating = 0;
+    if (shopResponse.ok) {
+      const shopData = await shopResponse.json();
+      rating = parseFloat(shopData.average_rating || shopData.rating || 0);
+    }
+    
+    // Fetch customers count
+    const customersResponse = await fetch(`https://api.sellauth.com/v1/shops/${shopId}/customers`, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json',
+      }
+    });
+
+    let buyersCount = 0;
+    if (customersResponse.ok) {
+      const customersData = await customersResponse.json();
+      // Get total from pagination data or count the data array
+      buyersCount = customersData.total || customersData.data?.length || 0;
+    }
+
     const stats: ShopStats = {
-      sales: data.total_sales || data.orders_count || 0,
-      buyers: data.customers_count || data.unique_customers || 0,
-      rating: parseFloat(data.average_rating || data.rating || 0),
+      sales: totalSales,
+      buyers: buyersCount,
+      rating: rating,
     };
 
     console.log(`Parsed stats:`, stats);

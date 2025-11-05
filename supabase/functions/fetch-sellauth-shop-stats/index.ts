@@ -44,7 +44,7 @@ serve(async (req) => {
     const stats: ShopStats = {
       sales: data.total_sales || data.orders_count || 0,
       buyers: data.customers_count || data.unique_customers || 0,
-      rating: data.average_rating || data.rating || 0,
+      rating: parseFloat(data.average_rating || data.rating || 0),
     };
 
     console.log(`Parsed stats:`, stats);

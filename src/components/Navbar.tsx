@@ -1,7 +1,10 @@
 import { Home, Package, Star, HelpCircle, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSellAuthShopStats } from "@/hooks/useSellAuthShopStats";
 
 const Navbar = () => {
+  const { data: shopStats, isLoading } = useSellAuthShopStats();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,15 +43,21 @@ const Navbar = () => {
 
           <div className="flex items-center gap-6">
             <div className="text-right">
-              <div className="text-lg font-bold">700+</div>
+              <div className="text-lg font-bold">
+                {isLoading ? "..." : `${shopStats?.sales || 0}+`}
+              </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
             </div>
             <div className="text-right">
-              <div className="text-lg font-bold">600+</div>
+              <div className="text-lg font-bold">
+                {isLoading ? "..." : `${shopStats?.buyers || 0}+`}
+              </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">BUYERS</div>
             </div>
             <div className="text-right">
-              <div className="text-lg font-bold">4.99</div>
+              <div className="text-lg font-bold">
+                {isLoading ? "..." : (shopStats?.rating || 0).toFixed(2)}
+              </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
             </div>
           </div>

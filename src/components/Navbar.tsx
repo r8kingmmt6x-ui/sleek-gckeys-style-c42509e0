@@ -50,12 +50,6 @@ const Navbar = () => {
             </div>
             <div className="text-right">
               <div className="text-lg font-bold">
-                {isLoading ? "..." : shopStats?.buyers || 0}
-              </div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">BUYERS</div>
-            </div>
-            <div className="text-right">
-              <div className="text-lg font-bold">
                 {isLoading ? "..." : (shopStats?.rating || 0).toFixed(2)}
               </div>
               <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>

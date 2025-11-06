@@ -173,6 +173,8 @@ const ProductDetails = () => {
     name: string;
     price: string;
   } | null>(null);
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [isPurchasing, setIsPurchasing] = useState(false);
 
   // Fetch live stock data from SellAuth
   const { data: stockData, isLoading: isLoadingStock } = useSellAuthStock(slug || '');
@@ -182,10 +184,22 @@ const ProductDetails = () => {
     const script = document.createElement("script");
     script.src = "https://sellauth.com/assets/js/sellauth-embed-2.js";
     script.async = true;
+    
+    script.onload = () => {
+      console.log('SellAuth script loaded successfully');
+      setIsScriptLoaded(true);
+    };
+    
+    script.onerror = () => {
+      console.error('Failed to load SellAuth script');
+    };
+    
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -201,7 +215,22 @@ const ProductDetails = () => {
   };
 
   const handlePurchase = () => {
-    if (selectedPlan && selectedPlan.productId && selectedPlan.variantId && window.sellAuthEmbed) {
+    if (!selectedPlan || !isScriptLoaded || isPurchasing) return;
+    
+    if (!window.sellAuthEmbed) {
+      console.error('SellAuth embed not available');
+      return;
+    }
+
+    setIsPurchasing(true);
+    
+    try {
+      console.log('Initiating checkout:', {
+        productId: selectedPlan.productId,
+        variantId: selectedPlan.variantId,
+        shopId: 165518
+      });
+      
       window.sellAuthEmbed.checkout(null, {
         cart: [{
           productId: selectedPlan.productId,
@@ -211,6 +240,14 @@ const ProductDetails = () => {
         shopId: 165518,
         modal: true
       });
+      
+      // Reset purchasing state after a delay
+      setTimeout(() => {
+        setIsPurchasing(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Checkout error:', error);
+      setIsPurchasing(false);
     }
   };
 
@@ -320,9 +357,13 @@ const ProductDetails = () => {
                   onClick={handlePurchase}
                   className="w-full h-12 text-base" 
                   size="lg" 
-                  disabled={!hasSellAuthIntegration || !selectedPlan}
+                  disabled={!hasSellAuthIntegration || !selectedPlan || !isScriptLoaded || isPurchasing}
                 >
-                  {!hasSellAuthIntegration
+                  {!isScriptLoaded
+                    ? "Loading..."
+                    : isPurchasing
+                    ? "Opening checkout..."
+                    : !hasSellAuthIntegration
                     ? "Coming Soon"
                     : selectedPlan
                     ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`

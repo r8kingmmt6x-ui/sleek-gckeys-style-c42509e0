@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   title: string;
@@ -16,7 +15,7 @@ interface ProductCardProps {
 const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false }: ProductCardProps) => {
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
-      <Link to={`/products/${slug}`}>
+      <a href={`/products/${slug}`}>
         <div className="relative h-48 overflow-hidden bg-secondary/50">
           <img 
             src={image} 
@@ -46,7 +45,7 @@ const ProductCard = ({ title, description, price, stock, image, slug, isLoadingS
             View Details
           </Button>
         </CardFooter>
-      </Link>
+      </a>
     </Card>
   );
 };

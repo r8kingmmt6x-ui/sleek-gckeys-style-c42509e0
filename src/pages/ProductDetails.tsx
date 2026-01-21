@@ -135,9 +135,9 @@ const products = [
   },
   {
     title: "Seliware",
-    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time. (seliware.com)(seliware.com/discord)",
+    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
     price: "$3.95 - $9.95",
-    image: "https://cdn.imgchest.com/files/41845bf96598.webp",
+    image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
     slug: "seliware",
     category: "Executor",
     plans: [
@@ -152,6 +152,19 @@ const products = [
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Redeem your purchased key at https://seliware.com/",
+      "Download the loader",
+      "Register an account and redeem your purchased key",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Troubleshooting: https://discord.gg/MMRpnuSb2g",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

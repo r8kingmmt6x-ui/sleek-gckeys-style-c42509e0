@@ -83,6 +83,7 @@ const Index = () => {
                 key={index} 
                 {...product} 
                 showStartingAt={product.title.toLowerCase() !== "kiciahook"}
+                customUrl={product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined}
               />
             ))}
           </div>

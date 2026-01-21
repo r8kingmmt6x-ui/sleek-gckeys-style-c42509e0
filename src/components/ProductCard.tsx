@@ -11,12 +11,15 @@ interface ProductCardProps {
   slug: string;
   isLoadingStock?: boolean;
   showStartingAt?: boolean;
+  customUrl?: string;
 }
 
-const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false, showStartingAt = false }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false, showStartingAt = false, customUrl }: ProductCardProps) => {
+  const href = customUrl || `/products/${slug}`;
+  
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
-      <a href={`/products/${slug}`}>
+      <a href={href}>
         <div className="relative h-48 overflow-hidden bg-secondary/50">
           <img 
             src={image} 

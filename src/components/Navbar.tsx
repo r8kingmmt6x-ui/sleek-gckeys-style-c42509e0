@@ -1,10 +1,7 @@
-import { Home, Package, Star, HelpCircle, FileText } from "lucide-react";
+import { Home, Package, HelpCircle, FileText, Star, ShoppingBag, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useSellAuthShopStats } from "@/hooks/useSellAuthShopStats";
 
 const Navbar = () => {
-  const { data: shopStats, isLoading } = useSellAuthShopStats();
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,10 +24,6 @@ const Navbar = () => {
               <Package className="w-4 h-4" />
               <span>Products</span>
             </a>
-            <Link to="/reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Star className="w-4 h-4" />
-              <span>Reviews</span>
-            </Link>
             <Link to="/terms" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <FileText className="w-4 h-4" />
               <span>ToS</span>
@@ -42,17 +35,26 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <div className="text-right">
-              <div className="text-lg font-bold">
-                {isLoading ? "..." : shopStats?.sales || 0}
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-primary" />
+              <div>
+                <div className="text-sm font-bold">4.98</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
               </div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
             </div>
-            <div className="text-right">
-              <div className="text-lg font-bold">
-                {isLoading ? "..." : (shopStats?.rating || 0).toFixed(2)}
+            <div className="flex items-center gap-2">
+              <ShoppingBag className="w-4 h-4 text-primary" />
+              <div>
+                <div className="text-sm font-bold">8K+</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
               </div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-primary" />
+              <div>
+                <div className="text-sm font-bold">6K+</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">CUSTOMERS</div>
+              </div>
             </div>
           </div>
         </div>

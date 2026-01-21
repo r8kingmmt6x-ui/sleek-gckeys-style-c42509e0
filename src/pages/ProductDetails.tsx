@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useSellAuthStock } from "@/hooks/useSellAuthStock";
 
 declare global {
   interface Window {
@@ -176,8 +175,7 @@ const ProductDetails = () => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [isPurchasing, setIsPurchasing] = useState(false);
 
-  // Fetch live stock data from SellAuth
-  const { data: stockData, isLoading: isLoadingStock } = useSellAuthStock(slug || '');
+  // Load SellAuth checkout script
 
   // Load SellAuth script
   useEffect(() => {
@@ -254,17 +252,6 @@ const ProductDetails = () => {
   // Check if product has SellAuth integration
   const hasSellAuthIntegration = product?.plans.some(plan => (plan as any).productId && (plan as any).variantId);
 
-  // Get live stock for a variant
-  const getVariantStock = (variantName: string): number | null => {
-    if (!stockData?.variants) return null;
-    const variant = stockData.variants.find(v => v.name === variantName);
-    return variant ? variant.stock : null;
-  };
-
-  // Calculate total stock from live data
-  const liveStock = stockData?.variants 
-    ? stockData.variants.reduce((sum, v) => sum + v.stock, 0)
-    : null;
 
   if (!product) {
     return (
@@ -310,8 +297,8 @@ const ProductDetails = () => {
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
                   <div className="flex gap-2">
-                    <Badge variant={(liveStock ?? product.stock) > 0 ? "success" : "destructive"}>
-                      {isLoadingStock ? "In Stock" : `${liveStock ?? product.stock} In Stock`}
+                    <Badge variant={product.stock > 0 ? "success" : "destructive"}>
+                      {product.stock} In Stock
                     </Badge>
                     <Badge variant="secondary">{product.category}</Badge>
                   </div>
@@ -321,8 +308,7 @@ const ProductDetails = () => {
                 
                 <div className="space-y-3 mb-6">
                   {product.plans.map((plan, index) => {
-                    const liveVariantStock = getVariantStock(plan.name);
-                    const stock = liveVariantStock ?? (plan.inStock ? 1 : 0);
+                    const stock = plan.inStock ? 1 : 0;
                     
                     return (
                       <div 
@@ -337,13 +323,11 @@ const ProductDetails = () => {
                         <div>
                           <div className="flex items-center gap-2 mb-1">
                             <span className="font-semibold">{plan.name}</span>
-                            {isLoadingStock ? (
-                              <span className="text-xs text-success">• In Stock</span>
-                            ) : stock === 0 ? (
+                            {stock === 0 ? (
                               <span className="text-xs text-destructive">• Out of stock</span>
-                            ) : liveVariantStock !== null && liveVariantStock > 0 ? (
-                              <span className="text-xs text-success">• {liveVariantStock} available</span>
-                            ) : null}
+                            ) : (
+                              <span className="text-xs text-success">• In Stock</span>
+                            )}
                           </div>
                           <div className="text-sm text-muted-foreground">{plan.duration}</div>
                         </div>

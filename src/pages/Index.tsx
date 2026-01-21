@@ -2,27 +2,6 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
-import { useSellAuthStock } from "@/hooks/useSellAuthStock";
-
-// Wrapper component to fetch stock for each product
-const ProductCardWithStock = ({ product }: { product: typeof products[0] }) => {
-  const { data: stockData, isLoading } = useSellAuthStock(product.slug);
-  
-  const liveStock = stockData?.variants 
-    ? stockData.variants.reduce((sum, v) => sum + v.stock, 0)
-    : null;
-
-  const showStartingAt = product.title.toLowerCase() !== "kiciahook";
-
-  return (
-    <ProductCard 
-      {...product} 
-      stock={liveStock ?? product.stock}
-      isLoadingStock={isLoading}
-      showStartingAt={showStartingAt}
-    />
-  );
-};
 
 const products = [
   {
@@ -100,7 +79,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
-              <ProductCardWithStock key={index} product={product} />
+              <ProductCard 
+                key={index} 
+                {...product} 
+                showStartingAt={product.title.toLowerCase() !== "kiciahook"}
+              />
             ))}
           </div>
         </div>

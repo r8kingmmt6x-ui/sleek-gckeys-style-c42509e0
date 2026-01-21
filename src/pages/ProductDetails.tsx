@@ -81,7 +81,7 @@ const products = [
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
     price: "$2.49 - $5.99",
-    image: "/src/assets/rift-now.png",
+    image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
     slug: "rift-now",
     category: "Script Hub",
     plans: [

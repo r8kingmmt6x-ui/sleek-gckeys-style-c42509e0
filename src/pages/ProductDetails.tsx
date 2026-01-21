@@ -62,6 +62,19 @@ const products = [
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Join the official Cryptic Discord server at https://discord.gg/Gqr89p9AmA",
+      "In any chat channel, type /redeem and enter your key when prompted.",
+      "After redeeming, type /getdownload in the chat to receive the download.",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance!"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/ThaUkwf9ad",
+      "Troubleshooting: https://discord.gg/ThaUkwf9ad",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

@@ -10,9 +10,10 @@ interface ProductCardProps {
   image: string;
   slug: string;
   isLoadingStock?: boolean;
+  showStartingAt?: boolean;
 }
 
-const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false, showStartingAt = false }: ProductCardProps) => {
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
       <a href={`/products/${slug}`}>
@@ -31,7 +32,10 @@ const ProductCard = ({ title, description, price, stock, image, slug, isLoadingS
               {isLoadingStock ? "In Stock" : `${stock} In Stock`}
             </Badge>
           </div>
-          <div className="text-xl font-bold text-primary">{price}</div>
+          <div className="text-xl font-bold text-primary">
+            {showStartingAt && <span className="text-sm font-normal text-muted-foreground">Starting At </span>}
+            {price}
+          </div>
         </CardHeader>
         
         

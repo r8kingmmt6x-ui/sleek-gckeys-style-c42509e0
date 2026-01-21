@@ -16,7 +16,7 @@ const products = [
     category: "Executor",
     plans: [
       { name: "Weekly", price: "$5.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-weekly" },
-      { name: "Monthly", price: "$19.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-monthly" }
+      { name: "Monthly", price: "$19.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-monthly-1" }
     ],
     features: [
       "Instant Key Delivery",

@@ -12,11 +12,14 @@ const ProductCardWithStock = ({ product }: { product: typeof products[0] }) => {
     ? stockData.variants.reduce((sum, v) => sum + v.stock, 0)
     : null;
 
+  const showStartingAt = product.title.toLowerCase() !== "kiciahook";
+
   return (
     <ProductCard 
       {...product} 
       stock={liveStock ?? product.stock}
       isLoadingStock={isLoading}
+      showStartingAt={showStartingAt}
     />
   );
 };

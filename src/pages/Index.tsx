@@ -8,7 +8,6 @@ const products = [
     title: "Volcano Executor",
     description: "",
     price: "$5.97",
-    stock: 25,
     image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
     slug: "volcano-executor"
   },
@@ -16,7 +15,6 @@ const products = [
     title: "Cryptic Windows",
     description: "",
     price: "$4.97",
-    stock: 91,
     image: "https://user-generated-content.komerza.com/078b73b6-89df-4999-9b9e-c7e7196c2444.png",
     slug: "cryptic-windows"
   },
@@ -24,7 +22,6 @@ const products = [
     title: "Rift NOW",
     description: "",
     price: "$2.49",
-    stock: 0,
     image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
     slug: "rift-now"
   },
@@ -32,7 +29,6 @@ const products = [
     title: "Seliware",
     description: "",
     price: "$3.95",
-    stock: 0,
     image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
     slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed"
   },
@@ -40,7 +36,6 @@ const products = [
     title: "RbxCli",
     description: "",
     price: "$3.99",
-    stock: 0,
     image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
     slug: "85fe7352-e372-42d7-a394-1f68f718abb4"
   },
@@ -48,7 +43,6 @@ const products = [
     title: "Solix Hub",
     description: "",
     price: "$1.99",
-    stock: 33,
     image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
     slug: "bfe43bcc-a68e-4a17-ab3f-5d060c411a0d"
   },
@@ -56,7 +50,6 @@ const products = [
     title: "kiciahook",
     description: "",
     price: "$9.99",
-    stock: 7,
     image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
     slug: "kiciahook"
   }

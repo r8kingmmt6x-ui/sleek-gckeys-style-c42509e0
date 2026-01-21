@@ -5,10 +5,8 @@ interface ProductCardProps {
   title: string;
   description: string;
   price: string;
-  stock: number;
   image: string;
   slug: string;
-  isLoadingStock?: boolean;
   showStartingAt?: boolean;
   customUrl?: string;
 }

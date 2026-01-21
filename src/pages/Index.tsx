@@ -31,7 +31,8 @@ const products = [
     description: "",
     price: "$3.95",
     image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
-    slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed"
+    slug: "seliware",
+    customUrl: "/product?slug=seliware"
   },
   {
     title: "RbxCli",

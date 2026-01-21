@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -164,7 +164,10 @@ const products = [
 ];
 
 const ProductDetails = () => {
-  const { slug } = useParams();
+  const { slug: paramSlug } = useParams();
+  const [searchParams] = useSearchParams();
+  const querySlug = searchParams.get('slug');
+  const slug = paramSlug || querySlug;
   const product = products.find(p => p.slug === slug);
   const [selectedPlan, setSelectedPlan] = useState<{
     productId: number;

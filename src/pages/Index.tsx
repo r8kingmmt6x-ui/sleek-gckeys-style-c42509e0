@@ -23,7 +23,8 @@ const products = [
     description: "",
     price: "$2.49",
     image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
-    slug: "rift-now"
+    slug: "rift-now",
+    customUrl: "/product?slug=rift-now"
   },
   {
     title: "Seliware",

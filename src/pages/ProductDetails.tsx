@@ -79,7 +79,7 @@ const products = [
   },
   {
     title: "Rift NOW",
-    description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
+    description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
     price: "$2.49 - $5.99",
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
     slug: "rift-now",
@@ -92,11 +92,24 @@ const products = [
     features: [
       "Instant Key Delivery",
       "Premium Support",
+      "No Annoying Pop-ups",
       "No Checkpoints or Ads",
     ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Join https://discord.gg/rukhKrpru6",
+      "Redeem your key in the #💻・rift-hub channel.",
+      "Launch Roblox, execute your script, and enjoy!"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Documentation: https://docs.rifton.top/",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

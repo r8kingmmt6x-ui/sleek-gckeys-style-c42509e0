@@ -1,6 +1,5 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ProductCardProps {
   title: string;
@@ -14,7 +13,7 @@ interface ProductCardProps {
   customUrl?: string;
 }
 
-const ProductCard = ({ title, description, price, stock, image, slug, isLoadingStock = false, showStartingAt = false, customUrl }: ProductCardProps) => {
+const ProductCard = ({ title, price, image, slug, showStartingAt = false, customUrl }: ProductCardProps) => {
   const href = customUrl || `/products/${slug}`;
   
   return (
@@ -29,18 +28,12 @@ const ProductCard = ({ title, description, price, stock, image, slug, isLoadingS
         </div>
         
         <CardHeader>
-          <div className="flex items-start justify-between gap-2">
-            <CardTitle className="text-xl">{title}</CardTitle>
-            <Badge variant={stock > 0 ? "success" : "destructive"} className="text-xs">
-              {isLoadingStock ? "In Stock" : `${stock} In Stock`}
-            </Badge>
-          </div>
+          <CardTitle className="text-xl">{title}</CardTitle>
           <div className="text-xl font-bold text-primary">
             {showStartingAt && <span className="text-sm font-normal text-muted-foreground">Starting At </span>}
             {price}
           </div>
         </CardHeader>
-        
         
         <CardFooter>
           <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">

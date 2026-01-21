@@ -1,29 +1,10 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Check } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-declare global {
-  interface Window {
-    sellAuthEmbed: {
-      checkout: (
-        element: null,
-        options: {
-          cart: Array<{
-            productId: number;
-            variantId: number;
-            quantity: number;
-          }>;
-          shopId: number;
-          modal: boolean;
-        }
-      ) => void;
-    };
-  }
-}
 
 const products = [
   {
@@ -34,8 +15,8 @@ const products = [
     slug: "volcano-executor",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$5.97", inStock: true, productId: 393930, variantId: 562297 },
-      { name: "Monthly", price: "$19.97", inStock: false, productId: 393930, variantId: 639153 }
+      { name: "Weekly", price: "$5.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-weekly" },
+      { name: "Monthly", price: "$19.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-monthly" }
     ],
     features: [
       "Instant Key Delivery",
@@ -175,90 +156,25 @@ const ProductDetails = () => {
   const slug = paramSlug || querySlug;
   const product = products.find(p => p.slug === slug);
   const [selectedPlan, setSelectedPlan] = useState<{
-    productId: number;
-    variantId: number;
     name: string;
     price: string;
+    purchaseUrl?: string;
   } | null>(null);
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-  const [isPurchasing, setIsPurchasing] = useState(false);
-
-  // Load SellAuth checkout script
-
-  // Load SellAuth script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://sellauth.com/assets/js/sellauth-embed-2.js";
-    script.async = true;
-    
-    script.onload = () => {
-      console.log('SellAuth script loaded successfully');
-      setIsScriptLoaded(true);
-    };
-    
-    script.onerror = () => {
-      console.error('Failed to load SellAuth script');
-    };
-    
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
   const handlePlanSelect = (plan: any) => {
-    if (plan.productId && plan.variantId) {
-      setSelectedPlan({
-        productId: plan.productId,
-        variantId: plan.variantId,
-        name: plan.name,
-        price: plan.price
-      });
-    }
+    setSelectedPlan({
+      name: plan.name,
+      price: plan.price,
+      purchaseUrl: plan.purchaseUrl
+    });
   };
 
   const handlePurchase = () => {
-    if (!selectedPlan || !isScriptLoaded || isPurchasing) return;
-    
-    if (!window.sellAuthEmbed) {
-      console.error('SellAuth embed not available');
-      return;
-    }
-
-    setIsPurchasing(true);
-    
-    try {
-      console.log('Initiating checkout:', {
-        productId: selectedPlan.productId,
-        variantId: selectedPlan.variantId,
-        shopId: 165518
-      });
-      
-      window.sellAuthEmbed.checkout(null, {
-        cart: [{
-          productId: selectedPlan.productId,
-          variantId: selectedPlan.variantId,
-          quantity: 1
-        }],
-        shopId: 165518,
-        modal: true
-      });
-      
-      // Reset purchasing state after a delay
-      setTimeout(() => {
-        setIsPurchasing(false);
-      }, 2000);
-    } catch (error) {
-      console.error('Checkout error:', error);
-      setIsPurchasing(false);
-    }
+    if (!selectedPlan?.purchaseUrl) return;
+    window.open(selectedPlan.purchaseUrl, '_blank');
   };
 
-  // Check if product has SellAuth integration
-  const hasSellAuthIntegration = product?.plans.some(plan => (plan as any).productId && (plan as any).variantId);
+  const hasPurchaseUrl = product?.plans.some(plan => (plan as any).purchaseUrl);
 
 
   if (!product) {
@@ -315,21 +231,12 @@ const ProductDetails = () => {
                       key={index} 
                       onClick={() => handlePlanSelect(plan)}
                       className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
-                        selectedPlan?.variantId === (plan as any).variantId
+                        selectedPlan?.name === plan.name
                           ? 'border-primary ring-2 ring-primary'
                           : 'border-border hover:border-primary/50'
                       }`}
                     >
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-semibold">{plan.name}</span>
-                          {plan.inStock ? (
-                            <span className="text-xs text-success">• Available</span>
-                          ) : (
-                            <span className="text-xs text-destructive">• Unavailable</span>
-                          )}
-                        </div>
-                      </div>
+                      <span className="font-semibold">{plan.name}</span>
                       <div className="text-xl font-bold text-primary">{plan.price}</div>
                     </div>
                   ))}
@@ -339,15 +246,9 @@ const ProductDetails = () => {
                   onClick={handlePurchase}
                   className="w-full h-12 text-base" 
                   size="lg" 
-                  disabled={!hasSellAuthIntegration || !selectedPlan || !isScriptLoaded || isPurchasing}
+                  disabled={!hasPurchaseUrl || !selectedPlan}
                 >
-                  {!isScriptLoaded
-                    ? "Loading..."
-                    : isPurchasing
-                    ? "Opening checkout..."
-                    : !hasSellAuthIntegration
-                    ? "Coming Soon"
-                    : selectedPlan
+                  {selectedPlan
                     ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
                     : "Select a plan"}
                 </Button>

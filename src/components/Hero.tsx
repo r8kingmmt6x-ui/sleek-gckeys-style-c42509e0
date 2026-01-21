@@ -12,7 +12,7 @@ const Hero = ({ searchTerm, onSearchChange }: HeroProps) => {
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-5xl font-bold mb-3 tracking-tight">GC Keys</h1>
         <p className="text-lg text-muted-foreground mb-8">
-          Your trusted source for utilities.
+          Your trusted source for game utilities, software, and digital keys.
         </p>
         
         <div className="relative max-w-xl mx-auto">

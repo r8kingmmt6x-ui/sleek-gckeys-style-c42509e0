@@ -49,9 +49,9 @@ const products = [
     slug: "cryptic-windows",
     category: "Executor",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$4.97", inStock: false },
-      { name: "Monthly", duration: "30-Day Access", price: "$17.97", inStock: false },
-      { name: "Quarterly", duration: "90-Day Access", price: "$39.97", inStock: false }
+      { name: "Weekly", duration: "7-Day Access", price: "$4.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-weekly" },
+      { name: "Monthly", duration: "30-Day Access", price: "$17.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-monthly" },
+      { name: "Quarterly", duration: "90-Day Access", price: "$39.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-quarterly" }
     ],
     features: [
       "Instant Key Delivery",

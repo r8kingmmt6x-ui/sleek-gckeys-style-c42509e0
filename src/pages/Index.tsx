@@ -73,12 +73,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
-              <ProductCard 
-                key={index} 
-                {...product} 
-                showStartingAt={product.title.toLowerCase() !== "kiciahook"}
-                customUrl={product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined}
-              />
+            <ProductCard 
+              key={index} 
+              {...product} 
+              showStartingAt={product.title.toLowerCase() !== "kiciahook"}
+              customUrl={product.customUrl || (product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined)}
+            />
             ))}
           </div>
         </div>

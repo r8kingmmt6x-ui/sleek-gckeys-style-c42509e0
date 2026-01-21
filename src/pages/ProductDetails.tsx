@@ -30,7 +30,6 @@ const products = [
     title: "Volcano Executor",
     description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to \"Volcano\" which is a PAID executor that is extremely high quality for the price. The stability is amongst the best out of all current PAID executors on the market.",
     price: "$5.97 - $24.97",
-    stock: 25,
     image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
     slug: "volcano-executor",
     category: "Executor",
@@ -66,7 +65,6 @@ const products = [
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
     price: "$2.49 - $5.99",
-    stock: 0,
     image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
     slug: "rift-now",
     category: "Script Hub",
@@ -79,7 +77,7 @@ const products = [
       "Instant Key Delivery",
       "Premium Support",
       "No Checkpoints or Ads",
-      ],
+    ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
@@ -89,19 +87,18 @@ const products = [
     title: "Exploitingis.FUN",
     description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
     price: "$7.99 - $14.99",
-    stock: 15,
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
     slug: "exploiting-is-fun",
     category: "Script Hub",
     plans: [
       { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 456407, variantId: 668978 },
       { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 456407, variantId: 737141 },
-      ],
+    ],
     features: [
       "Instant Key Delivery",
       "Premium Support",
       "No Checkpoints or Ads",
-      ],
+    ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
@@ -111,19 +108,18 @@ const products = [
     title: "Seliware",
     description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time. (seliware.com)(seliware.com/discord)",
     price: "$3.95 - $9.95",
-    stock: 0,
     image: "https://cdn.imgchest.com/files/41845bf96598.webp",
     slug: "seliware",
     category: "Executor",
     plans: [
       { name: "Weekly", duration: "7-Day Access", price: "$3.95", inStock: false, productId: 395148, variantId: 565174 },
       { name: "Monthly", duration: "30-Day Access", price: "$9.95", inStock: false, productId: 395148, variantId: 565175 },
-      ],
+    ],
     features: [
       "Ultra-Fast Execution",
       "Rock-Solid Stability",
       "100% sUNC",
-      ],
+    ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
@@ -133,13 +129,12 @@ const products = [
     title: "pretty.rich",
     description: "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
     price: "$1.99",
-    stock: 8,
     image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
     category: "Bio-link",
     plans: [
       { name: "pretty.rich invite", duration: "", price: "1.99", inStock: false, productId: 418813, variantId: 604896 },
-      ],
+    ],
     features: [
       "Music Integration",
       "Discord Integration",
@@ -149,25 +144,24 @@ const products = [
     ],
     requirements: [
       "Windows 10/11",
-      ]
+    ]
   },
   {
     title: "Solix Hub",
-    description: "Skip the hassle of reactivating every 12 hours. We’re now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
+    description: "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
     price: "$4.99 - $14.99",
-    stock: 12,
     image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
     slug: "solix-hub",
     category: "Script Hub",
     plans: [
       { name: "Weekly", duration: "7-Day Access", price: "$1.99", inStock: false, productId: 487342, variantId: 719645 },
       { name: "2 Months", duration: "60-Day Access", price: "$4.99", inStock: false, productId: 487342, variantId: 719644 },
-      ],
+    ],
     features: [
       "Instant Key Delivery",
       "No more frequent reactivations",
       "No Checkpoints or Ads",
-      ],
+    ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
@@ -311,45 +305,36 @@ const ProductDetails = () => {
               <div className="bg-card border border-border rounded-2xl p-6 mb-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
-                  <div className="flex gap-2">
-                    <Badge variant={product.stock > 0 ? "success" : "destructive"}>
-                      {product.stock} In Stock
-                    </Badge>
-                    <Badge variant="secondary">{product.category}</Badge>
-                  </div>
+                  <Badge variant="secondary">{product.category}</Badge>
                 </div>
 
                 <h3 className="text-xl font-bold mb-4">Choose Your Plan</h3>
                 
                 <div className="space-y-3 mb-6">
-                  {product.plans.map((plan, index) => {
-                    const stock = plan.inStock ? 1 : 0;
-                    
-                    return (
-                      <div 
-                        key={index} 
-                        onClick={() => handlePlanSelect(plan)}
-                        className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
-                          selectedPlan?.variantId === (plan as any).variantId
-                            ? 'border-primary ring-2 ring-primary'
-                            : 'border-border hover:border-primary/50'
-                        }`}
-                      >
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-semibold">{plan.name}</span>
-                            {stock === 0 ? (
-                              <span className="text-xs text-destructive">• Out of stock</span>
-                            ) : (
-                              <span className="text-xs text-success">• In Stock</span>
-                            )}
-                          </div>
-                          <div className="text-sm text-muted-foreground">{plan.duration}</div>
+                  {product.plans.map((plan, index) => (
+                    <div 
+                      key={index} 
+                      onClick={() => handlePlanSelect(plan)}
+                      className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
+                        selectedPlan?.variantId === (plan as any).variantId
+                          ? 'border-primary ring-2 ring-primary'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="font-semibold">{plan.name}</span>
+                          {plan.inStock ? (
+                            <span className="text-xs text-success">• Available</span>
+                          ) : (
+                            <span className="text-xs text-destructive">• Unavailable</span>
+                          )}
                         </div>
-                        <div className="text-xl font-bold text-primary">{plan.price}</div>
+                        <div className="text-sm text-muted-foreground">{plan.duration}</div>
                       </div>
-                    );
-                  })}
+                      <div className="text-xl font-bold text-primary">{plan.price}</div>
+                    </div>
+                  ))}
                 </div>
 
                 <Button 

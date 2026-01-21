@@ -141,8 +141,8 @@ const products = [
     slug: "seliware",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$3.95" },
-      { name: "Monthly", price: "$9.95" },
+      { name: "Weekly", price: "$3.95", purchaseUrl: "https://stealthpay.io/grand/seliware-weekly" },
+      { name: "Monthly", price: "$9.95", purchaseUrl: "https://stealthpay.io/grand/seliware-monthly" },
     ],
     features: [
       "Ultra-Fast Execution",

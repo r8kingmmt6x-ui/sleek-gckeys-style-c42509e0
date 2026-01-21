@@ -42,6 +42,28 @@ const products = [
     ]
   },
   {
+    title: "Cryptic Windows",
+    description: "Cryptic is a premium Windows executor known for its stability and performance. Get reliable script execution with excellent support.",
+    price: "$4.97 - $39.97",
+    image: "https://user-generated-content.komerza.com/078b73b6-89df-4999-9b9e-c7e7196c2444.png",
+    slug: "cryptic-windows",
+    category: "Executor",
+    plans: [
+      { name: "Weekly", duration: "7-Day Access", price: "$4.97", inStock: false },
+      { name: "Monthly", duration: "30-Day Access", price: "$17.97", inStock: false },
+      { name: "Quarterly", duration: "90-Day Access", price: "$39.97", inStock: false }
+    ],
+    features: [
+      "Instant Key Delivery",
+      "Premium Support",
+      "High Stability",
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ]
+  },
+  {
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken. (discord.gg/rukhKrpru6)",
     price: "$2.49 - $5.99",

@@ -204,7 +204,7 @@ const products = [
     slug: "kiciahook",
     category: "Script Hub",
     plans: [
-      { name: "Lifetime", price: "$9.99", purchaseUrl: "" }
+      { name: "Lifetime", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }
     ],
     features: [
       "Instant Key Delivery",

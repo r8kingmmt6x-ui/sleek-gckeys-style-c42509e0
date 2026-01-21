@@ -28,16 +28,16 @@ declare global {
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to Volcano which is a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market. (volcano.wtf)(volcano.wtf/discord.html)",
-    price: "$6.99 - $26.99",
-    stock: 67,
-    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to \"Volcano\" which is a PAID executor that is extremely high quality for the price. The stability is amongst the best out of all current PAID executors on the market.",
+    price: "$5.97 - $24.97",
+    stock: 25,
+    image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
     slug: "volcano-executor",
     category: "Executor",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$6.99", inStock: false, productId: 393930, variantId: 562297 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 393930, variantId: 639153 },
-      { name: "Lifetime", duration: "Lifetime Access", price: "$26.99", inStock: false, productId: 393930, variantId: 639154 }
+      { name: "Monthly", duration: "30-Day Access", price: "$5.97", inStock: true, productId: 393930, variantId: 562297 },
+      { name: "Quarterly", duration: "90-Day Access", price: "$13.97", inStock: true, productId: 393930, variantId: 639153 },
+      { name: "Lifetime", duration: "Lifetime Access", price: "$24.97", inStock: true, productId: 393930, variantId: 639154 }
     ],
     features: [
       "Instant Key Delivery",
@@ -48,6 +48,18 @@ const products = [
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Download Volcano at https://volcano.wtf/",
+      "Redeem your purchased key",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance."
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Video tutorial: https://youtu.be/eVhOIUYMD0E",
+      "3x HWID Resets Per Day at https://key.volcano.wtf/reset_hwid",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed"
     ]
   },
   {
@@ -393,6 +405,44 @@ const ProductDetails = () => {
               </CardContent>
             </Card>
           </div>
+
+          {(product as any).usage && (
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <Card className="bg-card border-border">
+                <CardHeader>
+                  <CardTitle>Usage</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {(product as any).usage.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {(product as any).info && (
+                <Card className="bg-card border-border">
+                  <CardHeader>
+                    <CardTitle>Info</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {(product as any).info.map((item: string, index: number) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
 
           <Card className="bg-card border-border">
             <CardHeader>

@@ -34,11 +34,6 @@ const ProductCard = ({ title, description, price, stock, image, slug, isLoadingS
           <div className="text-xl font-bold text-primary">{price}</div>
         </CardHeader>
         
-        <CardContent>
-          <CardDescription className="line-clamp-3 text-muted-foreground">
-            {description}
-          </CardDescription>
-        </CardContent>
         
         <CardFooter>
           <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">

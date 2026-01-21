@@ -141,9 +141,10 @@ const products = [
     slug: "seliware",
     category: "Executor",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$3.95", inStock: false, productId: 395148, variantId: 565174 },
-      { name: "Monthly", duration: "30-Day Access", price: "$9.95", inStock: false, productId: 395148, variantId: 565175 },
+      { name: "Weekly", price: "$3.95", inStock: false },
+      { name: "Monthly", price: "$9.95", inStock: false },
     ],
+    outOfStock: true,
     features: [
       "Ultra-Fast Execution",
       "Rock-Solid Stability",
@@ -315,7 +316,12 @@ const ProductDetails = () => {
               <div className="bg-card border border-border rounded-2xl p-6 mb-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
-                  <Badge variant="secondary">{product.category}</Badge>
+                  <div className="flex items-center gap-2">
+                    {(product as any).outOfStock && (
+                      <Badge variant="destructive">Out of Stock</Badge>
+                    )}
+                    <Badge variant="secondary">{product.category}</Badge>
+                  </div>
                 </div>
 
                 <h3 className="text-xl font-bold mb-4">Choose Your Plan</h3>
@@ -324,11 +330,13 @@ const ProductDetails = () => {
                   {product.plans.map((plan, index) => (
                     <div 
                       key={index} 
-                      onClick={() => handlePlanSelect(plan)}
-                      className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
-                        selectedPlan?.name === plan.name
-                          ? 'border-primary ring-2 ring-primary'
-                          : 'border-border hover:border-primary/50'
+                      onClick={() => !(product as any).outOfStock && handlePlanSelect(plan)}
+                      className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between transition-all ${
+                        (product as any).outOfStock 
+                          ? 'opacity-50 cursor-not-allowed'
+                          : selectedPlan?.name === plan.name
+                            ? 'border-primary ring-2 ring-primary cursor-pointer'
+                            : 'border-border hover:border-primary/50 cursor-pointer'
                       }`}
                     >
                       <span className="font-semibold">{plan.name}</span>
@@ -341,11 +349,13 @@ const ProductDetails = () => {
                   onClick={handlePurchase}
                   className="w-full h-12 text-base" 
                   size="lg" 
-                  disabled={!hasPurchaseUrl || !selectedPlan}
+                  disabled={(product as any).outOfStock || !hasPurchaseUrl || !selectedPlan}
                 >
-                  {selectedPlan
-                    ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
-                    : "Select a plan"}
+                  {(product as any).outOfStock
+                    ? "Out of Stock"
+                    : selectedPlan
+                      ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
+                      : "Select a plan"}
                 </Button>
               </div>
             </div>

@@ -24,51 +24,59 @@ const ProductCardWithStock = ({ product }: { product: typeof products[0] }) => {
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. It's a FREE key system executor that is extremely high quality for the price. The stability is amongst the best out of all current FREE executors on the market.",
-    price: "$6.99 - $26.99",
-    stock: 67,
-    image: "https://cdn.imgchest.com/files/edf608619724.webp",
+    description: "",
+    price: "$5.97",
+    stock: 25,
+    image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
     slug: "volcano-executor"
   },
   {
+    title: "Cryptic Windows",
+    description: "",
+    price: "$4.97",
+    stock: 91,
+    image: "https://user-generated-content.komerza.com/078b73b6-89df-4999-9b9e-c7e7196c2444.png",
+    slug: "cryptic-windows"
+  },
+  {
     title: "Rift NOW",
-    description: "With Rift NOW, you get on-demand access – no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed.",
-    price: "$2.49 - $5.99",
+    description: "",
+    price: "$2.49",
     stock: 0,
-    image: "https://cdn.imgchest.com/files/63f08822f5c5.webp",
+    image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
     slug: "rift-now"
   },
   {
-    title: "Exploitingis.FUN",
-    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters.",
-    price: "$7.99 - $14.99",
-    stock: 15,
-    image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
-    slug: "exploiting-is-fun"
-  },
-  {
     title: "Seliware",
-    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
-    price: "$3.95 - $9.95",
+    description: "",
+    price: "$3.95",
     stock: 0,
-    image: "https://cdn.imgchest.com/files/41845bf96598.webp",
-    slug: "seliware"
+    image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
+    slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed"
   },
   {
-    title: "pretty.rich",
-    description: "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
-    price: "$1.99",
-    stock: 8,
-    image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
-    slug: "pretty-rich"
+    title: "RbxCli",
+    description: "",
+    price: "$3.99",
+    stock: 0,
+    image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
+    slug: "85fe7352-e372-42d7-a394-1f68f718abb4"
   },
   {
     title: "Solix Hub",
-    description: "Skip the hassle of reactivating every 12 hours. We’re now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
-    price: "$4.99 - $14.99",
-    stock: 12,
-    image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
-    slug: "solix-hub"
+    description: "",
+    price: "$1.99",
+    stock: 33,
+    image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
+    slug: "bfe43bcc-a68e-4a17-ab3f-5d060c411a0d"
+  },
+  {
+    title: "kiciahook",
+    description: "",
+    price: "$9.99",
+    stock: 7,
+    image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
+    slug: "kiciahook"
   }
 ];
 

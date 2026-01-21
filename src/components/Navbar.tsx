@@ -1,5 +1,6 @@
 import { Home, Package, HelpCircle, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-14">
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
+              src={logo} 
               alt="GC Keys Logo" 
               className="w-7 h-7 rounded-md object-cover"
             />

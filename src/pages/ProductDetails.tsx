@@ -85,9 +85,9 @@ const products = [
     slug: "rift-now",
     category: "Script Hub",
     plans: [
-      { name: "7 Days", duration: "", price: "$2.49", inStock: false, productId: 393924, variantId: 564505 },
-      { name: "14 Days", duration: "", price: "$3.99", inStock: false, productId: 393924, variantId: 564504 },
-      { name: "30 Days", duration: "", price: "$5.99", inStock: false, productId: 393924, variantId: 562286 }
+      { name: "7 Days", duration: "", price: "$2.49", purchaseUrl: "https://stealthpay.io/grand/rift-now-7-days" },
+      { name: "14 Days", duration: "", price: "$3.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-14-days" },
+      { name: "30 Days", duration: "", price: "$5.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-30-days" }
     ],
     features: [
       "Instant Key Delivery",

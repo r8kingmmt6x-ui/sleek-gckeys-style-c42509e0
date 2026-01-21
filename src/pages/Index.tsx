@@ -22,7 +22,7 @@ const products = [
     title: "Rift NOW",
     description: "",
     price: "$2.49",
-    image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
+    image: "/src/assets/rift-now.png",
     slug: "rift-now",
     customUrl: "/product?slug=rift-now"
   },

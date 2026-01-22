@@ -193,7 +193,7 @@ const products = [
     description: "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals.",
     price: "$1.99 - $4.99",
     image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
-    slug: "solix-hub",
+    slug: "bfe43bcc-a68e-4a17-ab3f-5d060c411a0d",
     category: "Script Hub",
     plans: [
       { name: "Weekly", price: "$1.99", purchaseUrl: "https://stealthpay.io/grand/solix-hub-weekly" },

@@ -39,8 +39,8 @@ const products = [
     description: "",
     price: "$3.99",
     image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
-    slug: "rbxcli",
-    customUrl: "/product?slug=rbxcli"
+    slug: "85fe7352-e372-42d7-a394-1f68f718abb4",
+    customUrl: "/product?slug=85fe7352-e372-42d7-a394-1f68f718abb4"
   },
   {
     title: "Solix Hub",

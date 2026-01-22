@@ -28,7 +28,7 @@ const Navbar = () => {
               <FileText className="w-4 h-4" />
               <span>Terms of Service</span>
             </Link>
-            <a href="https://discord.com/invite/zEfAcCPNKr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://discord.com/invite/aCwcJukUf6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <HelpCircle className="w-4 h-4" />
               <span>Support</span>
             </a>

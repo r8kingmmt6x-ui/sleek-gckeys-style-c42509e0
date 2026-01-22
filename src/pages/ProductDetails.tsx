@@ -469,20 +469,6 @@ const ProductDetails = () => {
               )}
             </div>
           )}
-
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle>What Our Customers Say</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-secondary/50 rounded-lg p-6">
-                <p className="text-lg italic mb-4">
-                  "100% works and gives key instantly instead of waiting for someone to give it its instant love it"
-                </p>
-                <p className="text-sm text-muted-foreground">— Customer</p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

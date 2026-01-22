@@ -190,23 +190,34 @@ const products = [
   },
   {
     title: "Solix Hub",
-    description: "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals. (discord.gg/solixhub)",
-    price: "$4.99 - $14.99",
-    image: "https://cdn.imgchest.com/files/5a2b4cb4f053.webp",
+    description: "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals.",
+    price: "$1.99",
+    image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
     slug: "solix-hub",
     category: "Script Hub",
     plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$1.99", inStock: false, productId: 487342, variantId: 719645 },
-      { name: "2 Months", duration: "60-Day Access", price: "$4.99", inStock: false, productId: 487342, variantId: 719644 },
+      { name: "Weekly", price: "$1.99", purchaseUrl: "" }
     ],
     features: [
       "Instant Key Delivery",
-      "No more frequent reactivations",
       "No Checkpoints or Ads",
+      "No More Frequent Reactivations"
     ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Join the official Solix Hub discord server https://discord.gg/solixhub",
+      "Redeem your purchased key in the #get-script channel",
+      "Launch Roblox, execute your script, and enjoy!"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Troubleshooting: https://discord.gg/solixhub",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

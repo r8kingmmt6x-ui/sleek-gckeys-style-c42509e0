@@ -222,6 +222,40 @@ const products = [
     ]
   },
   {
+    title: "RbxCli",
+    description: "RbxCli is a Roblox external tool, originally thought of as a private, invite-only external focused on visuals, extensibility and in-game reverse engineering.",
+    price: "$3.99",
+    image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
+    slug: "rbxcli",
+    category: "External",
+    plans: [
+      { name: "License", price: "$3.99", purchaseUrl: "" }
+    ],
+    features: [
+      "Box Visuals",
+      "Chameleon",
+      "Dynamic FoV",
+      "Hitbox Extension",
+      "Instant Key Delivery"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Join the official RbxCli discord server at https://discord.gg/VEFd3asJNA",
+      "Use /redeem in the server to redeem your purchased key",
+      "Use /generateloader in the server to generate your personal loader package for RbxCli",
+      "Launch Roblox, open RbxCli, and enjoy!"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
+    ]
+  },
+  {
     title: "kiciahook",
     description: "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.99",

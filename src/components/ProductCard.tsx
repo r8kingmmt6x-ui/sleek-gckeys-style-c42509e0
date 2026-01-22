@@ -27,7 +27,7 @@ const ProductCard = ({ title, price, image, slug, showStartingAt = false, custom
         
         <CardHeader>
           <CardTitle className="text-xl">{title}</CardTitle>
-          <div className="text-xl font-bold text-primary">
+          <div className="text-xl font-bold text-foreground">
             {showStartingAt && <span className="text-sm font-normal text-muted-foreground">Starting At </span>}
             {price}
           </div>

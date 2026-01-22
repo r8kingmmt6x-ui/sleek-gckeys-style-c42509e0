@@ -36,15 +36,15 @@ const Navbar = () => {
 
           <div className="flex items-center gap-6 text-sm">
             <div className="text-center">
-              <div className="font-bold text-primary">4.98</div>
+              <div className="font-bold text-foreground">4.98</div>
               <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
             </div>
             <div className="text-center">
-              <div className="font-bold text-primary">8K+</div>
+              <div className="font-bold text-foreground">8K+</div>
               <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
             </div>
             <div className="text-center">
-              <div className="font-bold text-primary">6K+</div>
+              <div className="font-bold text-foreground">6K+</div>
               <div className="text-[10px] text-muted-foreground tracking-wide">CUSTOMERS</div>
             </div>
           </div>

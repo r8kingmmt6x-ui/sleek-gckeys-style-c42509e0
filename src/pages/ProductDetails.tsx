@@ -378,7 +378,7 @@ const ProductDetails = () => {
                       }`}
                     >
                       <span className="font-semibold">{plan.name}</span>
-                      <div className="text-xl font-bold text-primary">{plan.price}</div>
+                      <div className="text-xl font-bold text-foreground">{plan.price}</div>
                     </div>
                   ))}
                 </div>

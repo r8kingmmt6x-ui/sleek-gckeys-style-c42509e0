@@ -1,4 +1,4 @@
-import { Home, Package, HelpCircle, FileText } from "lucide-react";
+import { Home, Package, HelpCircle, FileText, Star, ShoppingCart, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -35,17 +35,26 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-6 text-sm">
-            <div className="text-center">
-              <div className="font-bold text-foreground">4.98</div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-primary" />
+              <div className="text-center">
+                <div className="font-bold text-foreground">4.98</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="font-bold text-foreground">8K+</div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
+            <div className="flex items-center gap-2">
+              <ShoppingCart className="w-4 h-4 text-primary" />
+              <div className="text-center">
+                <div className="font-bold text-foreground">8K+</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="font-bold text-foreground">6K+</div>
-              <div className="text-[10px] text-muted-foreground tracking-wide">CUSTOMERS</div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-primary" />
+              <div className="text-center">
+                <div className="font-bold text-foreground">6K+</div>
+                <div className="text-[10px] text-muted-foreground tracking-wide">CUSTOMERS</div>
+              </div>
             </div>
           </div>
         </div>

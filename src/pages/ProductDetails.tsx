@@ -224,12 +224,13 @@ const products = [
   {
     title: "RbxCli",
     description: "RbxCli is a Roblox external tool, originally thought of as a private, invite-only external focused on visuals, extensibility and in-game reverse engineering.",
-    price: "$3.99",
+    price: "$3.99 - $9.99",
     image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
     slug: "rbxcli",
     category: "External",
     plans: [
-      { name: "License", price: "$3.99", purchaseUrl: "" }
+      { name: "Weekly", price: "$3.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-weekly" },
+      { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-monthly" }
     ],
     features: [
       "Box Visuals",

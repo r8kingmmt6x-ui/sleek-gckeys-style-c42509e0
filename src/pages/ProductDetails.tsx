@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import visaIcon from "@/assets/pay-visa.svg";
 import mastercardIcon from "@/assets/pay-mastercard.svg";
 import applePayIcon from "@/assets/pay-applepay.svg";
@@ -575,6 +577,8 @@ const ProductDetails = () => {
           )}
         </div>
       </div>
+      <ScrollToTop />
+      <Footer />
     </div>
   );
 };

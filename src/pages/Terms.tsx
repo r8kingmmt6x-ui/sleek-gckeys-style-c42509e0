@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 
@@ -153,10 +154,10 @@ const Terms = () => {
               </CardContent>
             </Card>
           </div>
-          
           <ScrollToTop />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

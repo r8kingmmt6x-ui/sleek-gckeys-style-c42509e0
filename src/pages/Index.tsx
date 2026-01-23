@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const products = [
   {
@@ -89,6 +90,7 @@ const Index = () => {
         </div>
       </section>
       
+      <ScrollToTop />
       <Footer />
     </div>
   );

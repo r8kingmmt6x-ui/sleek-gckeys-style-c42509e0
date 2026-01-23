@@ -22,9 +22,9 @@ const Footer = () => {
           
           {/* Navigation */}
           <div className="flex items-center justify-center gap-8 text-sm">
-            <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://gckeys.cc" className="text-muted-foreground hover:text-foreground transition-colors">
               Home
-            </Link>
+            </a>
             <a href="https://gckeys.cc/#products" className="text-muted-foreground hover:text-foreground transition-colors">
               Products
             </a>
@@ -32,7 +32,7 @@ const Footer = () => {
               Terms of Service
             </Link>
             <a 
-              href="https://discord.gg/gckeys" 
+              href="https://discord.com/invite/aCwcJukUf6" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

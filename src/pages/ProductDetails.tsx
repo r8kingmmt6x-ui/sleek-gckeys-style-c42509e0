@@ -14,6 +14,31 @@ import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
 import robuxIcon from "@/assets/pay-robux.png";
 
+// Helper function to parse text and make URLs clickable
+const parseTextWithLinks = (text: string) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  
+  return parts.map((part, index) => {
+    if (urlRegex.test(part)) {
+      // Reset regex lastIndex
+      urlRegex.lastIndex = 0;
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
+
 
 const products = [
   {
@@ -518,11 +543,11 @@ const ProductDetails = () => {
                   <CardTitle>Usage</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
+                <ul className="space-y-3">
                     {(product as any).usage.map((item: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span>{item}</span>
+                        <span>{parseTextWithLinks(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -535,11 +560,11 @@ const ProductDetails = () => {
                     <CardTitle>Info</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-3">
+                  <ul className="space-y-3">
                       {(product as any).info.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
+                          <span>{parseTextWithLinks(item)}</span>
                         </li>
                       ))}
                     </ul>

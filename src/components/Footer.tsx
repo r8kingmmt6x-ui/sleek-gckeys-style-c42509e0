@@ -7,8 +7,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <div className="flex items-center justify-center md:justify-start gap-2">
-            <span className="text-2xl font-bold text-primary">GC</span>
-            <span className="text-2xl font-bold text-foreground">Keys</span>
+            <img 
+              src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
+              alt="GC Keys Logo" 
+              className="w-8 h-8 rounded-md object-cover"
+            />
+            <span className="text-2xl font-bold text-foreground">GC Keys</span>
           </div>
           
           {/* Navigation */}

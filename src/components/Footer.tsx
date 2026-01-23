@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -39,9 +43,18 @@ const Footer = () => {
             </a>
           </div>
           
-          {/* Copyright */}
-          <div className="text-sm text-muted-foreground text-center md:text-right">
-            © {new Date().getFullYear()} GC Keys. All rights reserved.
+          {/* Copyright and Scroll to Top */}
+          <div className="flex items-center justify-center md:justify-end gap-4">
+            <div className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} GC Keys. All rights reserved.
+            </div>
+            <button
+              onClick={scrollToTop}
+              className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center hover:bg-secondary/80 transition-colors"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4 text-foreground" />
+            </button>
           </div>
         </div>
       </div>

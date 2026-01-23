@@ -445,7 +445,7 @@ const ProductDetails = () => {
                 {/* Accepted Payments */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>
-                  <div className="flex items-center gap-2 overflow-x-auto flex-nowrap scrollbar-hide">
+                  <div className="flex flex-wrap items-center gap-2">
                     {[
                       { name: "Visa", icon: visaIcon },
                       { name: "Mastercard", icon: mastercardIcon },
@@ -459,13 +459,13 @@ const ProductDetails = () => {
                     ].map((method) => (
                       <div
                         key={method.name}
-                        className="h-8 min-w-[44px] rounded-md border border-border bg-primary-foreground px-2.5 flex items-center justify-center flex-shrink-0"
+                        className="h-8 min-w-[44px] rounded-md border border-border bg-secondary px-2.5 flex items-center justify-center"
                         title={method.name}
                       >
                         <img
                           src={method.icon}
                           alt={method.name}
-                          className="h-4 w-auto opacity-90"
+                          className="h-4 w-auto brightness-0 invert opacity-80"
                           loading="lazy"
                           decoding="async"
                         />

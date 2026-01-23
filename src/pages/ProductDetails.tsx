@@ -454,7 +454,6 @@ const ProductDetails = () => {
                       { name: "PayPal", icon: paypalIcon },
                       { name: "Bitcoin", icon: bitcoinIcon },
                       { name: "Cash App", icon: cashAppIcon },
-                      { name: "Robux", icon: robuxIcon },
                     ].map((method) => (
                       <div
                         key={method.name}

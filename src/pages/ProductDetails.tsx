@@ -297,9 +297,9 @@ const products = [
     slug: "bb7abe6b-6767-41c5-9e3c-663c44fcc998",
     category: "Executor",
     plans: [
-      { name: "Monthly", price: "$9.99", purchaseUrl: "" },
-      { name: "Quarterly", price: "$24.99", purchaseUrl: "" },
-      { name: "Month of RakNet", price: "$4.99", purchaseUrl: "" }
+      { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-monthly" },
+      { name: "Quarterly", price: "$24.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-quarterly" },
+      { name: "Month of RakNet", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-month-of-raknet" }
     ],
     features: [
       "Instant Key Delivery",

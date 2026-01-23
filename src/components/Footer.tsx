@@ -8,8 +8,6 @@ const Footer = () => {
           {/* Logo */}
           <a 
             href="https://gckeys.cc" 
-            target="_blank" 
-            rel="noopener noreferrer"
             className="flex items-center justify-center md:justify-start gap-2 hover:opacity-80 transition-opacity"
           >
             <img 

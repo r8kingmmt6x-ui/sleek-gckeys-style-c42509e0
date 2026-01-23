@@ -38,7 +38,7 @@ const Navbar = () => {
               <Home className="w-4 h-4" />
               <span>Home</span>
             </a>
-            <a href="/#products" onClick={handleProductsClick} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://gckeys.cc/#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Package className="w-4 h-4" />
               <span>Products</span>
             </a>

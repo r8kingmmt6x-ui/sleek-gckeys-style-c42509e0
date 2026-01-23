@@ -288,6 +288,39 @@ const products = [
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active"
     ]
+  },
+  {
+    title: "ChocoSploit",
+    description: "ChocoSploit is the first executor to use kernel component for it's needs, because of that, it is rarely affected by Hyperion updates which prevent DLL injection which executors need.",
+    price: "$4.99 - $24.99",
+    image: "https://user-generated-content.komerza.com/cf111642-7f49-4cae-b845-888c9ffbb573.png",
+    slug: "bb7abe6b-6767-41c5-9e3c-663c44fcc998",
+    category: "Executor",
+    plans: [
+      { name: "Monthly", price: "$9.99", purchaseUrl: "" },
+      { name: "Quarterly", price: "$24.99", purchaseUrl: "" },
+      { name: "Month of RakNet", price: "$4.99", purchaseUrl: "" }
+    ],
+    features: [
+      "Instant Key Delivery",
+      "Ultra-Fast Execution",
+      "Rock-Solid Stability",
+      "100% sUNC"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Use /redeem in the server to redeem your purchased key",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
+    ]
   }
 ];
 

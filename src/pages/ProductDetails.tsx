@@ -10,10 +10,9 @@ import mastercardIcon from "@/assets/pay-mastercard.svg";
 import applePayIcon from "@/assets/pay-applepay.svg";
 import googlePayIcon from "@/assets/pay-googlepay.svg";
 import paypalIcon from "@/assets/pay-paypal.svg";
-import venmoIcon from "@/assets/pay-venmo.svg";
 import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
-import shopifyIcon from "@/assets/pay-shopify.svg";
+import robuxIcon from "@/assets/pay-robux.svg";
 
 const products = [
   {
@@ -454,6 +453,7 @@ const ProductDetails = () => {
                       { name: "PayPal", icon: paypalIcon },
                       { name: "Bitcoin", icon: bitcoinIcon },
                       { name: "Cash App", icon: cashAppIcon },
+                      { name: "Robux", icon: robuxIcon },
                     ].map((method) => (
                       <div
                         key={method.name}

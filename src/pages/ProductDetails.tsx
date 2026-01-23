@@ -5,7 +5,15 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import acceptedPayments from "@/assets/accepted-payments.png";
+import visaIcon from "@/assets/pay-visa.svg";
+import mastercardIcon from "@/assets/pay-mastercard.svg";
+import applePayIcon from "@/assets/pay-applepay.svg";
+import googlePayIcon from "@/assets/pay-googlepay.svg";
+import paypalIcon from "@/assets/pay-paypal.svg";
+import venmoIcon from "@/assets/pay-venmo.svg";
+import bitcoinIcon from "@/assets/pay-bitcoin.svg";
+import cashAppIcon from "@/assets/pay-cashapp.svg";
+import shopifyIcon from "@/assets/pay-shopify.svg";
 
 const products = [
   {
@@ -437,13 +445,32 @@ const ProductDetails = () => {
                 {/* Accepted Payments */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>
-                  <div className="overflow-hidden rounded-lg border border-border bg-muted/30">
-                    <img
-                      src={acceptedPayments}
-                      alt="Accepted payment methods"
-                      className="w-full h-auto"
-                      loading="lazy"
-                    />
+                  <div className="flex flex-wrap items-center gap-2">
+                    {[
+                      { name: "Visa", icon: visaIcon },
+                      { name: "Mastercard", icon: mastercardIcon },
+                      { name: "Apple Pay", icon: applePayIcon },
+                      { name: "Google Pay", icon: googlePayIcon },
+                      { name: "Shop Pay", icon: shopifyIcon },
+                      { name: "PayPal", icon: paypalIcon },
+                      { name: "Venmo", icon: venmoIcon },
+                      { name: "Bitcoin", icon: bitcoinIcon },
+                      { name: "Cash App", icon: cashAppIcon },
+                    ].map((method) => (
+                      <div
+                        key={method.name}
+                        className="h-9 rounded-md border border-border bg-primary-foreground px-2 flex items-center justify-center"
+                        title={method.name}
+                      >
+                        <img
+                          src={method.icon}
+                          alt={method.name}
+                          className="h-5 w-auto"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

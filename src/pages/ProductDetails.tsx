@@ -12,7 +12,7 @@ import googlePayIcon from "@/assets/pay-googlepay.svg";
 import paypalIcon from "@/assets/pay-paypal.svg";
 import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
-import robuxIcon from "@/assets/pay-robux.svg";
+import robuxIcon from "@/assets/pay-robux.png";
 
 const products = [
   {

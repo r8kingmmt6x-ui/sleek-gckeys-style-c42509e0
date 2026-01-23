@@ -451,9 +451,7 @@ const ProductDetails = () => {
                       { name: "Mastercard", icon: mastercardIcon },
                       { name: "Apple Pay", icon: applePayIcon },
                       { name: "Google Pay", icon: googlePayIcon },
-                      { name: "Shop Pay", icon: shopifyIcon },
                       { name: "PayPal", icon: paypalIcon },
-                      { name: "Venmo", icon: venmoIcon },
                       { name: "Bitcoin", icon: bitcoinIcon },
                       { name: "Cash App", icon: cashAppIcon },
                     ].map((method) => (

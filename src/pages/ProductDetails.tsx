@@ -328,6 +328,7 @@ const ProductDetails = () => {
   const { slug: paramSlug } = useParams();
   const [searchParams] = useSearchParams();
   const querySlug = searchParams.get('slug');
+  const ref = searchParams.get('ref');
   const slug = paramSlug || querySlug;
   const product = products.find(p => p.slug === slug);
   const [selectedPlan, setSelectedPlan] = useState<{
@@ -346,7 +347,11 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
-    window.open(selectedPlan.purchaseUrl, '_blank');
+    let url = selectedPlan.purchaseUrl;
+    if (ref) {
+      url += `?r=${encodeURIComponent(ref)}`;
+    }
+    window.open(url, '_blank');
   };
 
   const hasPurchaseUrl = product?.plans.some(plan => (plan as any).purchaseUrl);

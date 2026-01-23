@@ -12,7 +12,8 @@ import googlePayIcon from "@/assets/pay-googlepay.svg";
 import paypalIcon from "@/assets/pay-paypal.svg";
 import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
-import robuxIcon from "@/assets/pay-robux.svg";
+import robuxIcon from "@/assets/pay-robux.png";
+
 
 const products = [
   {
@@ -463,7 +464,13 @@ const ProductDetails = () => {
                         <img
                           src={method.icon}
                           alt={method.name}
-                          className="h-4 w-auto brightness-0 invert opacity-80"
+                          className={(() => {
+                            if (method.name === "Robux") {
+                              return "h-5 w-auto opacity-100";
+                            }
+
+                            return "h-4 w-auto opacity-80 brightness-0 invert";
+                          })()}
                           loading="lazy"
                           decoding="async"
                         />

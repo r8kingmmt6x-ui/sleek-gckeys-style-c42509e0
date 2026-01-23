@@ -437,31 +437,39 @@ const ProductDetails = () => {
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>
                   <div className="flex flex-wrap gap-2">
-                    <div className="bg-white rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/visa.svg" alt="Visa" className="h-5" />
+                    {/* Visa */}
+                    <div className="bg-[#1A1F71] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-white text-xs font-bold italic">VISA</span>
                     </div>
-                    <div className="bg-white rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/mastercard.svg" alt="Mastercard" className="h-5" />
+                    {/* Mastercard */}
+                    <div className="bg-[#EB001B] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <div className="flex">
+                        <div className="w-4 h-4 bg-[#EB001B] rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#F79E1B] rounded-full -ml-2"></div>
+                      </div>
                     </div>
-                    <div className="bg-black rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/applepay.svg" alt="Apple Pay" className="h-5" />
+                    {/* Apple Pay */}
+                    <div className="bg-black rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-white text-xs font-medium"> Pay</span>
                     </div>
-                    <div className="bg-white rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/googlepay.svg" alt="Google Pay" className="h-5" />
+                    {/* Google Pay */}
+                    <div className="bg-white rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-xs font-medium"><span className="text-[#4285F4]">G</span><span className="text-[#EA4335]">o</span><span className="text-[#FBBC05]">o</span><span className="text-[#4285F4]">g</span><span className="text-[#34A853]">l</span><span className="text-[#EA4335]">e</span></span>
                     </div>
-                    <div className="bg-[#5A31F4] rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/shoppay.svg" alt="Shop Pay" className="h-5" />
+                    {/* Shop Pay */}
+                    <div className="bg-[#5A31F4] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-white text-xs font-bold">Shop</span>
                     </div>
-                    <div className="bg-[#169BD7] rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/venmo.svg" alt="Venmo" className="h-5" />
+                    {/* PayPal */}
+                    <div className="bg-[#003087] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-white text-xs font-bold">Pay<span className="text-[#009cde]">Pal</span></span>
                     </div>
-                    <div className="bg-[#003087] rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/paypal.svg" alt="PayPal" className="h-5" />
+                    {/* Bitcoin */}
+                    <div className="bg-[#F7931A] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
+                      <span className="text-white text-xs font-bold">₿</span>
                     </div>
-                    <div className="bg-[#F7931A] rounded px-2 py-1.5 flex items-center justify-center">
-                      <img src="https://cdn.jsdelivr.net/gh/nicehash/payment-icons@master/bitcoin.svg" alt="Bitcoin" className="h-5" />
-                    </div>
-                    <div className="bg-[#00C244] rounded px-2 py-1.5 flex items-center justify-center">
+                    {/* Cash App */}
+                    <div className="bg-[#00C244] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
                       <span className="text-white text-xs font-bold">$ Cash App</span>
                     </div>
                   </div>

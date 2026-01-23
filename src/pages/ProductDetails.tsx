@@ -138,7 +138,7 @@ const products = [
     description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
     price: "$3.95 - $9.95",
     image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
-    slug: "seliware",
+    slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed",
     category: "Executor",
     plans: [
       { name: "Weekly", price: "$3.95", purchaseUrl: "https://stealthpay.io/grand/seliware-weekly" },

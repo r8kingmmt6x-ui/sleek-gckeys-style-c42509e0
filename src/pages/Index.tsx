@@ -75,7 +75,7 @@ const Index = () => {
       <Navbar />
       <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       
-      <section className="pb-20 px-4" id="products">
+      <section className="pb-20 px-4 scroll-mt-20" id="products">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (

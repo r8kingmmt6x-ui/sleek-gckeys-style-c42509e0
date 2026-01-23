@@ -464,13 +464,9 @@ const ProductDetails = () => {
                         <img
                           src={method.icon}
                           alt={method.name}
-                          className={(() => {
-                            if (method.name === "Robux") {
-                              return "h-5 w-auto opacity-100";
-                            }
-
-                            return "h-4 w-auto opacity-80 brightness-0 invert";
-                          })()}
+                          className={
+                            `${method.name === "Robux" ? "h-5" : "h-4"} w-auto opacity-80 brightness-0 invert`
+                          }
                           loading="lazy"
                           decoding="async"
                         />

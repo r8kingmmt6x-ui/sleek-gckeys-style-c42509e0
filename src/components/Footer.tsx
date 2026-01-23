@@ -28,9 +28,9 @@ const Footer = () => {
             <a href="https://gckeys.cc/#products" className="text-muted-foreground hover:text-foreground transition-colors">
               Products
             </a>
-            <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://gckeys.cc/terms" className="text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
-            </Link>
+            </a>
             <a 
               href="https://discord.com/invite/aCwcJukUf6" 
               target="_blank" 

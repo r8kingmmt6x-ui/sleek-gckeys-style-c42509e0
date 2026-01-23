@@ -6,14 +6,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
-          <div className="flex items-center justify-center md:justify-start gap-2">
+          <a 
+            href="https://gckeys.cc" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center md:justify-start gap-2 hover:opacity-80 transition-opacity"
+          >
             <img 
               src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
               alt="GC Keys Logo" 
               className="w-8 h-8 rounded-md object-cover"
             />
             <span className="text-2xl font-bold text-foreground">GC Keys</span>
-          </div>
+          </a>
           
           {/* Navigation */}
           <div className="flex items-center justify-center gap-8 text-sm">

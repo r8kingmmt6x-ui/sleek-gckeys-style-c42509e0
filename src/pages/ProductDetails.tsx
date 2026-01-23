@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import acceptedPayments from "@/assets/accepted-payments.png";
 
 const products = [
   {
@@ -436,42 +437,13 @@ const ProductDetails = () => {
                 {/* Accepted Payments */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>
-                  <div className="flex flex-wrap gap-2">
-                    {/* Visa */}
-                    <div className="bg-[#1A1F71] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-bold italic">VISA</span>
-                    </div>
-                    {/* Mastercard */}
-                    <div className="bg-[#EB001B] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <div className="flex">
-                        <div className="w-4 h-4 bg-[#EB001B] rounded-full"></div>
-                        <div className="w-4 h-4 bg-[#F79E1B] rounded-full -ml-2"></div>
-                      </div>
-                    </div>
-                    {/* Apple Pay */}
-                    <div className="bg-black rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-medium"> Pay</span>
-                    </div>
-                    {/* Google Pay */}
-                    <div className="bg-white rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-xs font-medium"><span className="text-[#4285F4]">G</span><span className="text-[#EA4335]">o</span><span className="text-[#FBBC05]">o</span><span className="text-[#4285F4]">g</span><span className="text-[#34A853]">l</span><span className="text-[#EA4335]">e</span></span>
-                    </div>
-                    {/* Shop Pay */}
-                    <div className="bg-[#5A31F4] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-bold">Shop</span>
-                    </div>
-                    {/* PayPal */}
-                    <div className="bg-[#003087] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-bold">Pay<span className="text-[#009cde]">Pal</span></span>
-                    </div>
-                    {/* Bitcoin */}
-                    <div className="bg-[#F7931A] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-bold">₿</span>
-                    </div>
-                    {/* Cash App */}
-                    <div className="bg-[#00C244] rounded px-2 py-1.5 flex items-center justify-center min-w-[40px]">
-                      <span className="text-white text-xs font-bold">$ Cash App</span>
-                    </div>
+                  <div className="overflow-hidden rounded-lg border border-border bg-muted/30">
+                    <img
+                      src={acceptedPayments}
+                      alt="Accepted payment methods"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>

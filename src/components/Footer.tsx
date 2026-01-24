@@ -14,7 +14,7 @@ const Footer = () => {
           <img 
             src={storeBanner} 
             alt="GC Keys Store Banner" 
-            className="max-w-full h-auto rounded-lg"
+            className="h-12 w-auto rounded"
           />
         </div>
         

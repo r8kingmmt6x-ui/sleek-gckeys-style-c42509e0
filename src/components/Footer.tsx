@@ -9,15 +9,6 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Store Banner */}
-        <div className="flex justify-center mb-8">
-          <img 
-            src={storeBanner} 
-            alt="GC Keys Store Banner" 
-            className="h-12 w-auto rounded"
-          />
-        </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <a 
@@ -66,6 +57,15 @@ const Footer = () => {
               <ArrowUp className="w-4 h-4 text-foreground" />
             </button>
           </div>
+        </div>
+        
+        {/* Store Banner */}
+        <div className="flex justify-center mt-8">
+          <img 
+            src={storeBanner} 
+            alt="GC Keys Store Banner" 
+            className="h-12 w-auto rounded"
+          />
         </div>
       </div>
     </footer>

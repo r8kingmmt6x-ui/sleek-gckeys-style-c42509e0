@@ -61,11 +61,13 @@ const Footer = () => {
         
         {/* Store Banner */}
         <div className="flex justify-center mt-8">
-          <img 
-            src={storeBanner} 
-            alt="GC Keys Store Banner" 
-            className="h-12 w-auto rounded"
-          />
+          <a href="https://gckeys.cc" className="hover:opacity-80 transition-opacity">
+            <img 
+              src={storeBanner} 
+              alt="GC Keys Store Banner" 
+              className="h-12 w-auto rounded"
+            />
+          </a>
         </div>
       </div>
     </footer>

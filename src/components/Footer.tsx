@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import storeBanner from "@/assets/store-banner.png";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -8,6 +9,15 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Store Banner */}
+        <div className="flex justify-center mb-8">
+          <img 
+            src={storeBanner} 
+            alt="GC Keys Store Banner" 
+            className="max-w-full h-auto rounded-lg"
+          />
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <a 

@@ -1,4 +1,4 @@
-import { ArrowUp, Home, Package, FileText, HelpCircle } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import storeBanner from "@/assets/store-banner.png";
 
 const Footer = () => {
@@ -25,25 +25,21 @@ const Footer = () => {
           
           {/* Navigation */}
           <div className="flex items-center justify-center gap-8 text-sm">
-            <a href="https://gckeys.cc" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <Home className="w-4 h-4" />
+            <a href="https://gckeys.cc" className="text-muted-foreground hover:text-foreground transition-colors">
               Home
             </a>
-            <a href="https://gckeys.cc/#products" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <Package className="w-4 h-4" />
+            <a href="https://gckeys.cc/#products" className="text-muted-foreground hover:text-foreground transition-colors">
               Products
             </a>
-            <a href="https://gckeys.cc/terms" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <FileText className="w-4 h-4" />
+            <a href="https://gckeys.cc/terms" className="text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
             </a>
             <a 
               href="https://discord.com/invite/aCwcJukUf6" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <HelpCircle className="w-4 h-4" />
               Support
             </a>
           </div>

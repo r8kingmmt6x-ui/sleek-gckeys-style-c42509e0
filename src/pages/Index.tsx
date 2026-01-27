@@ -54,7 +54,7 @@ const products = [
   {
     title: "kiciahook",
     description: "",
-    price: "$9.99",
+    price: "$9.97",
     image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
     slug: "kiciahook",
     customUrl: "/product?slug=kiciahook"

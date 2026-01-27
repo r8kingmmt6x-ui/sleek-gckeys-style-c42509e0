@@ -294,12 +294,12 @@ const products = [
   {
     title: "kiciahook",
     description: "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
-    price: "$9.99",
+    price: "$9.97",
     image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
     slug: "kiciahook",
     category: "Script Hub",
     plans: [
-      { name: "Lifetime", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }
+      { name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }
     ],
     features: [
       "Instant Key Delivery",

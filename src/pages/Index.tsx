@@ -44,14 +44,6 @@ const products = [
     customUrl: "/product?slug=85fe7352-e372-42d7-a394-1f68f718abb4"
   },
   {
-    title: "Solix Hub",
-    description: "",
-    price: "$1.99",
-    image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
-    slug: "bfe43bcc-a68e-4a17-ab3f-5d060c411a0d",
-    customUrl: "/product?slug=bfe43bcc-a68e-4a17-ab3f-5d060c411a0d"
-  },
-  {
     title: "kiciahook",
     description: "",
     price: "$9.97",

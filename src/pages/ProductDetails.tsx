@@ -491,7 +491,7 @@ const ProductDetails = () => {
                           src={method.icon}
                           alt={method.name}
                           className={
-                            `${method.name === "Robux" ? "h-5" : "h-4"} w-auto opacity-80 brightness-0 invert`
+                            `${method.name === "Robux" ? "h-5" : "h-4"} w-auto opacity-80 ${method.name === "Robux" ? "" : "brightness-0 invert"}`
                           }
                           loading="lazy"
                           decoding="async"

@@ -13,7 +13,7 @@ import googlePayIcon from "@/assets/pay-googlepay.svg";
 import paypalIcon from "@/assets/pay-paypal.svg";
 import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
-import robuxIcon from "@/assets/pay-robux.png";
+import robuxIcon from "@/assets/pay-robux.svg";
 
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
@@ -480,6 +480,7 @@ const ProductDetails = () => {
                       { name: "PayPal", icon: paypalIcon },
                       { name: "Bitcoin", icon: bitcoinIcon },
                       { name: "Cash App", icon: cashAppIcon },
+                      { name: "Robux", icon: robuxIcon },
                     ].map((method) => (
                       <div
                         key={method.name}

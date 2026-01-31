@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+import StarryBackground from "@/components/StarryBackground";
 import visaIcon from "@/assets/pay-visa.svg";
 import mastercardIcon from "@/assets/pay-mastercard.svg";
 import applePayIcon from "@/assets/pay-applepay.svg";
@@ -394,7 +395,8 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background relative">
+        <StarryBackground />
         <Navbar />
         <div className="pt-28 px-4 text-center">
           <h1 className="text-2xl font-bold">Product not found</h1>
@@ -407,7 +409,8 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <StarryBackground />
       <Navbar />
       
       <div className="pt-20 pb-16 px-4">

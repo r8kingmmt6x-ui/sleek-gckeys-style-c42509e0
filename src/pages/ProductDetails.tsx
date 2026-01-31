@@ -435,7 +435,7 @@ const ProductDetails = () => {
             </div>
 
             <div>
-              <div className="bg-card border border-border rounded-2xl p-6 mb-6">
+              <div className="relative z-10 bg-card border border-border rounded-2xl p-6 mb-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-3xl font-bold text-primary">{product.price}</div>
                   <Badge variant="secondary">{product.category}</Badge>
@@ -508,7 +508,7 @@ const ProductDetails = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <Card className="bg-card border-border">
+            <Card className="relative z-10 bg-card border-border">
               <CardHeader>
                 <CardTitle>Features</CardTitle>
               </CardHeader>
@@ -524,7 +524,7 @@ const ProductDetails = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-border">
+            <Card className="relative z-10 bg-card border-border">
               <CardHeader>
                 <CardTitle>Requirements</CardTitle>
               </CardHeader>
@@ -543,7 +543,7 @@ const ProductDetails = () => {
 
           {(product as any).usage && (
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <Card className="bg-card border-border">
+              <Card className="relative z-10 bg-card border-border">
                 <CardHeader>
                   <CardTitle>Usage</CardTitle>
                 </CardHeader>
@@ -560,7 +560,7 @@ const ProductDetails = () => {
               </Card>
 
               {(product as any).info && (
-                <Card className="bg-card border-border">
+                <Card className="relative z-10 bg-card border-border">
                   <CardHeader>
                     <CardTitle>Info</CardTitle>
                   </CardHeader>

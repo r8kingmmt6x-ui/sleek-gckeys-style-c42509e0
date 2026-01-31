@@ -37,6 +37,7 @@ const StarryBackground = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Stars */}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -52,6 +53,32 @@ const StarryBackground = () => {
           }}
         />
       ))}
+      
+      {/* Gradient overlays for depth */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 50% 0%, hsl(220 88% 50% / 0.08) 0%, transparent 50%)",
+        }}
+      />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 80% 20%, hsl(260 70% 50% / 0.05) 0%, transparent 40%)",
+        }}
+      />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 20% 80%, hsl(200 80% 50% / 0.04) 0%, transparent 40%)",
+        }}
+      />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom, transparent 0%, hsl(0 0% 0% / 0.3) 100%)",
+        }}
+      />
     </div>
   );
 };

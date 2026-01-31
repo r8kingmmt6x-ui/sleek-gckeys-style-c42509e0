@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import StarryBackground from "@/components/StarryBackground";
 
 const products = [
   {
@@ -62,7 +63,8 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <StarryBackground />
       <Navbar />
       <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       

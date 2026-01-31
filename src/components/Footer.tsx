@@ -6,7 +6,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="relative z-10 bg-background border-t border-border">
       <div className="w-full px-4 py-6">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Logo */}

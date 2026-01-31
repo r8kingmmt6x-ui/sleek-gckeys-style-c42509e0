@@ -15,7 +15,7 @@ const ProductCard = ({ title, price, image, slug, showStartingAt = false, custom
   const href = customUrl || `/products/${slug}`;
   
   return (
-    <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
+    <Card className="relative z-10 bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden group">
       <a href={href}>
         <div className="relative h-48 overflow-hidden bg-secondary/50">
           <img 

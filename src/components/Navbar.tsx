@@ -21,9 +21,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-14">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 mr-10">
+          <Link to="/" className="flex items-center gap-2">
             <img 
               src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
               alt="GC Keys Logo" 
@@ -32,8 +32,8 @@ const Navbar = () => {
             <span className="text-lg font-semibold text-foreground">GC Keys</span>
           </Link>
 
-          {/* Navigation - after logo */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Center Navigation */}
+          <div className="hidden md:flex items-center gap-8">
             <a href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Home className="w-4 h-4" />
               <span>Home</span>
@@ -52,19 +52,19 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Stats - pushed to right */}
-          <div className="hidden sm:flex items-center gap-5 ml-auto text-sm">
-            <div className="flex items-center gap-1.5">
+          {/* Stats */}
+          <div className="hidden sm:flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
               <Star className="w-4 h-4 text-muted-foreground" />
               <span className="font-medium text-foreground">4.98</span>
               <span className="text-xs text-muted-foreground tracking-wide">RATING</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <ShoppingCart className="w-4 h-4 text-muted-foreground" />
               <span className="font-medium text-foreground">8K+</span>
               <span className="text-xs text-muted-foreground tracking-wide">SALES</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-muted-foreground" />
               <span className="font-medium text-foreground">6K+</span>
               <span className="text-xs text-muted-foreground tracking-wide">CUSTOMERS</span>

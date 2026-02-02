@@ -1,4 +1,4 @@
-import { Home, Package, HelpCircle, FileText, Star, ShoppingCart, Users } from "lucide-react";
+import { Home, Globe, FileText, HelpCircle, Star, ShoppingCart, Users } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,10 +9,8 @@ const Navbar = () => {
     e.preventDefault();
     
     if (location.pathname === "/") {
-      // Already on homepage, smooth scroll
       document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate to homepage first, then scroll
       navigate("/");
       setTimeout(() => {
         document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
@@ -21,58 +19,55 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
               src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
               alt="GC Keys Logo" 
               className="w-7 h-7 rounded-md object-cover"
             />
-            <span className="text-lg font-bold">GC Keys</span>
+            <span className="text-lg font-semibold text-foreground">GC Keys</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-            <a href="/" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+          {/* Center Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Home className="w-4 h-4" />
               <span>Home</span>
             </a>
-            <a href="https://gckeys.cc/#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Package className="w-4 h-4" />
+            <a href="https://gckeys.cc/#products" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Globe className="w-4 h-4" />
               <span>Products</span>
             </a>
-            <a href="https://gckeys.cc/terms" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://gckeys.cc/terms" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <FileText className="w-4 h-4" />
-              <span>Terms of Service</span>
+              <span>Terms</span>
             </a>
-            <a href="https://discord.com/invite/aCwcJukUf6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://discord.com/invite/aCwcJukUf6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <HelpCircle className="w-4 h-4" />
               <span>Support</span>
             </a>
           </div>
 
-          <div className="flex items-center gap-6 text-sm">
+          {/* Stats */}
+          <div className="hidden sm:flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
-              <Star className="w-4 h-4 text-primary" />
-              <div className="text-center">
-                <div className="font-bold text-foreground">4.98</div>
-                <div className="text-[10px] text-muted-foreground tracking-wide">RATING</div>
-              </div>
+              <Star className="w-4 h-4 text-muted-foreground" />
+              <span className="font-medium text-foreground">4.98</span>
+              <span className="text-xs text-muted-foreground tracking-wide">RATING</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShoppingCart className="w-4 h-4 text-primary" />
-              <div className="text-center">
-                <div className="font-bold text-foreground">8K+</div>
-                <div className="text-[10px] text-muted-foreground tracking-wide">SALES</div>
-              </div>
+              <ShoppingCart className="w-4 h-4 text-muted-foreground" />
+              <span className="font-medium text-foreground">8K+</span>
+              <span className="text-xs text-muted-foreground tracking-wide">SALES</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-primary" />
-              <div className="text-center">
-                <div className="font-bold text-foreground">6K+</div>
-                <div className="text-[10px] text-muted-foreground tracking-wide">CUSTOMERS</div>
-              </div>
+              <Users className="w-4 h-4 text-muted-foreground" />
+              <span className="font-medium text-foreground">6K+</span>
+              <span className="text-xs text-muted-foreground tracking-wide">CUSTOMERS</span>
             </div>
           </div>
         </div>

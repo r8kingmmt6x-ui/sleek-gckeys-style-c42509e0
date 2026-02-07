@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
+import yabujinImage from "@/assets/yabujin.webp";
 
 const products = [
   {
@@ -52,6 +53,14 @@ const products = [
     image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
     slug: "kiciahook",
     customUrl: "/product?slug=kiciahook"
+  },
+  {
+    title: "Yabujin",
+    description: "",
+    price: "$4.99",
+    image: yabujinImage,
+    slug: "yabujin",
+    customUrl: "/product?slug=yabujin"
   }
 ];
 

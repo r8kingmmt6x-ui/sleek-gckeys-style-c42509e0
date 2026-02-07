@@ -57,7 +57,7 @@ const products = [
   {
     title: "Yabujin",
     description: "",
-    price: "$4.99",
+    price: "$6.99",
     image: yabujinImage,
     slug: "yabujin",
     customUrl: "/product?slug=yabujin"
@@ -85,7 +85,7 @@ const Index = () => {
             <ProductCard 
               key={index} 
               {...product} 
-              showStartingAt={product.title.toLowerCase() !== "kiciahook"}
+              showStartingAt={!["kiciahook", "yabujin"].includes(product.title.toLowerCase())}
               customUrl={product.customUrl || (product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined)}
             />
             ))}

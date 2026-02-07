@@ -15,7 +15,7 @@ import paypalIcon from "@/assets/pay-paypal.svg";
 import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
 import robuxIcon from "@/assets/pay-robux.png";
-
+import yabujinImage from "@/assets/yabujin.webp";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -320,6 +320,37 @@ const products = [
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "kiciahook showcase: https://youtu.be/77UvIazGt6Y",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
+    ]
+  },
+  {
+    title: "Yabujin",
+    description: "Yabujin is a high-quality skinchanger designed specifically for Roblox Rivals. It provides a smooth user experience with features no other skinchangers have. Yabujin focuses on consistent updates to ensure maximum compatibility with the latest game versions.",
+    price: "$6.99",
+    image: yabujinImage,
+    slug: "yabujin",
+    category: "Skinchanger",
+    plans: [
+      { name: "Lifetime", price: "$6.99", purchaseUrl: "https://gckeys.cc/products/yabujin" }
+    ],
+    features: [
+      "Simple Interface",
+      "Stable Performance",
+      "Active Community and Support",
+      "Easy Setup"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Soon."
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/yabu",
+      "Troubleshooting: https://discord.gg/yabu",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active"

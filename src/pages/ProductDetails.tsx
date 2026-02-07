@@ -333,7 +333,7 @@ const products = [
     slug: "yabujin",
     category: "Skinchanger",
     plans: [
-      { name: "Lifetime", price: "$6.99", purchaseUrl: "https://gckeys.cc/products/yabujin" }
+      { name: "Lifetime", price: "$6.99", purchaseUrl: "https://stealthpay.io/grand/yabuji" }
     ],
     features: [
       "Simple Interface",

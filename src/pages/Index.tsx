@@ -5,7 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
-import yabujinImage from "@/assets/yabujin.webp";
+import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 
 const products = [

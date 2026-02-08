@@ -16,6 +16,7 @@ import bitcoinIcon from "@/assets/pay-bitcoin.svg";
 import cashAppIcon from "@/assets/pay-cashapp.svg";
 import robuxIcon from "@/assets/pay-robux.png";
 import yabujinImage from "@/assets/yabujin.webp";
+import kiciahookImage from "@/assets/kiciahook.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -296,7 +297,7 @@ const products = [
     title: "kiciahook",
     description: "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.97",
-    image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
+    image: kiciahookImage,
     slug: "kiciahook",
     category: "Script Hub",
     plans: [

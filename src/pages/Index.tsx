@@ -6,6 +6,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
 import yabujinImage from "@/assets/yabujin.webp";
+import kiciahookImage from "@/assets/kiciahook.png";
 
 const products = [
   {
@@ -50,7 +51,7 @@ const products = [
     title: "kiciahook",
     description: "",
     price: "$9.97",
-    image: "https://user-generated-content.komerza.com/b5ddb332-f16b-4851-80bf-3f085012a9ec.png",
+    image: kiciahookImage,
     slug: "kiciahook",
     customUrl: "/product?slug=kiciahook"
   },

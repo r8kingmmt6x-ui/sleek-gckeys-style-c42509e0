@@ -10,7 +10,7 @@ const Hero = ({ searchTerm, onSearchChange }: HeroProps) => {
   return (
     <section className="pt-28 pb-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl font-bold mb-3 tracking-tight">GC Keys</h1>
+        <h1 className="text-5xl font-bold mb-3 tracking-tight">wYr-XI0-Svk-</h1>
         <p className="text-lg text-muted-foreground mb-8">
           Your trusted source for game utilities, software, and digital keys.
         </p>

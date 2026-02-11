@@ -382,7 +382,9 @@ const products = [
       "Minimum requirements for Roblox"
     ],
     usage: [
-      "Coming soon."
+      "Join the official Archon Discord server at https://discord.gg/archonpf",
+      "In the #🔑╽redeem-key channel, redeem your purchased key in the panel.",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance!"
     ],
     info: [
       "Support available on Discord: https://discord.gg/archonpf",

@@ -371,7 +371,11 @@ const products = [
     ],
     features: [
       "Instant Key Delivery",
-      "Premium Support"
+      "Ragebot",
+      "ESP",
+      "Anti-Aim",
+      "Unlock All",
+      "Third Person Visuals"
     ],
     requirements: [
       "Windows 10/11",
@@ -381,9 +385,10 @@ const products = [
       "Coming soon."
     ],
     info: [
-      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Support available on Discord: https://discord.gg/archonpf",
       "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed"
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

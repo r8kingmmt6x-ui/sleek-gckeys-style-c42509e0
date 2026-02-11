@@ -40,6 +40,14 @@ const products = [
     customUrl: "/product?slug=0efbc78f-045f-4f48-9113-78fcba6ac5ed"
   },
   {
+    title: "RbxCli",
+    description: "",
+    price: "$3.99",
+    image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
+    slug: "85fe7352-e372-42d7-a394-1f68f718abb4",
+    customUrl: "/product?slug=85fe7352-e372-42d7-a394-1f68f718abb4"
+  },
+  {
     title: "kiciahook",
     description: "",
     price: "$9.97",

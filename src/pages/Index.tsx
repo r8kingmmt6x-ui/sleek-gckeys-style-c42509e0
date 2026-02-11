@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
+import archonImage from "@/assets/archon.png";
 
 const products = [
   {
@@ -67,7 +68,7 @@ const products = [
     title: "Archon",
     description: "",
     price: "$4.99",
-    image: "https://placehold.co/400x300/1a1a2e/e94560?text=Archon",
+    image: archonImage,
     slug: "archon",
     customUrl: "/product?slug=archon"
   }

@@ -360,7 +360,7 @@ const products = [
   },
   {
     title: "Archon",
-    description: "Archon is a powerful tool designed for top-tier performance and reliability.",
+    description: "With Archon, you get on-demand access to a premium Phantom Forces script — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with Archon!",
     price: "$3.97 - $9.97",
     image: archonImage,
     slug: "archon",

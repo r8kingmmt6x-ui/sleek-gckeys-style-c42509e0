@@ -366,8 +366,8 @@ const products = [
     slug: "archon",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$3.97", purchaseUrl: "" },
-      { name: "Lifetime", price: "$9.97", purchaseUrl: "" }
+      { name: "Weekly", price: "$3.97", purchaseUrl: "https://stealthpay.io/grand/archon-weekly" },
+      { name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/archon-lifetime" }
     ],
     features: [
       "Instant Key Delivery",

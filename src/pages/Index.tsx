@@ -67,7 +67,7 @@ const products = [
   {
     title: "Archon",
     description: "",
-    price: "$4.99",
+    price: "$3.97",
     image: archonImage,
     slug: "archon",
     customUrl: "/product?slug=archon"

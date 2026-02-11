@@ -361,12 +361,13 @@ const products = [
   {
     title: "Archon",
     description: "Archon is a powerful tool designed for top-tier performance and reliability.",
-    price: "$4.99",
+    price: "$3.97 - $9.97",
     image: archonImage,
     slug: "archon",
     category: "Executor",
     plans: [
-      { name: "Monthly", price: "$4.99", purchaseUrl: "" }
+      { name: "Weekly", price: "$3.97", purchaseUrl: "" },
+      { name: "Lifetime", price: "$9.97", purchaseUrl: "" }
     ],
     features: [
       "Instant Key Delivery",

@@ -358,6 +358,33 @@ const products = [
     ]
   },
   {
+    title: "Archon",
+    description: "Archon is a powerful tool designed for top-tier performance and reliability.",
+    price: "$4.99",
+    image: "https://placehold.co/400x300/1a1a2e/e94560?text=Archon",
+    slug: "archon",
+    category: "Executor",
+    plans: [
+      { name: "Monthly", price: "$4.99", purchaseUrl: "" }
+    ],
+    features: [
+      "Instant Key Delivery",
+      "Premium Support"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Coming soon."
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed"
+    ]
+  },
+  {
     title: "ChocoSploit",
     description: "ChocoSploit is the first executor to use kernel component for it's needs, because of that, it is rarely affected by Hyperion updates which prevent DLL injection which executors need.",
     price: "$4.99 - $24.99",

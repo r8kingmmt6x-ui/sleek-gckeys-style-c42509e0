@@ -62,6 +62,14 @@ const products = [
     image: yabujinImage,
     slug: "yabujin",
     customUrl: "https://gckeys.cc/products/yabujin"
+  },
+  {
+    title: "Archon",
+    description: "",
+    price: "$4.99",
+    image: "https://placehold.co/400x300/1a1a2e/e94560?text=Archon",
+    slug: "archon",
+    customUrl: "/product?slug=archon"
   }
 ];
 

@@ -17,6 +17,7 @@ import cashAppIcon from "@/assets/pay-cashapp.svg";
 import robuxIcon from "@/assets/pay-robux.png";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
+import archonImage from "@/assets/archon.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -361,7 +362,7 @@ const products = [
     title: "Archon",
     description: "Archon is a powerful tool designed for top-tier performance and reliability.",
     price: "$4.99",
-    image: "https://placehold.co/400x300/1a1a2e/e94560?text=Archon",
+    image: archonImage,
     slug: "archon",
     category: "Executor",
     plans: [

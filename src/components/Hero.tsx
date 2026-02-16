@@ -10,7 +10,14 @@ const Hero = ({ searchTerm, onSearchChange }: HeroProps) => {
   return (
     <section className="pt-28 pb-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl font-bold mb-3 tracking-tight">GC Keys</h1>
+        <h1 className="text-5xl font-bold mb-3 tracking-tight flex items-center justify-center gap-3">
+          <img 
+            src="https://cdn.imgchest.com/files/331434c35d9f.webp" 
+            alt="GC Keys Logo" 
+            className="w-12 h-12 rounded-lg object-cover"
+          />
+          GC Keys
+        </h1>
         <p className="text-lg text-muted-foreground mb-8">
           Your trusted source for game utilities, software, and digital keys.
         </p>

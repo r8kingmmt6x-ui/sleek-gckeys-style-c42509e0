@@ -82,7 +82,7 @@ const Index = () => {
       <Hero />
 
       <section className="pb-24 px-4 scroll-mt-20" id="products">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               All Products
@@ -92,7 +92,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, index) => (
               <ProductCard
                 key={index}

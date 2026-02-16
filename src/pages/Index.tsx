@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
@@ -15,7 +14,8 @@ const products = [
     description: "",
     price: "$5.97",
     image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
-    slug: "volcano-executor"
+    slug: "volcano-executor",
+    customUrl: `/product?slug=volcano-executor`
   },
   {
     title: "Cryptic Windows",
@@ -75,36 +75,36 @@ const products = [
 ];
 
 const Index = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <div className="min-h-screen bg-background relative">
       <StarryBackground />
       <Navbar />
-      <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      
-      <section className="pb-20 px-4 scroll-mt-20" id="products">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredProducts.map((product, index) => (
-            <ProductCard 
-              key={index} 
-              {...product} 
-              showStartingAt={!["kiciahook", "yabujin"].includes(product.title.toLowerCase())}
-              customUrl={product.customUrl || (product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined)}
-            />
+      <Hero />
+
+      <section className="pb-24 px-4 scroll-mt-20" id="products">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              All Products
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              Explore our curated collection of premium software and digital keys
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product, index) => (
+              <ProductCard
+                key={index}
+                {...product}
+                showStartingAt={!["kiciahook", "yabujin"].includes(product.title.toLowerCase())}
+              />
             ))}
           </div>
         </div>
       </section>
-      
+
       <WhyChooseUs />
-      
       <Footer />
     </div>
   );

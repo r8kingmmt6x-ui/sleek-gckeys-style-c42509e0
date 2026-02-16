@@ -1,30 +1,37 @@
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-interface HeroProps {
-  searchTerm: string;
-  onSearchChange: (value: string) => void;
-}
+const Hero = () => {
+  const scrollToProducts = () => {
+    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+  };
 
-const Hero = ({ searchTerm, onSearchChange }: HeroProps) => {
   return (
-    <section className="pt-28 pb-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl font-bold mb-3 tracking-tight">GC Keys</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Your trusted source for game utilities, software, and digital keys.
-        </p>
-        
-        <div className="relative max-w-xl mx-auto">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input
-            type="text"
-            placeholder="Search for products..."
-            value={searchTerm}
-            onChange={(e) => onSearchChange(e.target.value)}
-            className="pl-11 h-12 bg-input border-border text-sm rounded-lg"
+    <section className="pt-32 pb-24 px-4 flex items-center justify-center min-h-[70vh]">
+      <div className="max-w-3xl mx-auto text-center">
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <img
+            src="https://cdn.imgchest.com/files/331434c35d9f.webp"
+            alt="GC Keys Logo"
+            className="w-16 h-16 rounded-xl object-cover"
           />
+          <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-foreground">
+            GC Keys
+          </h1>
         </div>
+        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
+          Your trusted source for game utilities, software, and digital keys.
+          Quality products with instant delivery.
+        </p>
+        <Button
+          onClick={scrollToProducts}
+          variant="outline"
+          size="lg"
+          className="rounded-full px-8 py-6 text-base border-border bg-card hover:bg-secondary text-foreground gap-2"
+        >
+          Browse Products
+          <ArrowRight className="w-4 h-4" />
+        </Button>
       </div>
     </section>
   );

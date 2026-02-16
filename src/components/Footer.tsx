@@ -6,8 +6,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative z-10 bg-background border-t border-border">
-      <div className="w-full px-4 py-6">
+    <footer className="relative z-10 mx-4 mb-4">
+      <div className="w-full px-4 py-6 bg-background/80 backdrop-blur-sm border border-border rounded-2xl">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Logo */}
           <a 

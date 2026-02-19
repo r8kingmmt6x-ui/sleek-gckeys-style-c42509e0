@@ -118,14 +118,13 @@ const products = [
   {
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
-    price: "$1.99 - $4.79",
+    price: "$2.49 - $3.99",
     image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
     slug: "rift-now",
     category: "Script Hub",
     plans: [
-      { name: "7 Days", duration: "", price: "$1.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-7-days" },
-      { name: "14 Days", duration: "", price: "$3.19", purchaseUrl: "https://stealthpay.io/grand/rift-now-14-days" },
-      { name: "30 Days", duration: "", price: "$4.79", purchaseUrl: "https://stealthpay.io/grand/rift-now-30-days" }
+      { name: "7 Days", duration: "", price: "$2.49", purchaseUrl: "https://stealthpay.io/grand/rift-now-7-days" },
+      { name: "14 Days", duration: "", price: "$3.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-14-days" }
     ],
     features: [
       "Instant Key Delivery",

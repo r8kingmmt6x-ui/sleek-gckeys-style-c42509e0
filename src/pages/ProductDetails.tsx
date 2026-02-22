@@ -361,7 +361,7 @@ const products = [
   },
   {
     title: "Isaeva",
-    description: "Isaeva delivers premium performance with flexible plans to fit your needs.",
+    description: "Experience the most reliable and secure solution for your needs, with flexible licensing options and dedicated support.",
     price: "$5.49 - $44.99",
     image: isaevaImage,
     slug: "isaeva",
@@ -381,10 +381,17 @@ const products = [
       "Windows 10/11",
       "Minimum requirements for Roblox"
     ],
+    usage: [
+      "Register an account and redeem your purchased key at https://getisaeva.xyz/",
+      "Download the loader",
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+    ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Troubleshooting: https://discord.gg/MMRpnuSb2g",
       "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed"
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

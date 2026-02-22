@@ -9,9 +9,10 @@ interface ProductCardProps {
   slug: string;
   showStartingAt?: boolean;
   customUrl?: string;
+  imageContain?: boolean;
 }
 
-const ProductCard = ({ title, price, image, slug, showStartingAt = false, customUrl }: ProductCardProps) => {
+const ProductCard = ({ title, price, image, slug, showStartingAt = false, customUrl, imageContain = false }: ProductCardProps) => {
   const href = customUrl || `/products/${slug}`;
   
   return (
@@ -21,7 +22,7 @@ const ProductCard = ({ title, price, image, slug, showStartingAt = false, custom
           <img 
             src={image} 
             alt={title}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+            className={`w-full h-full ${imageContain ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
           />
         </div>
         

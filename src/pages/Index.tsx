@@ -8,6 +8,7 @@ import StarryBackground from "@/components/StarryBackground";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 import archonImage from "@/assets/archon.png";
+import isaevaImage from "@/assets/isaeva.png";
 
 const products = [
   {
@@ -63,6 +64,14 @@ const products = [
     image: yabujinImage,
     slug: "yabujin",
     customUrl: "https://gckeys.cc/product?slug=yabujin"
+  },
+  {
+    title: "Isaeva",
+    description: "",
+    price: "$5.49",
+    image: isaevaImage,
+    slug: "isaeva",
+    customUrl: "/product?slug=isaeva"
   },
   {
     title: "Archon",

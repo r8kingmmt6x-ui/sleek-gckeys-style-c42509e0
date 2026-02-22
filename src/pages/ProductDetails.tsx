@@ -18,6 +18,7 @@ import robuxIcon from "@/assets/pay-robux.png";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 import archonImage from "@/assets/archon.png";
+import isaevaImage from "@/assets/isaeva.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -356,6 +357,34 @@ const products = [
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active"
+    ]
+  },
+  {
+    title: "Isaeva",
+    description: "Isaeva delivers premium performance with flexible plans to fit your needs.",
+    price: "$5.49 - $44.99",
+    image: isaevaImage,
+    slug: "isaeva",
+    category: "Executor",
+    plans: [
+      { name: "Weekly", price: "$5.49", purchaseUrl: "https://stealthpay.io/grand/isaeva-weekly" },
+      { name: "Monthly", price: "$17.99", purchaseUrl: "https://stealthpay.io/grand/isaeva-monthly" },
+      { name: "Quarterly", price: "$44.99", purchaseUrl: "https://stealthpay.io/grand/isaeva-quarterly" }
+    ],
+    features: [
+      "Instant Key Delivery",
+      "Premium Support",
+      "No Annoying Pop-ups",
+      "No Checkpoints or Ads"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed"
     ]
   },
   {

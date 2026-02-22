@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ProductDetails from "./pages/ProductDetails";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import RefRedirect from "./pages/RefRedirect";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/ref/:refCode" element={<RefRedirect />} />
           <Route path="/products/:slug" element={<ProductDetails />} />
           <Route path="/product" element={<ProductDetails />} />
           <Route path="/terms" element={<Terms />} />

@@ -86,6 +86,7 @@ const products = [
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const ref = sessionStorage.getItem("ref");
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -101,14 +102,22 @@ const Index = () => {
       <section className="pb-20 px-4 scroll-mt-20" id="products">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredProducts.map((product, index) => (
-            <ProductCard 
-              key={index} 
-              {...product} 
-              showStartingAt={!["kiciahook", "yabujin"].includes(product.title.toLowerCase())}
-              customUrl={product.customUrl || (product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : undefined)}
-            />
-            ))}
+            {filteredProducts.map((product, index) => {
+              const baseUrl = product.customUrl || (product.title === "Volcano Executor" ? `/product?slug=${product.slug}` : `/products/${product.slug}`);
+              let productUrl = baseUrl;
+              if (ref) {
+                const separator = productUrl.includes('?') ? '&' : '?';
+                productUrl = `${productUrl}${separator}ref=${encodeURIComponent(ref)}`;
+              }
+              return (
+                <ProductCard 
+                  key={index} 
+                  {...product} 
+                  showStartingAt={!["kiciahook", "yabujin"].includes(product.title.toLowerCase())}
+                  customUrl={productUrl}
+                />
+              );
+            })}
           </div>
         </div>
       </section>

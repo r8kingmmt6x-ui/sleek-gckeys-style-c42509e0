@@ -468,7 +468,7 @@ const ProductDetails = () => {
   const { slug: paramSlug } = useParams();
   const [searchParams] = useSearchParams();
   const querySlug = searchParams.get('slug');
-  const ref = searchParams.get('ref');
+  const ref = searchParams.get('ref') || sessionStorage.getItem('ref');
   const slug = paramSlug || querySlug;
   const product = products.find(p => p.slug === slug);
   const [selectedPlan, setSelectedPlan] = useState<{
@@ -476,6 +476,11 @@ const ProductDetails = () => {
     price: string;
     purchaseUrl?: string;
   } | null>(null);
+
+  // Store ref in sessionStorage if present in URL
+  if (searchParams.get('ref')) {
+    sessionStorage.setItem('ref', searchParams.get('ref')!);
+  }
 
   const handlePlanSelect = (plan: any) => {
     setSelectedPlan({
@@ -489,7 +494,8 @@ const ProductDetails = () => {
     if (!selectedPlan?.purchaseUrl) return;
     let url = selectedPlan.purchaseUrl;
     if (ref) {
-      url += `?r=${encodeURIComponent(ref)}`;
+      const separator = url.includes('?') ? '&' : '?';
+      url += `${separator}ref=${encodeURIComponent(ref)}`;
     }
     window.open(url, '_blank');
   };

@@ -71,8 +71,7 @@ const products = [
     price: "$5.49",
     image: isaevaImage,
     slug: "isaeva",
-    customUrl: "/product?slug=isaeva",
-    imageContain: true
+    customUrl: "/product?slug=isaeva"
   },
   {
     title: "Archon",

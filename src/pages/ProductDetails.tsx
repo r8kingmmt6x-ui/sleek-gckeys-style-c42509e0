@@ -361,7 +361,7 @@ const products = [
   },
   {
     title: "Isaeva",
-    description: "Experience the most reliable and secure solution for your needs, with flexible licensing options and dedicated support.",
+    description: "Count on Isaeva for uncompromising precision and next-level performance. Our cutting-edge system is engineered for flawless reliability, delivering seamless execution, unwavering stability, and total confidence in every operation. With Isaeva, excellence isn't optional — it's the standard.",
     price: "$5.49 - $44.99",
     image: isaevaImage,
     slug: "isaeva",

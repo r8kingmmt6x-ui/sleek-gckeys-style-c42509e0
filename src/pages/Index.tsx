@@ -67,20 +67,20 @@ const products = [
     customUrl: "/product?slug=isaeva"
   },
   {
-    title: "injware",
-    description: "",
-    price: "$5.99",
-    image: injwareImage,
-    slug: "injware",
-    customUrl: "https://gckeys.cc/product?slug=injware"
-  },
-  {
     title: "Yabujin",
     description: "",
     price: "$6.99",
     image: yabujinImage,
     slug: "yabujin",
     customUrl: "https://gckeys.cc/product?slug=yabujin"
+  },
+  {
+    title: "injware",
+    description: "",
+    price: "$5.99",
+    image: injwareImage,
+    slug: "injware",
+    customUrl: "https://gckeys.cc/product?slug=injware"
   },
 ];
 

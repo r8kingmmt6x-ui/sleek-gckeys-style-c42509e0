@@ -17,7 +17,7 @@ import cashAppIcon from "@/assets/pay-cashapp.svg";
 import robuxIcon from "@/assets/pay-robux.png";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
-import archonImage from "@/assets/archon.png";
+
 import isaevaImage from "@/assets/isaeva.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
@@ -389,41 +389,6 @@ const products = [
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Troubleshooting: https://discord.gg/MMRpnuSb2g",
-      "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
-  },
-  {
-    title: "Archon",
-    description: "With Archon, you get on-demand access to a premium Phantom Forces script — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with Archon!",
-    price: "$3.97 - $9.97",
-    image: archonImage,
-    slug: "archon",
-    category: "Executor",
-    plans: [
-      { name: "Weekly", price: "$3.97", purchaseUrl: "https://stealthpay.io/grand/archon-weekly" },
-      { name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/archon-lifetime" }
-    ],
-    features: [
-      "Instant Key Delivery",
-      "Ragebot",
-      "ESP",
-      "Anti-Aim",
-      "Unlock All",
-      "Third Person Visuals"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
-    usage: [
-      "Join the official Archon Discord server at https://discord.gg/archonpf",
-      "In the #🔑╽redeem-key channel, redeem your purchased key in the panel.",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance!"
-    ],
-    info: [
-      "Support available on Discord: https://discord.gg/archonpf",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active"

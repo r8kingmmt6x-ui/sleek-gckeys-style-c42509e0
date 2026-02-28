@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import StarryBackground from "@/components/StarryBackground";
 import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
-import archonImage from "@/assets/archon.png";
+
 import isaevaImage from "@/assets/isaeva.png";
 
 const products = [
@@ -73,14 +73,6 @@ const products = [
     slug: "isaeva",
     customUrl: "/product?slug=isaeva"
   },
-  {
-    title: "Archon",
-    description: "",
-    price: "$3.97",
-    image: archonImage,
-    slug: "archon",
-    customUrl: "/product?slug=archon"
-  }
 ];
 
 const Index = () => {

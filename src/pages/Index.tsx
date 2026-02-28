@@ -9,6 +9,7 @@ import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
+import injwareImage from "@/assets/injware.png";
 
 const products = [
   {
@@ -64,6 +65,14 @@ const products = [
     image: isaevaImage,
     slug: "isaeva",
     customUrl: "/product?slug=isaeva"
+  },
+  {
+    title: "injware",
+    description: "",
+    price: "$5.99",
+    image: injwareImage,
+    slug: "injware",
+    customUrl: "https://gckeys.cc/product?slug=injware"
   },
   {
     title: "Yabujin",

@@ -19,6 +19,7 @@ import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
+import injwareImage from "@/assets/injware.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -392,6 +393,36 @@ const products = [
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active"
+    ]
+  },
+  {
+    title: "injware",
+    description: "",
+    price: "$5.99",
+    image: injwareImage,
+    slug: "injware",
+    category: "Executor",
+    plans: [
+      { name: "Lifetime", price: "$5.99", purchaseUrl: "https://stealthpay.io/grand/injware-lifetime" }
+    ],
+    features: [
+      "Instant Key Delivery",
+      "Premium Support",
+      "No Annoying Pop-ups",
+      "No Checkpoints or Ads"
+    ],
+    requirements: [
+      "Windows 10/11",
+      "Minimum requirements for Roblox"
+    ],
+    usage: [
+      "Redeem your purchased key.",
+      "Launch Roblox, execute your scripts, and enjoy!"
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed"
     ]
   },
   {

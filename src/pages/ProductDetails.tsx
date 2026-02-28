@@ -417,10 +417,10 @@ const products = [
     ],
     usage: [
       "Go to https://discord.gg/injware",
-      "Use /redeem command and paste your License Key",
-      "Go to the download channel and download Injware",
-      "Select the register option and create your account",
-      "Load your fast flags, inject, and have fun!"
+      "Use /redeem command and paste your purchased license key",
+      "Go to download channel and download Injware",
+      "Select register option and create your account",
+      "Load ur fast flags, inject and have fun!"
     ],
     info: [
       "Support available on Discord: https://discord.gg/injware",

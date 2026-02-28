@@ -58,20 +58,20 @@ const products = [
     customUrl: "/product?slug=kiciahook"
   },
   {
-    title: "Yabujin",
-    description: "",
-    price: "$6.99",
-    image: yabujinImage,
-    slug: "yabujin",
-    customUrl: "https://gckeys.cc/product?slug=yabujin"
-  },
-  {
     title: "Isaeva",
     description: "Count on Isaeva for uncompromising precision and next-level performance. Our cutting-edge system is engineered for flawless reliability, delivering seamless execution, unwavering stability, and total confidence in every operation. With Isaeva, excellence isn't optional — it's the standard.",
     price: "$4.97",
     image: isaevaImage,
     slug: "isaeva",
     customUrl: "/product?slug=isaeva"
+  },
+  {
+    title: "Yabujin",
+    description: "",
+    price: "$6.99",
+    image: yabujinImage,
+    slug: "yabujin",
+    customUrl: "https://gckeys.cc/product?slug=yabujin"
   },
 ];
 

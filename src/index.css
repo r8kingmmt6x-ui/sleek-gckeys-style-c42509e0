@@ -87,15 +87,15 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
 
-  body::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     display: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }

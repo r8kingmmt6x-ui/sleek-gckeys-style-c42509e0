@@ -397,7 +397,7 @@ const products = [
   },
   {
     title: "injware",
-    description: "injware is currently the best fast flag injector on the market, offering outstanding speed, reliability, and performance. It consistently outperforms competitors while remaining the most affordable option available, making it the top choice for quality and value.",
+    description: "Injware is currently the best fast flag injector on the market, offering outstanding speed, reliability, and performance. It consistently outperforms competitors while remaining the most affordable option available, making it the top choice for quality and value.",
     price: "$5.99",
     image: injwareImage,
     slug: "injware",

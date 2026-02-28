@@ -397,32 +397,37 @@ const products = [
   },
   {
     title: "injware",
-    description: "",
+    description: "injware is currently the best fast flag injector on the market, offering outstanding speed, reliability, and performance. It consistently outperforms competitors while remaining the most affordable option available, making it the top choice for quality and value.",
     price: "$5.99",
     image: injwareImage,
     slug: "injware",
-    category: "Executor",
+    category: "Fast Flag",
     plans: [
       { name: "Lifetime", price: "$5.99", purchaseUrl: "https://stealthpay.io/grand/injware-lifetime" }
     ],
     features: [
-      "Instant Key Delivery",
-      "Premium Support",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads"
+      "Debug Logs",
+      "Advanced Flag Editor",
+      "Editable Cursor",
+      "Performance Mode Selector"
     ],
     requirements: [
       "Windows 10/11",
       "Minimum requirements for Roblox"
     ],
     usage: [
-      "Redeem your purchased key.",
-      "Launch Roblox, execute your scripts, and enjoy!"
+      "Go to https://discord.gg/injware",
+      "Use /redeem command and paste your License Key",
+      "Go to the download channel and download Injware",
+      "Select the register option and create your account",
+      "Load your fast flags, inject, and have fun!"
     ],
     info: [
-      "Support available on Discord: https://discord.gg/aCwcJukUf6",
+      "Support available on Discord: https://discord.gg/injware",
+      "Troubleshooting: https://discord.gg/injware",
       "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed"
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active"
     ]
   },
   {

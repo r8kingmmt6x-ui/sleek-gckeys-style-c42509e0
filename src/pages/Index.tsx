@@ -75,7 +75,7 @@ const products = [
     customUrl: "https://gckeys.cc/product?slug=yabujin"
   },
   {
-    title: "injware",
+    title: "Injware",
     description: "",
     price: "$5.99",
     image: injwareImage,

@@ -20,13 +20,6 @@ const products = [
     slug: "volcano-executor"
   },
   {
-    title: "Cryptic Windows",
-    description: "",
-    price: "$4.97",
-    image: "https://user-generated-content.komerza.com/078b73b6-89df-4999-9b9e-c7e7196c2444.png",
-    slug: "cryptic-windows"
-  },
-  {
     title: "Rift NOW",
     description: "",
     price: "$1.99",

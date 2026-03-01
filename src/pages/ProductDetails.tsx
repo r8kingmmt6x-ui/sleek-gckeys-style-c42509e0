@@ -82,42 +82,6 @@ const products = [
     ]
   },
   {
-    title: "Cryptic Windows",
-    description: "Cryptic Windows sets the standard for Windows executors. Built for reliability and precision, it delivers smooth, stable performance you can depend on—every single time.",
-    price: "$4.97 - $39.97",
-    image: "https://user-generated-content.komerza.com/078b73b6-89df-4999-9b9e-c7e7196c2444.png",
-    slug: "cryptic-windows",
-    category: "Executor",
-    plans: [
-      { name: "Weekly", duration: "7-Day Access", price: "$4.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-weekly" },
-      { name: "Monthly", duration: "30-Day Access", price: "$17.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-monthly" },
-      { name: "Quarterly", duration: "90-Day Access", price: "$39.97", purchaseUrl: "https://stealthpay.io/grand/cryptic-windows-quarterly" }
-    ],
-    features: [
-      "Instant Key Delivery",
-      "Ultra-Fast Execution",
-      "Rock-Solid Stability",
-      "100% sUNC",
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
-    usage: [
-      "Join the official Cryptic Discord server at https://discord.gg/Gqr89p9AmA",
-      "In any chat channel, type /redeem and enter your key when prompted.",
-      "After redeeming, type /getdownload in the chat to receive the download.",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance!"
-    ],
-    info: [
-      "Support available on Discord: https://discord.gg/ThaUkwf9ad",
-      "Troubleshooting: https://discord.gg/ThaUkwf9ad",
-      "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
-  },
-  {
     title: "Rift NOW",
     description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
     price: "$1.99 - $4.99",

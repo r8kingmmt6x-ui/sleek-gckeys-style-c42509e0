@@ -546,6 +546,16 @@ const ProductDetails = () => {
                     : "Select a plan"}
                 </Button>
 
+                {product.slug === "volcano-executor" && (
+                  <Button
+                    onClick={() => window.open("https://stealthpay.io/grand/volcano-executor-robux", "_blank")}
+                    className="w-full h-12 text-base mt-3 bg-[hsl(43,60%,65%)] hover:bg-[hsl(43,60%,55%)] text-black font-semibold shadow-none"
+                    size="lg"
+                  >
+                    Robux Payment Method
+                  </Button>
+                )}
+
                 {/* Accepted Payments */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>

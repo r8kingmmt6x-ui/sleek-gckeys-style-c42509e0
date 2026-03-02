@@ -547,13 +547,15 @@ const ProductDetails = () => {
                 </Button>
 
                 {product.slug === "volcano-executor" && (
-                  <Button
+                  <button
                     onClick={() => window.open("https://stealthpay.io/grand/volcano-executor-robux", "_blank")}
-                    className="w-full h-12 text-base mt-3 bg-[hsl(45,80%,55%)] hover:bg-[hsl(45,80%,45%)] text-black font-semibold shadow-none"
-                    size="lg"
+                    className="w-full h-12 text-base mt-3 rounded-full font-semibold"
+                    style={{ backgroundColor: 'hsl(45, 80%, 55%)', color: 'black' }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(45, 80%, 45%)'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(45, 80%, 55%)'}
                   >
                     Robux Payment Method
-                  </Button>
+                  </button>
                 )}
 
                 {/* Accepted Payments */}

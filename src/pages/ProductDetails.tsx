@@ -50,7 +50,7 @@ const products = [
     category: "Executor",
     plans: [
       { name: "Weekly", price: "$5.97", purchaseUrl: "https://aquadratic.com/pay/cmm9nbl3s0003b9m7vfv63qh1" },
-      { name: "Monthly", price: "$19.97", purchaseUrl: "https://aquadratic.com/pay/cmm9nbl3s0003b9m7vfv63qh1" },
+      { name: "Monthly", price: "$19.97", purchaseUrl: "https://aquadratic.com/pay/cmm9ors38000112xh2a6cz0q8" },
     ],
     features: ["Instant Key Delivery", "No Annoying Pop-ups", "No Checkpoints or Ads", "3x HWID Resets Per Day"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],

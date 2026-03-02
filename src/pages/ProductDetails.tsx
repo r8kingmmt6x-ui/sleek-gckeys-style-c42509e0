@@ -24,66 +24,53 @@ import injwareImage from "@/assets/injware.png";
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
   const parts = text.split(urlRegex);
-  
+
   return parts.map((part, index) => {
     if (urlRegex.test(part)) {
       // Reset regex lastIndex
       urlRegex.lastIndex = 0;
       return (
-        <a
-          key={index}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
+        <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
           {part}
         </a>
       );
     }
     return part;
   });
-  };
-
+};
 
 const products = [
   {
     title: "Volcano Executor",
-    description: "Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to \"Volcano\" which is a PAID executor that is extremely high quality for the price. The stability is amongst the best out of all current PAID executors on the market.",
+    description:
+      'Volcano is Electron rebranded. Electron was an executor that was around for many years before Roblox introduced the Hyperion anti cheat/tamper. It eventually rebranded to "Volcano" which is a PAID executor that is extremely high quality for the price. The stability is amongst the best out of all current PAID executors on the market.',
     price: "$5.97 - $19.97",
     image: "https://user-generated-content.komerza.com/05d3e42e-a1fc-4760-b2d2-38fd2ad9af15.png",
     slug: "volcano-executor",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$5.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-weekly" },
-      { name: "Monthly", price: "$19.97", purchaseUrl: "https://stealthpay.io/grand/volcano-executor-monthly-1" }
+      { name: "Weekly", price: "$5.97", purchaseUrl: "https://aquadratic.com/pay/cmm9nbl3s0003b9m7vfv63qh1" },
+      { name: "Monthly", price: "$19.97", purchaseUrl: "https://aquadratic.com/pay/cmm9nbl3s0003b9m7vfv63qh1" },
     ],
-    features: [
-      "Instant Key Delivery",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads",
-      "3x HWID Resets Per Day"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Instant Key Delivery", "No Annoying Pop-ups", "No Checkpoints or Ads", "3x HWID Resets Per Day"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Download Volcano at https://volcano.wtf/",
       "Redeem your purchased key",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance."
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance.",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Video tutorial: https://youtu.be/eVhOIUYMD0E",
       "3x HWID Resets Per Day at https://key.volcano.wtf/reset_hwid",
       "Check spam/junk if delivery email isn't visible",
-      "Digital product — no refunds once key is redeemed"
-    ]
+      "Digital product — no refunds once key is redeemed",
+    ],
   },
   {
     title: "Rift NOW",
-    description: "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
+    description:
+      "With Rift NOW, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with banner ads removed. Rift exclusively supports Grow a Garden, Dead Rails, 99 Nights In The Forest, ink Game and Forsaken.",
     price: "$1.99 - $4.99",
     image: "https://user-generated-content.komerza.com/113fe0d0-9daf-4fee-a015-e13b039553d3.png",
     slug: "rift-now",
@@ -91,55 +78,56 @@ const products = [
     plans: [
       { name: "7 Days", duration: "", price: "$1.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-7-days" },
       { name: "14 Days", duration: "", price: "$2.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-14-days" },
-      { name: "30 Days", duration: "", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-30-days" }
+      { name: "30 Days", duration: "", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-30-days" },
     ],
-    features: [
-      "Instant Key Delivery",
-      "Premium Support",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads",
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Join https://discord.gg/rukhKrpru6",
       "Redeem your key in the #💻・rift-hub channel.",
-      "Launch Roblox, execute your script, and enjoy!"
+      "Launch Roblox, execute your script, and enjoy!",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Documentation: https://docs.rifton.top/",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "Exploitingis.FUN",
-    description: "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
+    description:
+      "Exploitingis.FUN exclusively supports Forsaken, Basketball Legends, 99 Nights in the Forest, Ink Game, Grow a Garden, Build a Plane, Doors and Protect The House From Monsters (discord.gg/exploitingisfun)",
     price: "$7.99 - $14.99",
     image: "https://cdn.imgchest.com/files/9d6fa32a3840.webp",
     slug: "exploiting-is-fun",
     category: "Script Hub",
     plans: [
-      { name: "Monthly", duration: "30-Day Access", price: "$7.99", inStock: false, productId: 456407, variantId: 668978 },
-      { name: "Quarterly", duration: "90-Day Access", price: "$14.99", inStock: false, productId: 456407, variantId: 737141 },
+      {
+        name: "Monthly",
+        duration: "30-Day Access",
+        price: "$7.99",
+        inStock: false,
+        productId: 456407,
+        variantId: 668978,
+      },
+      {
+        name: "Quarterly",
+        duration: "90-Day Access",
+        price: "$14.99",
+        inStock: false,
+        productId: 456407,
+        variantId: 737141,
+      },
     ],
-    features: [
-      "Instant Key Delivery",
-      "Premium Support",
-      "No Checkpoints or Ads",
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ]
+    features: ["Instant Key Delivery", "Premium Support", "No Checkpoints or Ads"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
   },
   {
     title: "Seliware",
-    description: "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
+    description:
+      "Count on Seliware for unrivaled dependability. Our advanced executor offers rock-solid stability, guaranteeing smooth, consistent performance and complete confidence every time.",
     price: "$3.95 - $9.95",
     image: "https://user-generated-content.komerza.com/abc5281a-46f4-4de0-8f45-3ae585c603a4.png",
     slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed",
@@ -148,32 +136,26 @@ const products = [
       { name: "Weekly", price: "$3.95", purchaseUrl: "https://stealthpay.io/grand/seliware-weekly" },
       { name: "Monthly", price: "$9.95", purchaseUrl: "https://stealthpay.io/grand/seliware-monthly" },
     ],
-    features: [
-      "Ultra-Fast Execution",
-      "Rock-Solid Stability",
-      "100% sUNC",
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Redeem your purchased key at https://seliware.com/",
       "Download the loader",
       "Register an account and redeem your purchased key",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Troubleshooting: https://discord.gg/MMRpnuSb2g",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "pretty.rich",
-    description: "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
+    description:
+      "Create beautiful pages that represent you, and you only. Cheaper than the competition, yet more powerful and feature packed.",
     price: "$1.99",
     image: "https://cdn.imgchest.com/files/be8b3e5a8545.webp",
     slug: "pretty-rich",
@@ -186,147 +168,108 @@ const products = [
       "Discord Integration",
       "Customize to your liking",
       "Analytics & Insights",
-      "Access to 30+ domains"
+      "Access to 30+ domains",
     ],
-    requirements: [
-      "Windows 10/11",
-    ]
+    requirements: ["Windows 10/11"],
   },
   {
     title: "Solix Hub",
-    description: "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals.",
+    description:
+      "Skip the hassle of reactivating every 12 hours. We're now offering long-term access keys, no interruptions, no constant renewals.",
     price: "$1.99 - $4.99",
     image: "https://user-generated-content.komerza.com/db3e3171-0950-4b39-bb98-cb71dd9c2308.png",
     slug: "bfe43bcc-a68e-4a17-ab3f-5d060c411a0d",
     category: "Script Hub",
     plans: [
       { name: "Weekly", price: "$1.99", purchaseUrl: "https://stealthpay.io/grand/solix-hub-weekly" },
-      { name: "2 Months", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/solix-hub-2-months" }
+      { name: "2 Months", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/solix-hub-2-months" },
     ],
-    features: [
-      "Instant Key Delivery",
-      "No Checkpoints or Ads",
-      "No More Frequent Reactivations"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Instant Key Delivery", "No Checkpoints or Ads", "No More Frequent Reactivations"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Join the official Solix Hub discord server https://discord.gg/solixhub",
       "Redeem your purchased key in the #get-script channel",
-      "Launch Roblox, execute your script, and enjoy!"
+      "Launch Roblox, execute your script, and enjoy!",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Troubleshooting: https://discord.gg/solixhub",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "RbxCli",
-    description: "RbxCli is a Roblox external tool, originally thought of as a private, invite-only external focused on visuals, extensibility and in-game reverse engineering.",
+    description:
+      "RbxCli is a Roblox external tool, originally thought of as a private, invite-only external focused on visuals, extensibility and in-game reverse engineering.",
     price: "$3.99 - $9.99",
     image: "https://user-generated-content.komerza.com/8308c098-6d69-412c-9697-e7040b155a98.png",
     slug: "85fe7352-e372-42d7-a394-1f68f718abb4",
     category: "External",
     plans: [
       { name: "Weekly", price: "$3.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-weekly" },
-      { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-monthly" }
+      { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-monthly" },
     ],
-    features: [
-      "Box Visuals",
-      "Chameleon",
-      "Dynamic FoV",
-      "Hitbox Extension",
-      "Instant Key Delivery"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Box Visuals", "Chameleon", "Dynamic FoV", "Hitbox Extension", "Instant Key Delivery"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Join the official RbxCli discord server at https://discord.gg/VEFd3asJNA",
       "Use /redeem in the server to redeem your purchased key",
       "Use /generateloader in the server to generate your personal loader package for RbxCli",
-      "Launch Roblox, open RbxCli, and enjoy!"
+      "Launch Roblox, open RbxCli, and enjoy!",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "kiciahook",
-    description: "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
+    description:
+      "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.97",
     image: kiciahookImage,
     slug: "kiciahook",
     category: "Script Hub",
-    plans: [
-      { name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }
-    ],
-    features: [
-      "Instant Key Delivery",
-      "Premium Support",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
-    usage: [
-      "Execute the script.",
-      "Enter your purchased key.",
-      "Press confirm and enjoy!"
-    ],
+    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }],
+    features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
+    usage: ["Execute the script.", "Enter your purchased key.", "Press confirm and enjoy!"],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "kiciahook showcase: https://youtu.be/77UvIazGt6Y",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "Yabujin",
-    description: "Yabujin is a high-quality skinchanger designed specifically for Roblox Rivals. It provides a smooth user experience with features no other skinchangers have. Yabujin focuses on consistent updates to ensure maximum compatibility with the latest game versions.",
+    description:
+      "Yabujin is a high-quality skinchanger designed specifically for Roblox Rivals. It provides a smooth user experience with features no other skinchangers have. Yabujin focuses on consistent updates to ensure maximum compatibility with the latest game versions.",
     price: "$6.99",
     image: yabujinImage,
     slug: "yabujin",
     category: "Skinchanger",
-    plans: [
-      { name: "Lifetime", price: "$6.99", purchaseUrl: "https://stealthpay.io/grand/yabuji" }
-    ],
-    features: [
-      "Simple Interface",
-      "Stable Performance",
-      "Active Community and Support",
-      "Easy Setup"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
-    usage: [
-      "Soon."
-    ],
+    plans: [{ name: "Lifetime", price: "$6.99", purchaseUrl: "https://stealthpay.io/grand/yabuji" }],
+    features: ["Simple Interface", "Stable Performance", "Active Community and Support", "Easy Setup"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
+    usage: ["Soon."],
     info: [
       "Support available on Discord: https://discord.gg/yabu",
       "Troubleshooting: https://discord.gg/yabu",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "Isaeva",
-    description: "Count on Isaeva for uncompromising precision and next-level performance. Our cutting-edge system is engineered for flawless reliability, delivering seamless execution, unwavering stability, and total confidence in every operation. With Isaeva, excellence isn't optional — it's the standard.",
+    description:
+      "Count on Isaeva for uncompromising precision and next-level performance. Our cutting-edge system is engineered for flawless reliability, delivering seamless execution, unwavering stability, and total confidence in every operation. With Isaeva, excellence isn't optional — it's the standard.",
     price: "$4.97 - $44.97",
     image: isaevaImage,
     slug: "isaeva",
@@ -334,69 +277,53 @@ const products = [
     plans: [
       { name: "Weekly", price: "$4.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-weekly" },
       { name: "Monthly", price: "$17.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-monthly" },
-      { name: "Quarterly", price: "$44.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-quarterly" }
+      { name: "Quarterly", price: "$44.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-quarterly" },
     ],
-    features: [
-      "Instant Key Delivery",
-      "Premium Support",
-      "No Annoying Pop-ups",
-      "No Checkpoints or Ads"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Register an account and redeem your purchased key at https://getisaeva.xyz/",
       "Download the loader",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Troubleshooting: https://discord.gg/MMRpnuSb2g",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "Injware",
-    description: "Injware is currently the best fast flag injector on the market, offering outstanding speed, reliability, and performance. It consistently outperforms competitors while remaining the most affordable option available, making it the top choice for quality and value.",
+    description:
+      "Injware is currently the best fast flag injector on the market, offering outstanding speed, reliability, and performance. It consistently outperforms competitors while remaining the most affordable option available, making it the top choice for quality and value.",
     price: "$5.99",
     image: injwareImage,
     slug: "injware",
     category: "Fast Flag",
-    plans: [
-      { name: "Lifetime", price: "$5.99", purchaseUrl: "https://stealthpay.io/grand/injware-lifetime" }
-    ],
-    features: [
-      "Debug Logs",
-      "Advanced Flag Editor",
-      "Editable Cursor",
-      "Performance Mode Selector"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    plans: [{ name: "Lifetime", price: "$5.99", purchaseUrl: "https://stealthpay.io/grand/injware-lifetime" }],
+    features: ["Debug Logs", "Advanced Flag Editor", "Editable Cursor", "Performance Mode Selector"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Go to https://discord.gg/injware",
       "Use /redeem command and paste your purchased license key",
       "Go to download channel and download Injware",
       "Select register option and create your account",
-      "Load ur fast flags, inject and have fun!"
+      "Load ur fast flags, inject and have fun!",
     ],
     info: [
       "Support available on Discord: https://discord.gg/injware",
       "Troubleshooting: https://discord.gg/injware",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
+      "Limited availability — secure your license while active",
+    ],
   },
   {
     title: "ChocoSploit",
-    description: "ChocoSploit is the first executor to use kernel component for it's needs, because of that, it is rarely affected by Hyperion updates which prevent DLL injection which executors need.",
+    description:
+      "ChocoSploit is the first executor to use kernel component for it's needs, because of that, it is rarely affected by Hyperion updates which prevent DLL injection which executors need.",
     price: "$4.99 - $24.99",
     image: "https://user-generated-content.komerza.com/cf111642-7f49-4cae-b845-888c9ffbb573.png",
     slug: "bb7abe6b-6767-41c5-9e3c-663c44fcc998",
@@ -404,38 +331,34 @@ const products = [
     plans: [
       { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-monthly" },
       { name: "Quarterly", price: "$24.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-quarterly" },
-      { name: "Month of RakNet", price: "$4.99", purchaseUrl: "https://stealthpay.io/grand/chocosploit-month-of-raknet" }
+      {
+        name: "Month of RakNet",
+        price: "$4.99",
+        purchaseUrl: "https://stealthpay.io/grand/chocosploit-month-of-raknet",
+      },
     ],
-    features: [
-      "Instant Key Delivery",
-      "Ultra-Fast Execution",
-      "Rock-Solid Stability",
-      "100% sUNC"
-    ],
-    requirements: [
-      "Windows 10/11",
-      "Minimum requirements for Roblox"
-    ],
+    features: ["Instant Key Delivery", "Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
       "Use /redeem in the server to redeem your purchased key",
-      "Launch Roblox, execute your scripts, and enjoy enhanced performance"
+      "Launch Roblox, execute your scripts, and enjoy enhanced performance",
     ],
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
-      "Limited availability — secure your license while active"
-    ]
-  }
+      "Limited availability — secure your license while active",
+    ],
+  },
 ];
 
 const ProductDetails = () => {
   const { slug: paramSlug } = useParams();
   const [searchParams] = useSearchParams();
-  const querySlug = searchParams.get('slug');
-  const ref = searchParams.get('ref') || sessionStorage.getItem('ref');
+  const querySlug = searchParams.get("slug");
+  const ref = searchParams.get("ref") || sessionStorage.getItem("ref");
   const slug = paramSlug || querySlug;
-  const product = products.find(p => p.slug === slug);
+  const product = products.find((p) => p.slug === slug);
   const [selectedPlan, setSelectedPlan] = useState<{
     name: string;
     price: string;
@@ -444,15 +367,15 @@ const ProductDetails = () => {
   const [showRobuxModal, setShowRobuxModal] = useState(false);
 
   // Store ref in sessionStorage if present in URL
-  if (searchParams.get('ref')) {
-    sessionStorage.setItem('ref', searchParams.get('ref')!);
+  if (searchParams.get("ref")) {
+    sessionStorage.setItem("ref", searchParams.get("ref")!);
   }
 
   const handlePlanSelect = (plan: any) => {
     setSelectedPlan({
       name: plan.name,
       price: plan.price,
-      purchaseUrl: plan.purchaseUrl
+      purchaseUrl: plan.purchaseUrl,
     });
   };
 
@@ -460,14 +383,13 @@ const ProductDetails = () => {
     if (!selectedPlan?.purchaseUrl) return;
     let url = selectedPlan.purchaseUrl;
     if (ref) {
-      const separator = url.includes('?') ? '&' : '?';
+      const separator = url.includes("?") ? "&" : "?";
       url += `${separator}ref=${encodeURIComponent(ref)}`;
     }
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
-  const hasPurchaseUrl = product?.plans.some(plan => (plan as any).purchaseUrl);
-
+  const hasPurchaseUrl = product?.plans.some((plan) => (plan as any).purchaseUrl);
 
   if (!product) {
     return (
@@ -488,10 +410,13 @@ const ProductDetails = () => {
     <div className="min-h-screen bg-background relative">
       <StarryBackground />
       <Navbar />
-      
+
       <div className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <Link to="/#products" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
+          <Link
+            to="/#products"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
+          >
             <ArrowLeft className="w-4 h-4" />
             Back to Products
           </Link>
@@ -499,11 +424,7 @@ const ProductDetails = () => {
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="relative rounded-2xl overflow-hidden bg-secondary/50 aspect-video mb-6">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-cover"
-                />
+                <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
               </div>
 
               <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
@@ -518,16 +439,16 @@ const ProductDetails = () => {
                 </div>
 
                 <h3 className="text-xl font-bold mb-4">Choose Your Plan</h3>
-                
+
                 <div className="space-y-3 mb-6">
                   {product.plans.map((plan, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       onClick={() => handlePlanSelect(plan)}
                       className={`bg-secondary/50 border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${
                         selectedPlan?.name === plan.name
-                          ? 'border-primary ring-2 ring-primary'
-                          : 'border-border hover:border-primary/50'
+                          ? "border-primary ring-2 ring-primary"
+                          : "border-border hover:border-primary/50"
                       }`}
                     >
                       <span className="font-semibold">{plan.name}</span>
@@ -536,15 +457,13 @@ const ProductDetails = () => {
                   ))}
                 </div>
 
-                <Button 
+                <Button
                   onClick={handlePurchase}
-                  className="w-full h-12 text-base" 
-                  size="lg" 
+                  className="w-full h-12 text-base"
+                  size="lg"
                   disabled={!hasPurchaseUrl || !selectedPlan}
                 >
-                  {selectedPlan
-                    ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}`
-                    : "Select a plan"}
+                  {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
                 </Button>
 
                 {product.slug === "volcano-executor" && (
@@ -552,36 +471,55 @@ const ProductDetails = () => {
                     <button
                       onClick={() => setShowRobuxModal(true)}
                       className="w-full h-12 text-base mt-3 rounded-full font-semibold"
-                      style={{ backgroundColor: '#e1cc8d', color: 'black' }}
-                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c9b57a'}
-                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e1cc8d'}
+                      style={{ backgroundColor: "#e1cc8d", color: "black" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#c9b57a")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#e1cc8d")}
                     >
                       Robux Payment Method
                     </button>
 
                     {showRobuxModal && (
-                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowRobuxModal(false)}>
-                        <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
+                      <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+                        onClick={() => setShowRobuxModal(false)}
+                      >
+                        <div
+                          className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm mx-4"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <div className="flex items-center justify-between mb-5">
                             <h3 className="text-lg font-bold">Choose Robux Variant</h3>
-                            <button onClick={() => setShowRobuxModal(false)} className="text-muted-foreground hover:text-foreground">
+                            <button
+                              onClick={() => setShowRobuxModal(false)}
+                              className="text-muted-foreground hover:text-foreground"
+                            >
                               <X className="w-5 h-5" />
                             </button>
                           </div>
                           <div className="space-y-3">
                             <button
-                              onClick={() => { window.open("https://stealthpay.io/grand/volcano-executor-robux-weekly", "_blank"); setShowRobuxModal(false); }}
+                              onClick={() => {
+                                window.open("https://stealthpay.io/grand/volcano-executor-weekly", "_blank");
+                                setShowRobuxModal(false);
+                              }}
                               className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
                             >
                               <span className="font-semibold">Weekly</span>
-                              <span className="font-bold" style={{ color: '#e1cc8d' }}>2090 Robux</span>
+                              <span className="font-bold" style={{ color: "#e1cc8d" }}>
+                                2090 Robux
+                              </span>
                             </button>
                             <button
-                              onClick={() => { window.open("https://stealthpay.io/grand/volcano-executor-robux-monthly", "_blank"); setShowRobuxModal(false); }}
+                              onClick={() => {
+                                window.open("https://stealthpay.io/grand/volcano-executor-monthly-1", "_blank");
+                                setShowRobuxModal(false);
+                              }}
                               className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
                             >
                               <span className="font-semibold">Monthly</span>
-                              <span className="font-bold" style={{ color: '#e1cc8d' }}>6990 Robux</span>
+                              <span className="font-bold" style={{ color: "#e1cc8d" }}>
+                                6990 Robux
+                              </span>
                             </button>
                           </div>
                         </div>
@@ -612,9 +550,7 @@ const ProductDetails = () => {
                         <img
                           src={method.icon}
                           alt={method.name}
-                          className={
-                            `${method.name === "Robux" ? "h-5" : "h-4"} w-auto opacity-80 brightness-0 invert`
-                          }
+                          className={`${method.name === "Robux" ? "h-5" : "h-4"} w-auto opacity-80 brightness-0 invert`}
                           loading="lazy"
                           decoding="async"
                         />
@@ -667,7 +603,7 @@ const ProductDetails = () => {
                   <CardTitle>Usage</CardTitle>
                 </CardHeader>
                 <CardContent>
-                <ul className="space-y-3">
+                  <ul className="space-y-3">
                     {(product as any).usage.map((item: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -684,7 +620,7 @@ const ProductDetails = () => {
                     <CardTitle>Info</CardTitle>
                   </CardHeader>
                   <CardContent>
-                  <ul className="space-y-3">
+                    <ul className="space-y-3">
                       {(product as any).info.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

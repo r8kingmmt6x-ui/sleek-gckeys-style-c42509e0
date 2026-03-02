@@ -1,5 +1,5 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, X } from "lucide-react";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,7 @@ const parseTextWithLinks = (text: string) => {
     }
     return part;
   });
-};
+  };
 
 
 const products = [
@@ -441,6 +441,7 @@ const ProductDetails = () => {
     price: string;
     purchaseUrl?: string;
   } | null>(null);
+  const [showRobuxModal, setShowRobuxModal] = useState(false);
 
   // Store ref in sessionStorage if present in URL
   if (searchParams.get('ref')) {
@@ -547,15 +548,46 @@ const ProductDetails = () => {
                 </Button>
 
                 {product.slug === "volcano-executor" && (
-                  <button
-                    onClick={() => window.open("https://stealthpay.io/grand/volcano-executor-robux", "_blank")}
-                    className="w-full h-12 text-base mt-3 rounded-full font-semibold"
-                    style={{ backgroundColor: '#e1cc8d', color: 'black' }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c9b57a'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e1cc8d'}
-                  >
-                    Robux Payment Method
-                  </button>
+                  <>
+                    <button
+                      onClick={() => setShowRobuxModal(true)}
+                      className="w-full h-12 text-base mt-3 rounded-full font-semibold"
+                      style={{ backgroundColor: '#e1cc8d', color: 'black' }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c9b57a'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e1cc8d'}
+                    >
+                      Robux Payment Method
+                    </button>
+
+                    {showRobuxModal && (
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowRobuxModal(false)}>
+                        <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
+                          <div className="flex items-center justify-between mb-5">
+                            <h3 className="text-lg font-bold">Choose Robux Variant</h3>
+                            <button onClick={() => setShowRobuxModal(false)} className="text-muted-foreground hover:text-foreground">
+                              <X className="w-5 h-5" />
+                            </button>
+                          </div>
+                          <div className="space-y-3">
+                            <button
+                              onClick={() => { window.open("https://stealthpay.io/grand/volcano-executor-robux-weekly", "_blank"); setShowRobuxModal(false); }}
+                              className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
+                            >
+                              <span className="font-semibold">Weekly</span>
+                              <span className="font-bold" style={{ color: '#e1cc8d' }}>2090 Robux</span>
+                            </button>
+                            <button
+                              onClick={() => { window.open("https://stealthpay.io/grand/volcano-executor-robux-monthly", "_blank"); setShowRobuxModal(false); }}
+                              className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
+                            >
+                              <span className="font-semibold">Monthly</span>
+                              <span className="font-bold" style={{ color: '#e1cc8d' }}>6990 Robux</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
 
                 {/* Accepted Payments */}

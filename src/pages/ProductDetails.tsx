@@ -499,7 +499,10 @@ const ProductDetails = () => {
                           <div className="space-y-3">
                             <button
                               onClick={() => {
-                                window.open("https://stealthpay.io/grand/volcano-executor-weekly", "_blank");
+                                window.open(
+                                  "https://stealthpay.io/grand/volcano-executor-weekly/robux?quantity=1",
+                                  "_blank",
+                                );
                                 setShowRobuxModal(false);
                               }}
                               className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
@@ -511,7 +514,10 @@ const ProductDetails = () => {
                             </button>
                             <button
                               onClick={() => {
-                                window.open("https://stealthpay.io/grand/volcano-executor-monthly-1", "_blank");
+                                window.open(
+                                  "https://stealthpay.io/grand/volcano-executor-monthly-1/robux?quantity=1",
+                                  "_blank",
+                                );
                                 setShowRobuxModal(false);
                               }}
                               className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"

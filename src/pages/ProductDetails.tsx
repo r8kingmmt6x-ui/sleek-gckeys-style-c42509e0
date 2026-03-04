@@ -466,7 +466,7 @@ const ProductDetails = () => {
                   {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
                 </Button>
 
-                {product.slug === "volcano-executor" && (
+                {(product.slug === "volcano-executor" || product.slug === "kiciahook") && (
                   <>
                     <button
                       onClick={() => setShowRobuxModal(true)}
@@ -497,36 +497,57 @@ const ProductDetails = () => {
                             </button>
                           </div>
                           <div className="space-y-3">
-                            <button
-                              onClick={() => {
-                                window.open(
-                                  "https://stealthpay.io/grand/volcano-executor-weekly/robux?quantity=1",
-                                  "_blank",
-                                );
-                                setShowRobuxModal(false);
-                              }}
-                              className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
-                            >
-                              <span className="font-semibold">Weekly</span>
-                              <span className="font-bold" style={{ color: "#e1cc8d" }}>
-                                2090 Robux
-                              </span>
-                            </button>
-                            <button
-                              onClick={() => {
-                                window.open(
-                                  "https://stealthpay.io/grand/volcano-executor-monthly-1/robux?quantity=1",
-                                  "_blank",
-                                );
-                                setShowRobuxModal(false);
-                              }}
-                              className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
-                            >
-                              <span className="font-semibold">Monthly</span>
-                              <span className="font-bold" style={{ color: "#e1cc8d" }}>
-                                6990 Robux
-                              </span>
-                            </button>
+                            {product.slug === "volcano-executor" && (
+                              <>
+                                <button
+                                  onClick={() => {
+                                    window.open(
+                                      "https://stealthpay.io/grand/volcano-executor-weekly/robux?quantity=1",
+                                      "_blank",
+                                    );
+                                    setShowRobuxModal(false);
+                                  }}
+                                  className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
+                                >
+                                  <span className="font-semibold">Weekly</span>
+                                  <span className="font-bold" style={{ color: "#e1cc8d" }}>
+                                    2090 Robux
+                                  </span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    window.open(
+                                      "https://stealthpay.io/grand/volcano-executor-monthly-1/robux?quantity=1",
+                                      "_blank",
+                                    );
+                                    setShowRobuxModal(false);
+                                  }}
+                                  className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
+                                >
+                                  <span className="font-semibold">Monthly</span>
+                                  <span className="font-bold" style={{ color: "#e1cc8d" }}>
+                                    6990 Robux
+                                  </span>
+                                </button>
+                              </>
+                            )}
+                            {product.slug === "kiciahook" && (
+                              <button
+                                onClick={() => {
+                                  window.open(
+                                    "https://stealthpay.io/grand/kiciahook/robux?quantity=1",
+                                    "_blank",
+                                  );
+                                  setShowRobuxModal(false);
+                                }}
+                                className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"
+                              >
+                                <span className="font-semibold">Lifetime</span>
+                                <span className="font-bold" style={{ color: "#e1cc8d" }}>
+                                  3490 Robux
+                                </span>
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>

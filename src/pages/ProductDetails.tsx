@@ -234,7 +234,7 @@ const products = [
     image: kiciahookImage,
     slug: "kiciahook",
     category: "Script Hub",
-    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://stealthpay.io/grand/kiciahook" }],
+    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://aquadratic.com/pay/cmmcn0j220001wuiwsodsrg94" }],
     features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: ["Execute the script.", "Enter your purchased key.", "Press confirm and enjoy!"],
@@ -534,10 +534,7 @@ const ProductDetails = () => {
                             {product.slug === "kiciahook" && (
                               <button
                                 onClick={() => {
-                                  window.open(
-                                    "https://stealthpay.io/grand/kiciahook/robux?quantity=1",
-                                    "_blank",
-                                  );
+                                  window.open("https://stealthpay.io/grand/kiciahook/robux?quantity=1", "_blank");
                                   setShowRobuxModal(false);
                                 }}
                                 className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center justify-between hover:border-[#e1cc8d] transition-colors"

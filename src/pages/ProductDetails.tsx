@@ -208,8 +208,8 @@ const products = [
     slug: "85fe7352-e372-42d7-a394-1f68f718abb4",
     category: "External",
     plans: [
-      { name: "Weekly", price: "$3.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-weekly" },
-      { name: "Monthly", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rbxcli-monthly" },
+      { name: "Weekly", price: "$3.99", purchaseUrl: "https://valary.cc/product?id=rbxcli&ref=grand" },
+      { name: "Monthly", price: "$9.99", purchaseUrl: "https://valary.cc/product?id=rbxcli&ref=grand" },
     ],
     features: ["Box Visuals", "Chameleon", "Dynamic FoV", "Hitbox Extension", "Instant Key Delivery"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],

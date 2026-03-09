@@ -275,7 +275,7 @@ const products = [
     slug: "isaeva",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$4.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-weekly" },
+      { name: "Weekly", price: "$4.97", purchaseUrl: "https://valary.cc/product?id=isaeva&ref=grand" },
       { name: "Monthly", price: "$17.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-monthly" },
       { name: "Quarterly", price: "$44.97", purchaseUrl: "https://stealthpay.io/grand/isaeva-quarterly" },
     ],

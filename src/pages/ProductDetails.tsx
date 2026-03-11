@@ -596,7 +596,6 @@ const ProductDetails = () => {
                           <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
                             <CreditCard className="h-5 w-5 text-primary" />
                           </div>
-                          </div>
                           <div>
                             <span className="font-semibold block">Credit/Debit Card</span>
                             <span className="text-sm text-muted-foreground">Powered by Pandabase</span>

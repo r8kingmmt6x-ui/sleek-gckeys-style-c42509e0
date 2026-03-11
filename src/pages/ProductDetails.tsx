@@ -590,18 +590,6 @@ const ProductDetails = () => {
                       </div>
                       <div className="space-y-3">
                         <button
-                          onClick={() => handlePaymentMethodSelect("crypto")}
-                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
-                        >
-                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                            <img src={bitcoinIcon} alt="Crypto" className="h-5 w-auto" />
-                          </div>
-                          <div>
-                            <span className="font-semibold block">Cryptocurrency</span>
-                            <span className="text-sm text-muted-foreground">BTC, ETH, USDT & more</span>
-                          </div>
-                        </button>
-                        <button
                           onClick={() => handlePaymentMethodSelect("card")}
                           className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
                         >
@@ -612,6 +600,18 @@ const ProductDetails = () => {
                           <div>
                             <span className="font-semibold block">Credit/Debit Card</span>
                             <span className="text-sm text-muted-foreground">Powered by Pandabase</span>
+                          </div>
+                        </button>
+                        <button
+                          onClick={() => handlePaymentMethodSelect("crypto")}
+                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
+                        >
+                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                            <img src={bitcoinIcon} alt="Crypto" className="h-5 w-auto" />
+                          </div>
+                          <div>
+                            <span className="font-semibold block">Cryptocurrency</span>
+                            <span className="text-sm text-muted-foreground">BTC, ETH, USDT & more</span>
                           </div>
                         </button>
                       </div>

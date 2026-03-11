@@ -365,6 +365,7 @@ const ProductDetails = () => {
     purchaseUrl?: string;
   } | null>(null);
   const [showRobuxModal, setShowRobuxModal] = useState(false);
+  const [showPaymentMethodModal, setShowPaymentMethodModal] = useState(false);
 
   // Store ref in sessionStorage if present in URL
   if (searchParams.get("ref")) {

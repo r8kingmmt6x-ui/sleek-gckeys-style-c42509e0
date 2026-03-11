@@ -365,6 +365,7 @@ const ProductDetails = () => {
     purchaseUrl?: string;
   } | null>(null);
   const [showRobuxModal, setShowRobuxModal] = useState(false);
+  const [showPaymentMethodModal, setShowPaymentMethodModal] = useState(false);
 
   // Store ref in sessionStorage if present in URL
   if (searchParams.get("ref")) {
@@ -381,12 +382,28 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
+    // For Rift NOW, show payment method selection instead of direct purchase
+    if (product?.slug === "rift-now") {
+      setShowPaymentMethodModal(true);
+      return;
+    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";
       url += `${separator}ref=${encodeURIComponent(ref)}`;
     }
     window.open(url, "_blank");
+  };
+
+  const handlePaymentMethodSelect = (method: "crypto" | "card") => {
+    if (!selectedPlan?.purchaseUrl) return;
+    let url = `${selectedPlan.purchaseUrl}/${method}`;
+    if (ref) {
+      const separator = url.includes("?") ? "&" : "?";
+      url += `${separator}ref=${encodeURIComponent(ref)}`;
+    }
+    window.open(url, "_blank");
+    setShowPaymentMethodModal(false);
   };
 
   const hasPurchaseUrl = product?.plans.some((plan) => (plan as any).purchaseUrl);
@@ -552,7 +569,57 @@ const ProductDetails = () => {
                   </>
                 )}
 
-                {/* Accepted Payments */}
+                {/* Payment Method Modal for Rift NOW */}
+                {showPaymentMethodModal && product.slug === "rift-now" && (
+                  <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+                    onClick={() => setShowPaymentMethodModal(false)}
+                  >
+                    <div
+                      className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm mx-4"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="flex items-center justify-between mb-5">
+                        <h3 className="text-lg font-bold">Choose Payment Method</h3>
+                        <button
+                          onClick={() => setShowPaymentMethodModal(false)}
+                          className="text-muted-foreground hover:text-foreground"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                      <div className="space-y-3">
+                        <button
+                          onClick={() => handlePaymentMethodSelect("crypto")}
+                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
+                        >
+                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                            <img src={bitcoinIcon} alt="Crypto" className="h-5 w-auto" />
+                          </div>
+                          <div>
+                            <span className="font-semibold block">Cryptocurrency</span>
+                            <span className="text-sm text-muted-foreground">BTC, ETH, USDT & more</span>
+                          </div>
+                        </button>
+                        <button
+                          onClick={() => handlePaymentMethodSelect("card")}
+                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
+                        >
+                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 gap-1">
+                            <img src={visaIcon} alt="Visa" className="h-3 w-auto brightness-0 invert" />
+                            <img src={mastercardIcon} alt="Mastercard" className="h-3 w-auto" />
+                          </div>
+                          <div>
+                            <span className="font-semibold block">Credit/Debit Card</span>
+                            <span className="text-sm text-muted-foreground">Powered by Pandabase</span>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>
                   <div className="flex flex-wrap items-center gap-2">

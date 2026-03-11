@@ -1,5 +1,5 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Check, X } from "lucide-react";
+import { ArrowLeft, Check, X, CreditCard } from "lucide-react";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -593,9 +593,12 @@ const ProductDetails = () => {
                           onClick={() => handlePaymentMethodSelect("card")}
                           className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
                         >
-                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 gap-1">
-                            <img src={visaIcon} alt="Visa" className="h-3 w-auto brightness-0 invert" />
-                            <img src={mastercardIcon} alt="Mastercard" className="h-3 w-auto" />
+                          <div className="h-12 w-12 rounded-lg bg-secondary flex flex-col items-center justify-center flex-shrink-0 gap-0.5 p-1">
+                            <CreditCard className="h-4 w-4 text-primary" />
+                            <div className="flex items-center gap-0.5">
+                              <img src={visaIcon} alt="Visa" className="h-2 w-auto brightness-0 invert" />
+                              <img src={mastercardIcon} alt="Mastercard" className="h-2.5 w-auto" />
+                            </div>
                           </div>
                           <div>
                             <span className="font-semibold block">Credit/Debit Card</span>

@@ -382,12 +382,28 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
+    // For Rift NOW, show payment method selection instead of direct purchase
+    if (product?.slug === "rift-now") {
+      setShowPaymentMethodModal(true);
+      return;
+    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";
       url += `${separator}ref=${encodeURIComponent(ref)}`;
     }
     window.open(url, "_blank");
+  };
+
+  const handlePaymentMethodSelect = (method: "crypto" | "card") => {
+    if (!selectedPlan?.purchaseUrl) return;
+    let url = `${selectedPlan.purchaseUrl}/${method}`;
+    if (ref) {
+      const separator = url.includes("?") ? "&" : "?";
+      url += `${separator}ref=${encodeURIComponent(ref)}`;
+    }
+    window.open(url, "_blank");
+    setShowPaymentMethodModal(false);
   };
 
   const hasPurchaseUrl = product?.plans.some((plan) => (plan as any).purchaseUrl);

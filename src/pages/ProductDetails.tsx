@@ -569,7 +569,7 @@ const ProductDetails = () => {
                 )}
 
                 {/* Payment Method Modal for Rift NOW */}
-                {showPaymentMethodModal && product.slug === "rift-now" && (
+                {showPaymentMethodModal && product.slug === "rift-now" && createPortal(
                   <div
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
                     onClick={() => setShowPaymentMethodModal(false)}
@@ -614,7 +614,8 @@ const ProductDetails = () => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div>,
+                  document.body
                 )}
 
 

@@ -395,7 +395,7 @@ const ProductDetails = () => {
 
   const handlePaymentMethodSelect = (method: "crypto" | "card") => {
     if (!selectedPlan?.purchaseUrl) return;
-    let url = `${selectedPlan.purchaseUrl}/${method}`;
+    let url = `${selectedPlan.purchaseUrl}/${method}?quantity=1`;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";
       url += `${separator}ref=${encodeURIComponent(ref)}`;

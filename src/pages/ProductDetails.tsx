@@ -570,7 +570,7 @@ const ProductDetails = () => {
                 {/* Payment Method Modal for Rift NOW */}
                 {showPaymentMethodModal && product.slug === "rift-now" && (
                   <div
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
                     onClick={() => setShowPaymentMethodModal(false)}
                   >
                     <div

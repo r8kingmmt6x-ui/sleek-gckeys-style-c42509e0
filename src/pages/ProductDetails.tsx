@@ -1,6 +1,7 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Check, X, CreditCard } from "lucide-react";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -568,7 +569,7 @@ const ProductDetails = () => {
                 )}
 
                 {/* Payment Method Modal for Rift NOW */}
-                {showPaymentMethodModal && product.slug === "rift-now" && (
+                {showPaymentMethodModal && product.slug === "rift-now" && createPortal(
                   <div
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
                     onClick={() => setShowPaymentMethodModal(false)}
@@ -613,7 +614,8 @@ const ProductDetails = () => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div>,
+                  document.body
                 )}
 
 

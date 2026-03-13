@@ -381,11 +381,6 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
-    // For Rift NOW, show payment method selection instead of direct purchase
-    if (product?.slug === "rift-now") {
-      setShowPaymentMethodModal(true);
-      return;
-    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";

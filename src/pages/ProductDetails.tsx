@@ -77,7 +77,7 @@ const products = [
     slug: "rift-now",
     category: "Script Hub",
     plans: [
-      { name: "Lifetime", duration: "", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-lifetime-1" },
+      { name: "Lifetime", duration: "", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmomi6zk000oublot5e54ohx" },
     ],
     features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
@@ -381,11 +381,6 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
-    // For Rift NOW, show payment method selection instead of direct purchase
-    if (product?.slug === "rift-now") {
-      setShowPaymentMethodModal(true);
-      return;
-    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";
@@ -568,55 +563,6 @@ const ProductDetails = () => {
                   </>
                 )}
 
-                {/* Payment Method Modal for Rift NOW */}
-                {showPaymentMethodModal && product.slug === "rift-now" && createPortal(
-                  <div
-                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
-                    onClick={() => setShowPaymentMethodModal(false)}
-                  >
-                    <div
-                      className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm mx-4"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className="flex items-center justify-between mb-5">
-                        <h3 className="text-lg font-bold">Choose Payment Method</h3>
-                        <button
-                          onClick={() => setShowPaymentMethodModal(false)}
-                          className="text-muted-foreground hover:text-foreground"
-                        >
-                          <X className="w-5 h-5" />
-                        </button>
-                      </div>
-                      <div className="space-y-3">
-                        <button
-                          onClick={() => handlePaymentMethodSelect("card")}
-                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
-                        >
-                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                            <CreditCard className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <span className="font-semibold block">Credit/Debit Card</span>
-                            <span className="text-sm text-muted-foreground">Powered by Pandabase</span>
-                          </div>
-                        </button>
-                        <button
-                          onClick={() => handlePaymentMethodSelect("crypto")}
-                          className="w-full rounded-lg border border-border bg-secondary/50 p-4 flex items-center gap-4 hover:border-primary transition-colors text-left"
-                        >
-                          <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                            <img src={bitcoinIcon} alt="Crypto" className="h-5 w-auto" />
-                          </div>
-                          <div>
-                            <span className="font-semibold block">Cryptocurrency</span>
-                            <span className="text-sm text-muted-foreground">BTC, ETH, USDT & more</span>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </div>,
-                  document.body
-                )}
 
 
                 <div className="mt-6 pt-6 border-t border-border">

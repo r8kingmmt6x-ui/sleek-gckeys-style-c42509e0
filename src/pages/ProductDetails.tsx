@@ -77,7 +77,7 @@ const products = [
     slug: "rift-now",
     category: "Script Hub",
     plans: [
-      { name: "Lifetime", duration: "", price: "$9.99", purchaseUrl: "https://stealthpay.io/grand/rift-now-lifetime-1" },
+      { name: "Lifetime", duration: "", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmomi6zk000oublot5e54ohx" },
     ],
     features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],

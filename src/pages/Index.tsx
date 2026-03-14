@@ -9,6 +9,7 @@ import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
+import cosmicImage from "@/assets/cosmic.png";
 
 
 const products = [
@@ -60,6 +61,14 @@ const products = [
     customUrl: "/product?slug=isaeva"
   },
   {
+    title: "Cosmic",
+    description: "",
+    price: "$9.97",
+    image: cosmicImage,
+    slug: "cosmic",
+    customUrl: "/product?slug=cosmic"
+  },
+  {
     title: "Yabujin",
     description: "",
     price: "$6.99",
@@ -98,7 +107,7 @@ const Index = () => {
                 <ProductCard 
                   key={index} 
                   {...product} 
-                  showStartingAt={!["kiciahook", "yabujin", "injware", "rift now"].includes(product.title.toLowerCase())}
+                  showStartingAt={!["kiciahook", "yabujin", "cosmic", "injware", "rift now"].includes(product.title.toLowerCase())}
                   customUrl={productUrl}
                 />
               );

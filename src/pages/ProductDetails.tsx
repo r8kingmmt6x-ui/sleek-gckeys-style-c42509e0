@@ -21,6 +21,7 @@ import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
 import injwareImage from "@/assets/injware.png";
+import cosmicImage from "@/assets/cosmic.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;

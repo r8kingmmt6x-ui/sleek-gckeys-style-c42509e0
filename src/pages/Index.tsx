@@ -9,6 +9,7 @@ import yabujinImage from "@/assets/yabujin-new.png";
 import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
+import cosmicImage from "@/assets/cosmic.png";
 
 
 const products = [

@@ -21,6 +21,7 @@ import kiciahookImage from "@/assets/kiciahook.png";
 
 import isaevaImage from "@/assets/isaeva.png";
 import injwareImage from "@/assets/injware.png";
+import cosmicImage from "@/assets/cosmic.png";
 // Helper function to parse text and make URLs clickable
 const parseTextWithLinks = (text: string) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -240,6 +241,32 @@ const products = [
     info: [
       "Support available on Discord: https://discord.gg/aCwcJukUf6",
       "kiciahook showcase: https://youtu.be/77UvIazGt6Y",
+      "Check spam/junk if delivery email isn't visible",
+      "Digital product — no refunds once key is redeemed",
+      "Limited availability — secure your license while active",
+    ],
+  },
+  {
+    title: "Cosmic",
+    description:
+      "Cosmic delivers ultra-fast execution with rock-solid stability and 100% sUNC support. Engineered for peak performance and reliability.",
+    price: "$9.97",
+    image: cosmicImage,
+    slug: "cosmic",
+    category: "Executor",
+    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://aquadratic.com/pay/cmmqup06b0001wgq4jkbcqt4n" }],
+    features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
+    requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
+    usage: [
+      "To redeem your license key you have to join the Discord server: discord.gg/getcosmic",
+      "Enter /register with your credentials",
+      "Enter /download to download it",
+      "When you downloaded it you have to login using your credentials from /register",
+      "Simply hit Attach when you have Roblox open!",
+    ],
+    info: [
+      "Support available on Discord: https://discord.gg/getcosmic",
+      "Troubleshooting: https://discord.gg/getcosmic",
       "Check spam/junk if delivery email isn't visible",
       "Digital product — no refunds once key is redeemed",
       "Limited availability — secure your license while active",

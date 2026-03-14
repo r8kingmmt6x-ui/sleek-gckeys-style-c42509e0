@@ -107,7 +107,7 @@ const Index = () => {
                 <ProductCard 
                   key={index} 
                   {...product} 
-                  showStartingAt={!["kiciahook", "yabujin", "injware", "rift now"].includes(product.title.toLowerCase())}
+                  showStartingAt={!["kiciahook", "yabujin", "cosmic", "injware", "rift now"].includes(product.title.toLowerCase())}
                   customUrl={productUrl}
                 />
               );

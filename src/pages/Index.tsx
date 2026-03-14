@@ -61,6 +61,14 @@ const products = [
     customUrl: "/product?slug=isaeva"
   },
   {
+    title: "Cosmic",
+    description: "",
+    price: "$9.97",
+    image: cosmicImage,
+    slug: "cosmic",
+    customUrl: "/product?slug=cosmic"
+  },
+  {
     title: "Yabujin",
     description: "",
     price: "$6.99",

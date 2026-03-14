@@ -249,7 +249,7 @@ const products = [
   {
     title: "Cosmic",
     description:
-      "Cosmic delivers ultra-fast execution with rock-solid stability and 100% sUNC support. Engineered for peak performance and reliability.",
+      "Cosmic is a powerful Roblox scripting utility built for reliability. With multi-instance support, a rich set of custom functions, and rock-solid stability, it delivers smooth performance no matter what you run.",
     price: "$9.97",
     image: cosmicImage,
     slug: "cosmic",

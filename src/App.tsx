@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ProductDetails from "./pages/ProductDetails";
 import Terms from "./pages/Terms";
+import RefundPolicy from "./pages/RefundPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import RefRedirect from "./pages/RefRedirect";
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/products/:slug" element={<ProductDetails />} />
           <Route path="/product" element={<ProductDetails />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/refund" element={<RefundPolicy />} />
+          <Route path="/policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -281,7 +281,7 @@ const products = [
     title: "Yabujin",
     description:
       "Yabujin is a high-quality skinchanger designed specifically for Roblox Rivals. It provides a smooth user experience with features no other skinchangers have. Yabujin focuses on consistent updates to ensure maximum compatibility with the latest game versions.",
-    price: "$6.99",
+    price: "$7.49",
     image: yabujinImage,
     slug: "yabujin",
     category: "Skinchanger",

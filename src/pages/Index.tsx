@@ -71,7 +71,7 @@ const products = [
   {
     title: "Yabujin",
     description: "",
-    price: "$6.99",
+    price: "$7.49",
     image: yabujinImage,
     slug: "yabujin",
     customUrl: "https://gckeys.cc/product?slug=yabujin"

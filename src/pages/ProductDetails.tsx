@@ -78,7 +78,12 @@ const products = [
     slug: "rift-now",
     category: "Script Hub",
     plans: [
-      { name: "Lifetime", duration: "", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmomi6zk000oublot5e54ohx" },
+      {
+        name: "Lifetime",
+        duration: "",
+        price: "$9.99",
+        purchaseUrl: "https://aquadratic.com/pay/cmmomi6zk000oublot5e54ohx",
+      },
     ],
     features: ["Instant Key Delivery", "Premium Support", "No Annoying Pop-ups", "No Checkpoints or Ads"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
@@ -280,7 +285,7 @@ const products = [
     image: yabujinImage,
     slug: "yabujin",
     category: "Skinchanger",
-    plans: [{ name: "Lifetime", price: "$6.99", purchaseUrl: "https://stealthpay.io/grand/yabuji" }],
+    plans: [{ name: "Lifetime", price: "$6.99", purchaseUrl: "https://aquadratic.com/pay/cmmwojxay0004hcxw1900dieh" }],
     features: ["Simple Interface", "Stable Performance", "Active Community and Support", "Easy Setup"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: ["Soon."],
@@ -589,8 +594,6 @@ const ProductDetails = () => {
                     )}
                   </>
                 )}
-
-
 
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-3">Accepted payments</p>

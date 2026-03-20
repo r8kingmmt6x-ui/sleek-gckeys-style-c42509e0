@@ -723,29 +723,6 @@ const ProductDetails = () => {
       </div>
       <Footer />
 
-      {showYabujinEmbed && createPortal(
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
-          onClick={() => setShowYabujinEmbed(false)}
-        >
-          <div
-            className="bg-card border border-border rounded-2xl p-6 w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg font-bold">Complete Purchase</h3>
-              <button
-                onClick={() => setShowYabujinEmbed(false)}
-                className="text-muted-foreground hover:text-foreground"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div ref={embedContainerRef} />
-          </div>
-        </div>,
-        document.body
-      )}
     </div>
   );
 };

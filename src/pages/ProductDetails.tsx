@@ -429,10 +429,6 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
-    if (product?.slug === "yabujin") {
-      setShowYabujinEmbed(true);
-      return;
-    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";

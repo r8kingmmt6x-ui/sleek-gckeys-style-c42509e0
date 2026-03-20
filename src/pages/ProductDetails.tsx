@@ -1,6 +1,6 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Check, X, CreditCard } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";

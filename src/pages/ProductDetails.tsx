@@ -402,7 +402,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (showYabujinEmbed && embedContainerRef.current) {
-      embedContainerRef.current.innerHTML = '<div data-aquadratic="cmmwojxay0004hcxw1900dieh"></div>';
+      embedContainerRef.current.innerHTML = '<div data-aquadratic="cmmwojxay0004hcxw1900dieh" data-mode="card"></div>';
       const script = document.createElement("script");
       script.src = "https://aquadratic.com/embed.js";
       script.async = true;

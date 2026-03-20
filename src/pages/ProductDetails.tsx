@@ -512,7 +512,7 @@ const ProductDetails = () => {
                 {(product.slug === "volcano-executor" || product.slug === "kiciahook") && (
                   <>
                     <button
-                      onClick={() => setShowRobuxModal(true)}
+                      onClick={() => window.open("https://discord.com/invite/aCwcJukUf6", "_blank")}
                       className="w-full h-12 text-base mt-3 rounded-md font-semibold"
                       style={{ backgroundColor: "#e1cc8d", color: "black" }}
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#c9b57a")}

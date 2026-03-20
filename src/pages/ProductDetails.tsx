@@ -397,11 +397,10 @@ const ProductDetails = () => {
   } | null>(null);
   const [showRobuxModal, setShowRobuxModal] = useState(false);
   const [showPaymentMethodModal, setShowPaymentMethodModal] = useState(false);
-  const [showYabujinEmbed, setShowYabujinEmbed] = useState(false);
   const embedContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (showYabujinEmbed && embedContainerRef.current) {
+    if (product?.slug === "yabujin" && embedContainerRef.current) {
       embedContainerRef.current.innerHTML = '<div data-aquadratic="cmmwojxay0004hcxw1900dieh"></div>';
       const script = document.createElement("script");
       script.src = "https://aquadratic.com/embed.js";
@@ -413,7 +412,7 @@ const ProductDetails = () => {
         }
       };
     }
-  }, [showYabujinEmbed]);
+  }, [product?.slug]);
 
   // Store ref in sessionStorage if present in URL
   if (searchParams.get("ref")) {

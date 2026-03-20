@@ -521,14 +521,18 @@ const ProductDetails = () => {
                   ))}
                 </div>
 
-                <Button
-                  onClick={handlePurchase}
-                  className="w-full h-12 text-base"
-                  size="lg"
-                  disabled={!hasPurchaseUrl || !selectedPlan}
-                >
-                  {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
-                </Button>
+                {product.slug === "yabujin" ? (
+                  <div ref={embedContainerRef} className="w-full" />
+                ) : (
+                  <Button
+                    onClick={handlePurchase}
+                    className="w-full h-12 text-base"
+                    size="lg"
+                    disabled={!hasPurchaseUrl || !selectedPlan}
+                  >
+                    {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
+                  </Button>
+                )}
 
                 {(product.slug === "volcano-executor" || product.slug === "kiciahook") && (
                   <>

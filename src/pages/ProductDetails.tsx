@@ -259,7 +259,7 @@ const products = [
     image: cosmicImage,
     slug: "cosmic",
     category: "Executor",
-    plans: [{ name: "Lifetime", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmqup06b0001wgq4jkbcqt4n" }],
+    plans: [{ name: "Lifetime", price: "$9.99", purchaseUrl: "https://wyv.gg/product/cosmic-executor/ref/grand/" }],
     features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [

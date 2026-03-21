@@ -402,7 +402,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (showYabujinEmbed && embedContainerRef.current) {
-      embedContainerRef.current.innerHTML = '<div data-aquadratic="cmmwojxay0004hcxw1900dieh" data-mode="card"></div>';
+      embedContainerRef.current.innerHTML = '<div data-aquadratic="cmmwojxay0004hcxw1900dieh"></div>';
       const script = document.createElement("script");
       script.src = "https://aquadratic.com/embed.js";
       script.async = true;
@@ -430,6 +430,10 @@ const ProductDetails = () => {
 
   const handlePurchase = () => {
     if (!selectedPlan?.purchaseUrl) return;
+    if (product?.slug === "yabujin") {
+      setShowYabujinEmbed(true);
+      return;
+    }
     let url = selectedPlan.purchaseUrl;
     if (ref) {
       const separator = url.includes("?") ? "&" : "?";
@@ -518,13 +522,7 @@ const ProductDetails = () => {
                 </div>
 
                 <Button
-                  onClick={() => {
-                    if (product.slug === "yabujin") {
-                      setShowYabujinEmbed(true);
-                    } else {
-                      handlePurchase();
-                    }
-                  }}
+                  onClick={handlePurchase}
                   className="w-full h-12 text-base"
                   size="lg"
                   disabled={!hasPurchaseUrl || !selectedPlan}

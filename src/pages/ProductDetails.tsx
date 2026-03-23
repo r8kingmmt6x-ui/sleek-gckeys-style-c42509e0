@@ -503,7 +503,7 @@ const ProductDetails = () => {
                 {product.slug === "yabujin" ? (
                   selectedPlan ? (
                     <button
-                      data-shoppex-product-id="019d1ce2-94d7-7a6d-b289-220562c6504e"
+                      data-shoppex-product-id="019d1d04-550a-71f3-8a53-daa8b5994ff5"
                       data-shoppex-quantity="1"
                       data-shoppex-theme="auto"
                       data-shoppex-flow="embed"

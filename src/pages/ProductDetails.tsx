@@ -500,14 +500,26 @@ const ProductDetails = () => {
                   ))}
                 </div>
 
-                <Button
-                  onClick={handlePurchase}
-                  className="w-full h-12 text-base"
-                  size="lg"
-                  disabled={!hasPurchaseUrl || !selectedPlan}
-                >
-                  {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
-                </Button>
+                {product.slug === "yabujin" ? (
+                  <button
+                    data-shoppex-product-id="019d1ce2-94d7-7a6d-b289-220562c6504e"
+                    data-shoppex-quantity="1"
+                    data-shoppex-theme="auto"
+                    data-shoppex-flow="embed"
+                    className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
+                  >
+                    Purchase Lifetime - $7.49
+                  </button>
+                ) : (
+                  <Button
+                    onClick={handlePurchase}
+                    className="w-full h-12 text-base"
+                    size="lg"
+                    disabled={!hasPurchaseUrl || !selectedPlan}
+                  >
+                    {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
+                  </Button>
+                )}
 
                 {(product.slug === "volcano-executor" || product.slug === "kiciahook") && (
                   <>

@@ -516,6 +516,22 @@ const ProductDetails = () => {
                       Select a plan
                     </Button>
                   )
+                ) : product.slug === "rift-now" ? (
+                  selectedPlan ? (
+                    <button
+                      data-shoppex-product-id="019d2240-9eea-7179-aa19-e707db8f13ea"
+                      data-shoppex-quantity="1"
+                      data-shoppex-theme="auto"
+                      data-shoppex-flow="embed"
+                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
+                    >
+                      Purchase Lifetime - $9.99
+                    </button>
+                  ) : (
+                    <Button className="w-full h-12 text-base" size="lg" disabled>
+                      Select a plan
+                    </Button>
+                  )
                 ) : (
                   <Button
                     onClick={handlePurchase}

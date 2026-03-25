@@ -45,7 +45,7 @@ const products = [
     customUrl: "/product?slug=85fe7352-e372-42d7-a394-1f68f718abb4"
   },
   {
-    title: "kiciahook",
+    title: "Kiciahook",
     description: "",
     price: "$9.97",
     image: kiciahookImage,

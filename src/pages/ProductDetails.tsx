@@ -255,11 +255,11 @@ const products = [
     title: "Cosmic",
     description:
       "Cosmic is a powerful Roblox scripting utility built for reliability. With multi-instance support, a rich set of custom functions, and rock-solid stability, it delivers smooth performance no matter what you run.",
-    price: "$9.99",
+    price: "$9.97",
     image: cosmicImage,
     slug: "cosmic",
     category: "Executor",
-    plans: [{ name: "Lifetime", price: "$9.99", purchaseUrl: "https://wyv.gg/product/cosmic-executor/ref/grand/" }],
+    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://wyv.gg/product/cosmic-executor/ref/grand/" }],
     features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
@@ -557,7 +557,7 @@ const ProductDetails = () => {
                       data-shoppex-flow="embed"
                       className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
                     >
-                      Purchase Lifetime - $9.99
+                      Purchase Lifetime - $9.97
                     </button>
                   ) : (
                     <Button className="w-full h-12 text-base" size="lg" disabled>

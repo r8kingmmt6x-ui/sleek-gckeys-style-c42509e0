@@ -232,7 +232,7 @@ const products = [
     ],
   },
   {
-    title: "kiciahook",
+    title: "Kiciahook",
     description:
       "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.97",

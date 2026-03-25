@@ -557,7 +557,7 @@ const ProductDetails = () => {
                       data-shoppex-flow="embed"
                       className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
                     >
-                      Purchase Lifetime - $9.99
+                      Purchase Lifetime - $9.97
                     </button>
                   ) : (
                     <Button className="w-full h-12 text-base" size="lg" disabled>

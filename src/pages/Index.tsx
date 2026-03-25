@@ -63,7 +63,7 @@ const products = [
   {
     title: "Cosmic",
     description: "",
-    price: "$9.99",
+    price: "$9.97",
     image: cosmicImage,
     slug: "cosmic",
     customUrl: "/product?slug=cosmic"

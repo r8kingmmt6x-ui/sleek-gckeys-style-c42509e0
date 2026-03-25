@@ -232,9 +232,9 @@ const products = [
     ],
   },
   {
-    title: "Kiciahook",
+    title: "kiciahook",
     description:
-      "With Kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with Kiciahook!",
+      "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.97",
     image: kiciahookImage,
     slug: "kiciahook",
@@ -255,11 +255,11 @@ const products = [
     title: "Cosmic",
     description:
       "Cosmic is a powerful Roblox scripting utility built for reliability. With multi-instance support, a rich set of custom functions, and rock-solid stability, it delivers smooth performance no matter what you run.",
-    price: "$9.97",
+    price: "$9.99",
     image: cosmicImage,
     slug: "cosmic",
     category: "Executor",
-    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://wyv.gg/product/cosmic-executor/ref/grand/" }],
+    plans: [{ name: "Lifetime", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmqup06b0001wgq4jkbcqt4n" }],
     features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [
@@ -500,80 +500,14 @@ const ProductDetails = () => {
                   ))}
                 </div>
 
-                {product.slug === "yabujin" ? (
-                  selectedPlan ? (
-                    <button
-                      data-shoppex-product-id="019d1d04-550a-71f3-8a53-daa8b5994ff5"
-                      data-shoppex-quantity="1"
-                      data-shoppex-theme="auto"
-                      data-shoppex-flow="embed"
-                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-                    >
-                      Purchase Lifetime - $7.49
-                    </button>
-                  ) : (
-                    <Button className="w-full h-12 text-base" size="lg" disabled>
-                      Select a plan
-                    </Button>
-                  )
-                ) : product.slug === "rift-now" ? (
-                  selectedPlan ? (
-                    <button
-                      data-shoppex-product-id="019d2240-9eea-7179-aa19-e707db8f13ea"
-                      data-shoppex-quantity="1"
-                      data-shoppex-theme="auto"
-                      data-shoppex-flow="embed"
-                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-                    >
-                      Purchase Lifetime - $9.99
-                    </button>
-                  ) : (
-                    <Button className="w-full h-12 text-base" size="lg" disabled>
-                      Select a plan
-                    </Button>
-                  )
-                ) : product.slug === "kiciahook" ? (
-                  selectedPlan ? (
-                    <button
-                      data-shoppex-product-id="019d22af-7f63-7909-92c3-59c8205655f8"
-                      data-shoppex-quantity="1"
-                      data-shoppex-theme="auto"
-                      data-shoppex-flow="embed"
-                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-                    >
-                      Purchase Lifetime - $9.97
-                    </button>
-                  ) : (
-                    <Button className="w-full h-12 text-base" size="lg" disabled>
-                      Select a plan
-                    </Button>
-                  )
-                ) : product.slug === "cosmic" ? (
-                  selectedPlan ? (
-                    <button
-                      data-shoppex-product-id="019d2525-305a-79cd-8360-4901bc60afe9"
-                      data-shoppex-quantity="1"
-                      data-shoppex-theme="auto"
-                      data-shoppex-flow="embed"
-                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-                    >
-                      Purchase Lifetime - $9.97
-                    </button>
-                  ) : (
-                    <Button className="w-full h-12 text-base" size="lg" disabled>
-                      Select a plan
-                    </Button>
-                  )
-                ) : (
-                  <Button
-                    onClick={handlePurchase}
-                    className="w-full h-12 text-base"
-                    size="lg"
-                    disabled={!hasPurchaseUrl || !selectedPlan}
-                  >
-                    {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
-                  </Button>
-                )}
+                <Button
+                  onClick={handlePurchase}
+                  className="w-full h-12 text-base"
+                  size="lg"
+                  disabled={!hasPurchaseUrl || !selectedPlan}
+                >
+                  {selectedPlan ? `Purchase ${selectedPlan.name} - ${selectedPlan.price}` : "Select a plan"}
+                </Button>
 
                 {(product.slug === "volcano-executor" || product.slug === "kiciahook") && (
                   <>

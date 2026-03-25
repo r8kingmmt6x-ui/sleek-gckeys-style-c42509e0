@@ -548,6 +548,22 @@ const ProductDetails = () => {
                       Select a plan
                     </Button>
                   )
+                ) : product.slug === "cosmic" ? (
+                  selectedPlan ? (
+                    <button
+                      data-shoppex-product-id="019d2525-305a-79cd-8360-4901bc60afe9"
+                      data-shoppex-quantity="1"
+                      data-shoppex-theme="auto"
+                      data-shoppex-flow="embed"
+                      className="w-full h-12 text-base rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
+                    >
+                      Purchase Lifetime - $9.99
+                    </button>
+                  ) : (
+                    <Button className="w-full h-12 text-base" size="lg" disabled>
+                      Select a plan
+                    </Button>
+                  )
                 ) : (
                   <Button
                     onClick={handlePurchase}

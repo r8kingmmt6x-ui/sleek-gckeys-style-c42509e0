@@ -232,7 +232,7 @@ const products = [
     ],
   },
   {
-    title: "kiciahook",
+    title: "Kiciahook",
     description:
       "With kiciahook, you get on-demand access — no key system, no delays, just instant execution when you need it. Enjoy a clean experience with kiciahook!",
     price: "$9.97",
@@ -255,11 +255,11 @@ const products = [
     title: "Cosmic",
     description:
       "Cosmic is a powerful Roblox scripting utility built for reliability. With multi-instance support, a rich set of custom functions, and rock-solid stability, it delivers smooth performance no matter what you run.",
-    price: "$9.99",
+    price: "$9.97",
     image: cosmicImage,
     slug: "cosmic",
     category: "Executor",
-    plans: [{ name: "Lifetime", price: "$9.99", purchaseUrl: "https://aquadratic.com/pay/cmmqup06b0001wgq4jkbcqt4n" }],
+    plans: [{ name: "Lifetime", price: "$9.97", purchaseUrl: "https://aquadratic.com/pay/cmmqup06b0001wgq4jkbcqt4n" }],
     features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],
     usage: [

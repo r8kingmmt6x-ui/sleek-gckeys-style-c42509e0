@@ -138,8 +138,8 @@ const products = [
     slug: "0efbc78f-045f-4f48-9113-78fcba6ac5ed",
     category: "Executor",
     plans: [
-      { name: "Weekly", price: "$3.95", purchaseUrl: "https://valary.cc/product?id=seliware&ref=grand" },
-      { name: "Monthly", price: "$9.95", purchaseUrl: "https://valary.cc/product?id=seliware&ref=grand" },
+      { name: "Weekly", price: "$3.95", purchaseUrl: "https://aquadratic.com/pay/cmnyvvg0f0002jxf8lu1qrfnt" },
+      { name: "Monthly", price: "$9.95", purchaseUrl: "https://aquadratic.com/pay/cmnyvvxar0004jxf854aumve4" },
     ],
     features: ["Ultra-Fast Execution", "Rock-Solid Stability", "100% sUNC"],
     requirements: ["Windows 10/11", "Minimum requirements for Roblox"],

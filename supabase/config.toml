@@ -1,4 +1,0 @@
-project_id = "pjdiyegzulatmkefldxz"
-
-[functions.fetch-sellauth-reviews]
-verify_jwt = false
